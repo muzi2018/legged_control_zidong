@@ -1,12 +1,13 @@
 <launch>
+<!--
     <arg name="robot_type" default="$(env ROBOT_TYPE)" doc="Robot type: [a1, aliengo, go1, laikago]"/>
-
     <param name="legged_robot_description" command="$(find xacro)/xacro $(find legged_unitree_description)/urdf/robot.xacro
        robot_type:=$(arg robot_type)
     "/>
+
     <node name="generate_urdf" pkg="legged_common" type="generate_urdf.sh" output="screen"
           args="$(find legged_unitree_description)/urdf/robot.xacro $(arg robot_type)"/>
-
+-->
     <rosparam file="$(find legged_gazebo)/config/default.yaml" command="load"/>
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
         <arg name="world_name" value="$(find legged_gazebo)/worlds/empty_world.world"/>
@@ -16,3 +17,6 @@
           args="-z 0.5 -param legged_robot_description -urdf -model $(arg robot_type)" output="screen"/>
 
 </launch>
+
+
+rosrun gazebo_ros spawn_model -file <path_to_urdf_file> -urdf -x <x_position> -y <y_position> -z <z_position> -model <model_name>

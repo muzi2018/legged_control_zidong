@@ -1,1 +1,2 @@
-/home/taizun/Desktop/legged_control_zidong/src/legged_controllers
+catkin build legged_controllers legged_unitree_description
+legged_gazebo
