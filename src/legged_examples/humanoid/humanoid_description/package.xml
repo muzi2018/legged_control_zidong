@@ -2,7 +2,7 @@
 <package format="2">
     <name>humanoid_description</name>
     <version>0.0.0</version>
-    <description>Unitree robot description files</description>
+    <description>humanoid robot description files</description>
     <maintainer email="liaoqiayuan@gmail.com">Qiayuan Liao</maintainer>
     <license>BSD</license>
     <author email="liaoqiayuan@gmail.com">Qiayuan Liao</author>

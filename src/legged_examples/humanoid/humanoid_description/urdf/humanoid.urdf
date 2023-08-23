@@ -9,7 +9,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/Body.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/Body.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0 0 0"/>
     </visual>
@@ -30,7 +30,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_HipRz.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRz.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -51,7 +51,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_HipRx.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRx.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 -1.57 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -72,7 +72,7 @@
     </inertial>
     <visual>
      <geometry>
-          <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_Thigh.obj" scale="1 1 1"/>
+          <mesh filename="package://humanoid_description/meshes_zidong_obj/R_Thigh.dae" scale="1 1 1"/>
      </geometry>
       <origin rpy="0 1.57 -1.57" xyz="0.0 0.0 0.0"/>
     </visual>
@@ -93,7 +93,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_LowerLeg3_drawing.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_LowerLeg3_drawing.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="1.57 1.57 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -114,7 +114,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_foot_drawing.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_foot_drawing.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="1.57 1.57 0" xyz="0. 0. 0."/>
     </visual>
@@ -162,7 +162,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_HipRz.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRz.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -183,7 +183,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_HipRx.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_HipRx.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 -1.57 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -204,7 +204,7 @@
     </inertial>
     <visual>
         <geometry>
-          <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_Thigh.obj" scale="1 1 1"/>
+          <mesh filename="package://humanoid_description/meshes_zidong_obj/L_Thigh.dae" scale="1 1 1"/>
         </geometry>
       <origin rpy="0 1.57 -1.57" xyz="0.0 0.0 0.0"/>
     </visual>
@@ -225,7 +225,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_LowerLeg3_drawing.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_LowerLeg3_drawing.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="1.57 1.57 0.0" xyz="0. 0. 0"/>
     </visual>
@@ -246,7 +246,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_foot_drawing.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/L_foot_drawing.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="1.57 1.57 0" xyz="0. 0. 0."/>
     </visual>
@@ -294,7 +294,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_ShoulderRx.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_ShoulderRx.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 0" xyz="0.06 0.02 -0.055"/>
     </visual>
@@ -315,7 +315,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_UpperArm.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_UpperArm.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 1.57 -1.57" xyz="0. -0.07 0"/>
     </visual>
@@ -336,7 +336,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_ForeArm2.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_ForeArm2.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 1.57 0" xyz="0.0 0.00 0"/>
     </visual>
@@ -358,7 +358,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/R_ShoulderRx.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_ShoulderRx.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 0 3.14" xyz="0.06 -0.02 -0.055"/>
     </visual>
@@ -379,7 +379,7 @@
     </inertial>
     <visual>
       <geometry>
-        <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_UpperArm.obj" scale="1 1 1"/>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/L_UpperArm.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 1.57 -1.57" xyz="0. 0.07 0"/>
     </visual>
@@ -400,7 +400,7 @@
     </inertial>
     <visual>
       <geometry>
-         <mesh filename="package://ocs2_robotic_assets/resources/anymal_c/meshes_zidong_obj/L_ForeArm2.obj" scale="1 1 1"/>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_ForeArm2.dae" scale="1 1 1"/>
       </geometry>
       <origin rpy="0 1.57 0" xyz="0.0 0.0 0"/>
     </visual>

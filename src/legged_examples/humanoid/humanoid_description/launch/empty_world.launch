@@ -13,5 +13,5 @@
     </include>
     <!-- push robot_description to factory and spawn robot in gazebo -->
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
-          args="-file `$(find legged_examples)`/humanoid/humanoid_description/urdf/humanoid.urdf -urdf -x 0 -y 0 -z 0.49 -model $(arg robot_type)" output="screen"/>
+          args="-file /home/taizun/Desktop/legged_control_zidong/src/legged_examples/humanoid/humanoid_description/urdf/humanoid.urdf -urdf -x 0 -y 0 -z 0.49 -model $(arg robot_type)" output="screen"/>
 </launch>
