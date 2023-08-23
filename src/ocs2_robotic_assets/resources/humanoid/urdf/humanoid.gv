@@ -1,0 +1,53 @@
+digraph G {
+node [shape=box];
+"torso" [label="torso"];
+"L_HipRz" [label="L_HipRz"];
+"L_HipRx" [label="L_HipRx"];
+"L_Thigh" [label="L_Thigh"];
+"L_Shank" [label="L_Shank"];
+"L_Foot" [label="L_Foot"];
+"L_ShoulderRx" [label="L_ShoulderRx"];
+"L_UpperArm" [label="L_UpperArm"];
+"L_ForeArm" [label="L_ForeArm"];
+"R_HipRz" [label="R_HipRz"];
+"R_HipRx" [label="R_HipRx"];
+"R_Thigh" [label="R_Thigh"];
+"R_Shank" [label="R_Shank"];
+"R_Foot" [label="R_Foot"];
+"R_ShoulderRx" [label="R_ShoulderRx"];
+"R_UpperArm" [label="R_UpperArm"];
+"R_ForeArm" [label="R_ForeArm"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"torso" -> "torso_to_L_HipRz" [label="xyz: 0 0.075 0 \nrpy: 0 -0 0"]
+"torso_to_L_HipRz" -> "L_HipRz"
+"L_HipRz" -> "L_HipRz_to_L_HipRx" [label="xyz: -0.041 0 -0.0885 \nrpy: 0 -0 0"]
+"L_HipRz_to_L_HipRx" -> "L_HipRx"
+"L_HipRx" -> "L_HipRx_to_L_Thigh" [label="xyz: 0.065 0 0 \nrpy: 0 -0 0"]
+"L_HipRx_to_L_Thigh" -> "L_Thigh"
+"L_Thigh" -> "L_Knee" [label="xyz: 0 -0.017875 -0.247 \nrpy: 0 -0 0"]
+"L_Knee" -> "L_Shank"
+"L_Shank" -> "L_Ankle" [label="xyz: 0 0 -0.247 \nrpy: 0 -0 0"]
+"L_Ankle" -> "L_Foot"
+"torso" -> "torso_to_L_ShoulderRx" [label="xyz: -0.0215 0.1115 0.202 \nrpy: 0 -0 0"]
+"torso_to_L_ShoulderRx" -> "L_ShoulderRx"
+"L_ShoulderRx" -> "L_ShoulderRx_to_L_UpperArm" [label="xyz: 0.0545 0 0 \nrpy: 0 -0 0"]
+"L_ShoulderRx_to_L_UpperArm" -> "L_UpperArm"
+"L_UpperArm" -> "L_UpperArm_to_L_ForeArm" [label="xyz: 0 0.068 -0.195 \nrpy: 0 -0 0"]
+"L_UpperArm_to_L_ForeArm" -> "L_ForeArm"
+"torso" -> "torso_to_R_HipRz" [label="xyz: 0 -0.075 0 \nrpy: 0 -0 0"]
+"torso_to_R_HipRz" -> "R_HipRz"
+"R_HipRz" -> "R_HipRz_to_R_HipRx" [label="xyz: -0.041 0 -0.0885 \nrpy: 0 -0 0"]
+"R_HipRz_to_R_HipRx" -> "R_HipRx"
+"R_HipRx" -> "R_HipRx_to_R_Thigh" [label="xyz: 0.065 0 0 \nrpy: 0 -0 0"]
+"R_HipRx_to_R_Thigh" -> "R_Thigh"
+"R_Thigh" -> "R_Knee" [label="xyz: 0 0.017875 -0.247 \nrpy: 0 -0 0"]
+"R_Knee" -> "R_Shank"
+"R_Shank" -> "R_Ankle" [label="xyz: 0 0 -0.247 \nrpy: 0 -0 0"]
+"R_Ankle" -> "R_Foot"
+"torso" -> "torso_to_R_ShoulderRx" [label="xyz: -0.0215 -0.1115 0.202 \nrpy: 0 -0 0"]
+"torso_to_R_ShoulderRx" -> "R_ShoulderRx"
+"R_ShoulderRx" -> "R_ShoulderRx_to_R_UpperArm" [label="xyz: 0.0545 0 0 \nrpy: 0 -0 0"]
+"R_ShoulderRx_to_R_UpperArm" -> "R_UpperArm"
+"R_UpperArm" -> "R_UpperArm_to_R_ForeArm" [label="xyz: 0 -0.068 -0.195 \nrpy: 0 -0 0"]
+"R_UpperArm_to_R_ForeArm" -> "R_ForeArm"
+}
