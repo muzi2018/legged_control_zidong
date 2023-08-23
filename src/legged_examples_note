@@ -1,0 +1,55 @@
+legged_examples
+└── legged_unitree
+    ├── legged_unitree_description
+    │   ├── CMakeLists.txt
+    │   ├── launch
+    │   │   └── empty_world.launch
+    │   ├── meshes
+    │   │   ├── a1
+    │   │   │   ├── calf.dae
+    │   │   │   ├── hip.dae
+    │   │   │   ├── thigh.dae
+    │   │   │   ├── thigh_mirror.dae
+    │   │   │   ├── trunk_A1.png
+    │   │   │   └── trunk.dae
+    │   │   └── aliengo
+    │   │       ├── calf.dae
+    │   │       ├── hip.dae
+    │   │       ├── thigh.dae
+    │   │       ├── thigh_mirror.dae
+    │   │       ├── trunk.dae
+    │   │       └── trunk_uv_base_final.png
+    │   ├── package.xml
+    │   └── urdf
+    │       ├── a1
+    │       │   └── const.xacro
+    │       ├── aliengo
+    │       │   └── const.xacro
+    │       ├── common
+    │       │   ├── gazebo.xacro
+    │       │   ├── imu.xacro
+    │       │   ├── leg.xacro
+    │       │   ├── materials.xacro
+    │       │   └── transmission.xacro
+    │       └── robot.xacro
+    └── legged_unitree_hw
+        ├── CMakeLists.txt
+        ├── config
+        │   ├── a1.yaml
+        │   └── aliengo.yaml
+        ├── include
+        │   ├── legged_unitree_hw
+        │   │   └── UnitreeHW.h
+        │   └── unitree_legged_sdk
+        │       ├── comm.h
+        │       ├── quadruped.h
+        │       ├── safety.h
+        │       └── udp.h
+        ├── launch
+        │   └── legged_unitree_hw.launch
+        ├── lib
+        │   └── libunitree_legged_sdk_amd64.so
+        ├── package.xml
+        └── src
+            ├── legged_unitree_hw.cpp
+            └── UnitreeHW.cpp

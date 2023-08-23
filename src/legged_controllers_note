@@ -1,0 +1,28 @@
+legged_controllers
+├── CMakeLists.txt
+├── config
+│   ├── a1
+│   │   ├── gait.info
+│   │   ├── reference.info
+│   │   └── task.info
+│   ├── aliengo
+│   │   ├── gait.info
+│   │   ├── reference.info
+│   │   └── task.info
+│   ├── controllers.yaml
+│   └── joy.yaml
+├── include
+│   └── legged_controllers
+│       ├── LeggedController.h
+│       ├── SafetyChecker.h
+│       ├── TargetTrajectoriesPublisher.h
+│       └── visualization
+│           └── LeggedSelfCollisionVisualization.h
+├── launch
+│   ├── joy_teleop.launch
+│   └── load_controller.launch
+├── legged_controllers_plugins.xml
+├── package.xml
+└── src
+    ├── LeggedController.cpp
+    └── TargetTrajectoriesPublisher.cpp

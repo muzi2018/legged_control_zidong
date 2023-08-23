@@ -1,0 +1,17 @@
+legged_wbc
+├── CMakeLists.txt
+├── include
+│   └── legged_wbc
+│       ├── HierarchicalWbc.h
+│       ├── HoQp.h
+│       ├── Task.h
+│       ├── WbcBase.h
+│       └── WeightedWbc.h
+├── package.xml
+├── src
+│   ├── HierarchicalWbc.cpp
+│   ├── HoQp.cpp
+│   ├── WbcBase.cpp
+│   └── WeightedWbc.cpp
+└── test
+    └── HoQp_test.cpp

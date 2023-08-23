@@ -1,0 +1,12 @@
+legged_estimation/
+├── CMakeLists.txt
+├── include
+│   └── legged_estimation
+│       ├── FromTopiceEstimate.h
+│       ├── LinearKalmanFilter.h
+│       └── StateEstimateBase.h
+├── package.xml
+└── src
+    ├── FromTopicEstimate.cpp
+    ├── LinearKalmanFilter.cpp
+    └── StateEstimateBase.cpp

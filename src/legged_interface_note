@@ -1,0 +1,33 @@
+legged_interface
+├── CMakeLists.txt
+├── include
+│   └── legged_interface
+│       ├── constraint
+│       │   ├── EndEffectorLinearConstraint.h
+│       │   ├── FrictionConeConstraint.h
+│       │   ├── LeggedSelfCollisionConstraint.h
+│       │   ├── NormalVelocityConstraintCppAd.h
+│       │   ├── SwingTrajectoryPlanner.h
+│       │   ├── ZeroForceConstraint.h
+│       │   └── ZeroVelocityConstraintCppAd.h
+│       ├── cost
+│       │   └── LeggedRobotQuadraticTrackingCost.h
+│       ├── initialization
+│       │   └── LeggedRobotInitializer.h
+│       ├── LeggedInterface.h
+│       ├── LeggedRobotPreComputation.h
+│       └── SwitchedModelReferenceManager.h
+├── package.xml
+└── src
+    ├── constraint
+    │   ├── EndEffectorLinearConstraint.cpp
+    │   ├── FrictionConeConstraint.cpp
+    │   ├── NormalVelocityConstraintCppAd.cpp
+    │   ├── SwingTrajectoryPlanner.cpp
+    │   ├── ZeroForceConstraint.cpp
+    │   └── ZeroVelocityConstraintCppAd.cpp
+    ├── initialization
+    │   └── LeggedRobotInitializer.cpp
+    ├── LeggedInterface.cpp
+    ├── LeggedRobotPreComputation.cpp
+    └── SwitchedModelReferenceManager.cpp

@@ -1,0 +1,13 @@
+legged_gazebo
+├── CMakeLists.txt
+├── config
+│   └── default.yaml
+├── include
+│   └── legged_gazebo
+│       └── LeggedHWSim.h
+├── legged_hw_sim_plugins.xml
+├── package.xml
+├── src
+│   └── LeggedHWSim.cpp
+└── worlds
+    └── empty_world.world
