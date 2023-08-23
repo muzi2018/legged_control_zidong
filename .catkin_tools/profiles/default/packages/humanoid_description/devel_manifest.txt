@@ -1,0 +1,5 @@
+legged_examples/humanoid/humanoid_description
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_description/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_description/lib/pkgconfig/humanoid_description.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/humanoid_description.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_description/share/humanoid_description/cmake/humanoid_descriptionConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/humanoid_description/cmake/humanoid_descriptionConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_description/share/humanoid_description/cmake/humanoid_descriptionConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/humanoid_description/cmake/humanoid_descriptionConfig.cmake

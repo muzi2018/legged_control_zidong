@@ -1,0 +1,6 @@
+ocs2/ocs2_pinocchio/ocs2_pinocchio_interface
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/lib/libocs2_pinocchio_interface.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_pinocchio_interface.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/lib/pkgconfig/ocs2_pinocchio_interface.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_pinocchio_interface.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/share/ocs2_pinocchio_interface/cmake/ocs2_pinocchio_interfaceConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_pinocchio_interface/cmake/ocs2_pinocchio_interfaceConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/share/ocs2_pinocchio_interface/cmake/ocs2_pinocchio_interfaceConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_pinocchio_interface/cmake/ocs2_pinocchio_interfaceConfig.cmake

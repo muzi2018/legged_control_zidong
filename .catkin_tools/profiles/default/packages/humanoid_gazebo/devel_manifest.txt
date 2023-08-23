@@ -1,0 +1,6 @@
+humanoid_gazebo
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_gazebo/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_gazebo/lib/liblegged_hw_sim.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_hw_sim.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_gazebo/lib/pkgconfig/humanoid_gazebo.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/humanoid_gazebo.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_gazebo/share/humanoid_gazebo/cmake/humanoid_gazeboConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/humanoid_gazebo/cmake/humanoid_gazeboConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/humanoid_gazebo/share/humanoid_gazebo/cmake/humanoid_gazeboConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/humanoid_gazebo/cmake/humanoid_gazeboConfig.cmake

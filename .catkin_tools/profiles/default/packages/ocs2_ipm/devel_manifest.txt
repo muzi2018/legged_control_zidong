@@ -1,0 +1,6 @@
+ocs2/ocs2_ipm
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/lib/libocs2_ipm.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_ipm.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/lib/pkgconfig/ocs2_ipm.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_ipm.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/share/ocs2_ipm/cmake/ocs2_ipmConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_ipm/cmake/ocs2_ipmConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/share/ocs2_ipm/cmake/ocs2_ipmConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_ipm/cmake/ocs2_ipmConfig-version.cmake
