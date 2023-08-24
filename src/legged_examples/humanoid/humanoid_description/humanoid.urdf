@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="humanoid">
+  <!-- ===== DUMMY 'BASE' LINK ==== -->
+  <link name="torso">
+    <inertial>
+      <mass value="6.5"/>
+      <origin xyz="0.0 0.0 0.15"/>
+      <inertia ixx="0.3006167" ixy="0" ixz="0" iyy="0.23837" iyz="0" izz="0.09690467"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/Body.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+    </visual>
+  </link>
+  <!--!!!!!!!!!!!!!!!!!!!!!RIGHT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_R_HipRz" type="revolute">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.075 0.0"/>
+    <parent link="torso"/>
+    <child link="R_HipRz"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_HipRz">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.00 -0.04293"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRz.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_HipRz_to_R_HipRx" type="revolute">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
+    <parent link="R_HipRz"/>
+    <child link="R_HipRx"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_HipRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 -1.57 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_HipRx_to_R_Thigh" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
+    <parent link="R_HipRx"/>
+    <child link="R_Thigh"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_Thigh">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0.0 0.0 -0.10"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+     <geometry>
+          <mesh filename="package://humanoid_description/meshes_zidong_obj/R_Thigh.dae" scale="1 1 1"/>
+     </geometry>
+      <origin rpy="0 1.57 -1.57" xyz="0.0 0.0 0.0"/>
+    </visual>
+  </link>
+
+  <joint name="R_Knee" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.017875 -0.247"/>
+    <parent link="R_Thigh"/>
+    <child link="R_Shank"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_Shank">
+    <inertial>
+      <mass value="0.70"/>
+      <origin xyz="-0.03416 -0.00075 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_LowerLeg3_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="1.57 1.57 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_Ankle" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
+    <parent link="R_Shank"/>
+    <child link="R_Foot"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_Foot">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_foot_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="1.57 1.57 0" xyz="0. 0. 0."/>
+    </visual>
+
+    <visual>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+        <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <sphere radius="0.0"/>
+        </geometry>
+        <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+    </collision>
+
+    <visual>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+        <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <sphere radius="0.0"/>
+        </geometry>
+        <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!LEFT LEG!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_L_HipRz" type="revolute">
+    <axis xyz="0 0 1"/>
+    <origin rpy="0 0 0" xyz="0.0 0.075 0.0"/>
+    <parent link="torso"/>
+    <child link="L_HipRz"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_HipRz">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.00 -0.04293"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/R_HipRz.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 0 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="L_HipRz_to_L_HipRx" type="revolute">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
+    <parent link="L_HipRz"/>
+    <child link="L_HipRx"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_HipRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_HipRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 -1.57 0.0" xyz="0. 0. 0"/>
+    </visual>
+   </link>
+
+  <joint name="L_HipRx_to_L_Thigh" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
+    <parent link="L_HipRx"/>
+    <child link="L_Thigh"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_Thigh">
+    <inertial>
+      <mass value="1.0"/>
+      <origin xyz="0.0 0.0 -0.10"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+        <geometry>
+          <mesh filename="package://humanoid_description/meshes_zidong_obj/L_Thigh.dae" scale="1 1 1"/>
+        </geometry>
+      <origin rpy="0 1.57 -1.57" xyz="0.0 0.0 0.0"/>
+    </visual>
+   </link>
+
+  <joint name="L_Knee" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.017875 -0.247"/>
+    <parent link="L_Thigh"/>
+    <child link="L_Shank"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_Shank">
+    <inertial>
+      <mass value="0.70"/>
+      <origin xyz="-0.03416 -0.00075 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_LowerLeg3_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="1.57 1.57 0.0" xyz="0. 0. 0"/>
+    </visual>
+  </link>
+
+  <joint name="L_Ankle" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
+    <parent link="L_Shank"/>
+    <child link="L_Foot"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_Foot">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.0 0.0 -0.01"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/L_foot_drawing.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="1.57 1.57 0" xyz="0. 0. 0."/>
+    </visual>
+
+    <visual>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+        <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <sphere radius="0.0"/>
+        </geometry>
+        <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+    </collision>
+
+    <visual>
+        <geometry>
+            <sphere radius="0.001"/>
+        </geometry>
+        <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+    </visual>
+    <collision>
+        <geometry>
+            <sphere radius="0.0"/>
+        </geometry>
+        <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+    </collision>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!RIGHT ARM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_R_ShoulderRx" type="revolute">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.0215 -0.1115 0.202"/>
+    <parent link="torso"/>
+    <child link="R_ShoulderRx"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_ShoulderRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.01 0.0 0.0"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_ShoulderRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.06 0.02 -0.055"/>
+    </visual>
+   </link>
+
+  <joint name="R_ShoulderRx_to_R_UpperArm" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
+    <parent link="R_ShoulderRx"/>
+    <child link="R_UpperArm"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_UpperArm">
+    <inertial>
+      <mass value="0.37"/>
+      <origin xyz="0.0 0.0 -0.09"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_UpperArm.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 1.57 -1.57" xyz="0. -0.07 0"/>
+    </visual>
+  </link>
+
+  <joint name="R_UpperArm_to_R_ForeArm" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 -0.068 -0.195"/>
+    <parent link="R_UpperArm"/>
+    <child link="R_ForeArm"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="R_ForeArm">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0.0 -0.04"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_ForeArm2.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0.0 0.00 0"/>
+    </visual>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!LEFT ARM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <joint name="torso_to_L_ShoulderRx" type="revolute">
+    <axis xyz="1 0 0"/>
+    <origin rpy="0 0 0" xyz="-0.0215 0.1115 0.202"/>
+    <parent link="torso"/>
+    <child link="L_ShoulderRx"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_ShoulderRx">
+    <inertial>
+      <mass value="0.30"/>
+      <origin xyz="0.01 0.0 0.0"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/R_ShoulderRx.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 0 3.14" xyz="0.06 -0.02 -0.055"/>
+    </visual>
+   </link>
+
+  <joint name="L_ShoulderRx_to_L_UpperArm" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
+    <parent link="L_ShoulderRx"/>
+    <child link="L_UpperArm"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_UpperArm">
+    <inertial>
+      <mass value="0.37"/>
+      <origin xyz="0.0 0.0 -0.09"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <mesh filename="package://humanoid_description/meshes_zidong_obj/L_UpperArm.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 1.57 -1.57" xyz="0. 0.07 0"/>
+    </visual>
+  </link>
+
+  <joint name="L_UpperArm_to_L_ForeArm" type="revolute">
+    <axis xyz="0 1 0"/>
+    <origin rpy="0 0 0" xyz="0.0 0.068 -0.195"/>
+    <parent link="L_UpperArm"/>
+    <child link="L_ForeArm"/>
+    <limit lower="-3" upper="3" effort="33.6" velocity="55" />
+  </joint>
+  <link name="L_ForeArm">
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0.0 -0.04"/>
+      <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
+    </inertial>
+    <visual>
+      <geometry>
+         <mesh filename="package://humanoid_description/meshes_zidong_obj/L_ForeArm2.dae" scale="1 1 1"/>
+      </geometry>
+      <origin rpy="0 1.57 0" xyz="0.0 0.0 0"/>
+    </visual>
+  </link>
+
+  <!--!!!!!!!!!!!!!!!!!!!!!transmission!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+  <transmission name="torso_to_R_HipRz-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="torso_to_R_HipRz-motor"/>
+          <joint name="torso_to_R_HipRz"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_HipRz_to_R_HipRx-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_HipRz_to_R_HipRx-motor"/>
+          <joint name="R_HipRz_to_R_HipRx"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_HipRx_to_R_Thigh-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_HipRx_to_R_Thigh-motor"/>
+          <joint name="R_HipRx_to_R_Thigh"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_Knee-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_Knee-motor"/>
+          <joint name="R_Knee"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_Ankle-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_Ankle-motor"/>
+          <joint name="R_Ankle"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+
+
+  <transmission name="torso_to_L_HipRz-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="torso_to_L_HipRz-motor"/>
+          <joint name="torso_to_L_HipRz"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_HipRz_to_L_HipRx-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_HipRz_to_L_HipRx-motor"/>
+          <joint name="L_HipRz_to_L_HipRx"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_HipRx_to_L_Thigh-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_HipRx_to_L_Thigh-motor"/>
+          <joint name="L_HipRx_to_L_Thigh"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_Knee-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_Knee-motor"/>
+          <joint name="L_Knee"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_Ankle-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_Ankle-motor"/>
+          <joint name="L_Ankle"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+
+
+  <transmission name="torso_to_R_ShoulderRx-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="torso_to_R_ShoulderRx-motor"/>
+          <joint name="torso_to_R_ShoulderRx"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_ShoulderRx_to_R_UpperArm-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_ShoulderRx_to_R_UpperArm-motor"/>
+          <joint name="R_ShoulderRx_to_R_UpperArm"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="R_UpperArm_to_R_ForeArm-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="R_UpperArm_to_R_ForeArm-motor"/>
+          <joint name="R_UpperArm_to_R_ForeArm"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+
+
+  <transmission name="torso_to_L_ShoulderRx-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="torso_to_L_ShoulderRx-motor"/>
+          <joint name="torso_to_L_ShoulderRx"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_ShoulderRx_to_L_UpperArm-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_ShoulderRx_to_L_UpperArm-motor"/>
+          <joint name="L_ShoulderRx_to_L_UpperArm"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  <transmission name="L_UpperArm_to_L_ForeArm-trans" type="transmission_interface/SimpleTransmission">
+          <actuator name="L_UpperArm_to_L_ForeArm-motor"/>
+          <joint name="L_UpperArm_to_L_ForeArm"/>
+          <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+  
+</robot>
+
+
