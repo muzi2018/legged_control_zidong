@@ -8,7 +8,6 @@
 
         <joint name="${prefix}_JHipRz" type="revolute">
             <xacro:insert_block name="origin"/>
-            <origin rpy="0 0 0" xyz="0 ${0.075*mirror} 0"/>
             <parent link="base"/>
             <child link="${prefix}_LHipRz"/>
             <axis xyz="0 0 1"/>

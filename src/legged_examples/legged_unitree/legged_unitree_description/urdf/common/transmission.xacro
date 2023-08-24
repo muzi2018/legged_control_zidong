@@ -4,39 +4,60 @@
 
     <xacro:macro name="leg_transmission" params="name">
 
-        <transmission name="${prefix}_HAA_tran">
+        <transmission name="${prefix}_JHipRz_tran">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_HAA">
+            <joint name="${prefix}_JHipRz">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             </joint>
-            <actuator name="${prefix}_HAA_motor">
+            <actuator name="${prefix}_JHipRz_motor">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
 
-        <transmission name="${prefix}_HFE_tran">
+        <transmission name="${prefix}_JHipRx_tran">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_HFE">
+            <joint name="${prefix}_JHipRx">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             </joint>
-            <actuator name="${prefix}_HFE_motor">
+            <actuator name="${prefix}_JHipRx_motor">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
 
-        <transmission name="${prefix}_KFE_tran">
+        <transmission name="${prefix}_JThigh_tran">
             <type>transmission_interface/SimpleTransmission</type>
-            <joint name="${prefix}_KFE">
+            <joint name="${prefix}_JThigh">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             </joint>
-            <actuator name="${prefix}_KFE_motor">
+            <actuator name="${prefix}_JThigh_motor">
                 <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
                 <mechanicalReduction>1</mechanicalReduction>
             </actuator>
         </transmission>
 
+        <transmission name="${prefix}_JKnee_tran">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}_JKnee">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}_JKnee_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
+
+        <transmission name="${prefix}_JAnkle_tran">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}_JAnkle">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}_JAnkle_motor">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
     </xacro:macro>
 
 </robot>

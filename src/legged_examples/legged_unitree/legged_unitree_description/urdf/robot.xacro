@@ -6,6 +6,7 @@
 
     <xacro:include filename="$(find legged_unitree_description)/urdf/common/materials.xacro"/>
     <xacro:include filename="$(find legged_unitree_description)/urdf/common/leg.xacro"/>
+    <xacro:include filename="$(find legged_unitree_description)/urdf/common/arm.xacro"/>
     <xacro:include filename="$(find legged_unitree_description)/urdf/common/gazebo.xacro"/>
     <xacro:include filename="$(find legged_unitree_description)/urdf/common/imu.xacro"/>
 
@@ -38,10 +39,18 @@
     <xacro:IMU connected_to="base" imu_name="unitree_imu" xyz="0. 0. 0." rpy="0. 0. 0."/>
 
     <xacro:leg prefix="L" mirror="1" mirror_dae="False" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${-leg_offset_y} 0"/>
+        <origin rpy="0 0 0" xyz="0 0.075 0"/>
     </xacro:leg>
 
     <xacro:leg prefix="R" mirror="-1" mirror_dae="True" front_hind="1" front_hind_dae="True">
-        <origin rpy="0 0 0" xyz="${leg_offset_x} ${leg_offset_y} 0"/>
+        <origin rpy="0 0 0" xyz="0 -0.075 0"/>
+    </xacro:leg>
+
+    <xacro:arm prefix="L" mirror="1" mirror_dae="False" front_hind="1" front_hind_dae="True">
+        <origin rpy="0 0 0" xyz="-0.0215 0.1115 0.202"/>
+    </xacro:leg>
+
+    <xacro:arm prefix="R" mirror="-1" mirror_dae="True" front_hind="1" front_hind_dae="True">
+        <origin rpy="0 0 0" xyz="-0.0215 -0.1115 0.202"/>
     </xacro:leg>
 </robot>

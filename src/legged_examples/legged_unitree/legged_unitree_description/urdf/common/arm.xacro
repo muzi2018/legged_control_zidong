@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:include filename="$(find legged_unitree_description)/urdf/common/arm_transmission.xacro"/>
+
+    <xacro:macro name="arm" params="prefix mirror mirror_dae front_hind front_hind_dae *origin">
+
+        <joint name="${prefix}_JShoulderRx" type="revolute">
+            <xacro:insert_block name="origin"/>
+            <parent link="base"/>
+            <child link="${prefix}_LShoulderRx"/>
+            <axis xyz="1 0 0"/>
+            <dynamics damping="${damping}" friction="${friction}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}" upper="${hip_max}"/>
+        </joint>
+        <link name="${prefix}_LShoulderRx">
+            <visual>
+                <origin rpy="0 0 0.0" xyz="0.06 0.02 -0.055"/>
+                <geometry>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ShoulderRx.dae"
+                            scale="1 1 1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
+                <mass value="0.30"/>
+                <inertia
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
+            </inertial>
+        </link>
+
+
+        <joint name="${prefix}_JUpperArm" type="revolute">
+            <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
+            <parent link="${prefix}__LShoulderRx"/>
+            <child link="${prefix}_LUpperArm"/>
+            <axis xyz="0 1 0"/>
+            <dynamics damping="${damping}" friction="${friction}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
+        </joint>
+        <link name="${prefix}_LUpperArm">
+            <visual>
+                <origin rpy="0 1.57 -1.57" xyz="0. 0.07*mirror 0"/>
+                <geometry>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_UpperArm.dae"
+                            scale="1 1 1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.09"/>
+                <mass value="0.37"/>
+                <inertia
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
+            </inertial>
+        </link>
+
+
+        <joint name="${prefix}_JForeArm" type="revolute">
+            <origin rpy="0 0 0" xyz="0.0 0.068*mirror -0.195"/>
+            <parent link="${prefix}__LUpperArm"/>
+            <child link="${prefix}_LForeArm"/>
+            <axis xyz="0 1 0"/>
+            <dynamics damping="${damping}" friction="${friction}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
+        </joint>
+        <link name="${prefix}_LForeArm">
+            <visual>
+                <origin rpy="0 1.57 0" xyz="0. 0 0"/>
+                <geometry>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ForeArm2.dae"
+                            scale="1 1 1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.04"/>
+                <mass value="0.1"/>
+                <inertia
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
+            </inertial>
+        </link>
+
+
+        <gazebo reference="${prefix}_LShoulderRx">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
+        <gazebo reference="${prefix}_LShoulderRx">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
+        <gazebo reference="${prefix}_LUpperArm">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
+        <xacro:arm_transmission name="${prefix}"/>
+    </xacro:macro>
+</robot>
