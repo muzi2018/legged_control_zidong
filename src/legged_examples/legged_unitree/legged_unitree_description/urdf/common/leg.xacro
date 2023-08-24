@@ -6,199 +6,212 @@
 
     <xacro:macro name="leg" params="prefix mirror mirror_dae front_hind front_hind_dae *origin">
 
-        <joint name="${prefix}_HAA" type="revolute">
+        <joint name="${prefix}_JHipRz" type="revolute">
             <xacro:insert_block name="origin"/>
+            <origin rpy="0 0 0" xyz="0 ${0.075*mirror} 0"/>
             <parent link="base"/>
-            <child link="${prefix}_hip"/>
+            <child link="${prefix}_LHipRz"/>
+            <axis xyz="0 0 1"/>
+            <dynamics damping="${damping}" friction="${friction}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}" upper="${hip_max}"/>
+        </joint>
+
+        <link name="${prefix}_LHipRz">
+            <visual>
+                <origin rpy="0 0 0.0" xyz="0 0 0"/>
+                <geometry>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRz.dae"
+                            scale="1 1 1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <inertial>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
+                <mass value="0.30"/>
+                <inertia
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
+            </inertial>
+        </link>
+
+        <joint name="${prefix}_JHipRx" type="revolute">
+            <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
+            <parent link="${prefix}__LHipRz"/>
+            <child link="${prefix}_LHipRx"/>
             <axis xyz="1 0 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <xacro:if value="${(mirror_dae == True)}">
-                <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
-                       upper="${hip_max}"/>
-            </xacro:if>
-            <xacro:if value="${(mirror_dae == False)}">
-                <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${-hip_max}"
-                       upper="${-hip_min}"/>
-            </xacro:if>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
         </joint>
 
-        <link name="${prefix}_hip">
+        <link name="${prefix}_LHipRx">
             <visual>
-                <xacro:if value="${(mirror_dae == True) and (front_hind_dae == True)}">
-                    <origin rpy="0 0 0" xyz="0 0 0"/>
-                </xacro:if>
-                <xacro:if value="${(mirror_dae == False) and (front_hind_dae == True)}">
-                    <origin rpy="${pi} 0 0" xyz="0 0 0"/>
-                </xacro:if>
-                <xacro:if value="${(mirror_dae == True) and (front_hind_dae == False)}">
-                    <origin rpy="0 ${pi} 0" xyz="0 0 0"/>
-                </xacro:if>
-                <xacro:if value="${(mirror_dae == False) and (front_hind_dae == False)}">
-                    <origin rpy="${pi} ${pi} 0" xyz="0 0 0"/>
-                </xacro:if>
+                <origin rpy="0 -1.57 0.0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/hip.dae"
-                          scale="1 1 1"/>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRx.dae"
+                            scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
-            <collision>
-                <origin rpy="${pi/2.0} 0 0" xyz="0 0 0"/>
-                <geometry>
-                    <cylinder length="${hip_length}" radius="${hip_radius}"/>
-                </geometry>
-            </collision>
             <inertial>
-                <origin rpy="0 0 0" xyz="${hip_com_x*front_hind} ${hip_com_y*mirror} ${hip_com_z}"/>
-                <mass value="${hip_mass}"/>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
+                <mass value="0.30"/>
                 <inertia
-                        ixx="${hip_ixx}" ixy="${hip_ixy*mirror*front_hind}" ixz="${hip_ixz*front_hind}"
-                        iyy="${hip_iyy}" iyz="${hip_iyz*mirror}"
-                        izz="${hip_izz}"/>
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
             </inertial>
         </link>
 
-        <joint name="${prefix}_HFE" type="revolute">
-            <origin rpy="0 0 0" xyz="0 ${thigh_offset*mirror} 0"/>
-            <parent link="${prefix}_hip"/>
-            <child link="${prefix}_thigh"/>
+        <joint name="${prefix}_JThigh" type="revolute">
+            <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
+            <parent link="${prefix}__LHipRx"/>
+            <child link="${prefix}_LThigh"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${thigh_torque_max}" velocity="${thigh_velocity_max}" lower="${thigh_min}"
-                   upper="${thigh_max}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
         </joint>
 
-        <link name="${prefix}_thigh">
+        <link name="${prefix}_LThigh">
             <visual>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <origin rpy="0 1.57 -1.57" xyz="0 0 0"/>
                 <geometry>
-                    <xacro:if value="${mirror_dae == True}">
-                        <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/thigh.dae"
-                              scale="1 1 1"/>
-                    </xacro:if>
-                    <xacro:if value="${mirror_dae == False}">
-                        <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/thigh_mirror.dae"
-                              scale="1 1 1"/>
-                    </xacro:if>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_Thigh.dae"
+                            scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
-            <collision>
-                <origin rpy="0 ${pi/2.0+0.1} 0" xyz="${thigh_x_offset} 0 ${-thigh_length/2.0}"/>
-                <geometry>
-                    <box size="${thigh_length} ${thigh_width} ${thigh_height}"/>
-                </geometry>
-            </collision>
-            <collision>
-                <origin rpy="${pi/2.0} 0 0" xyz="0 ${mirror*thigh_shoulder_y_offset} 0"/>
-                <geometry>
-                    <cylinder length="${thigh_shoulder_length}" radius="${thigh_shoulder_radius}"/>
-                </geometry>
-            </collision>
             <inertial>
-                <origin rpy="0 0 0" xyz="${thigh_com_x} ${thigh_com_y*mirror} ${thigh_com_z}"/>
-                <mass value="${thigh_mass}"/>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
+                <mass value="1.0"/>
                 <inertia
-                        ixx="${thigh_ixx}" ixy="${thigh_ixy*mirror}" ixz="${thigh_ixz}"
-                        iyy="${thigh_iyy}" iyz="${thigh_iyz*mirror}"
-                        izz="${thigh_izz}"/>
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
             </inertial>
         </link>
 
-        <joint name="${prefix}_KFE" type="revolute">
-            <origin rpy="0 0 0" xyz="0 0 ${-thigh_length}"/>
-            <parent link="${prefix}_thigh"/>
-            <child link="${prefix}_calf"/>
+        <joint name="${prefix}_JKnee" type="revolute">
+            <origin rpy="0 0 0" xyz="0.0 -0.017875*mirror -0.247"/>
+            <parent link="${prefix}__LThigh"/>
+            <child link="${prefix}_LShank"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${calf_torque_max}" velocity="${calf_velocity_max}" lower="${calf_min}" upper="${calf_max}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
         </joint>
 
-        <link name="${prefix}_calf">
+        <link name="${prefix}_LShank">
             <visual>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <origin rpy="1.57 1.57 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/calf.dae"
-                          scale="1 1 1"/>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_LowerLeg3_drawing.dae"
+                            scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
-            <collision>
-                <origin rpy="0 ${pi/2.0} 0" xyz="${calf_x_offset} 0 ${-calf_length/2.0}"/>
-                <geometry>
-                    <box size="${calf_length} ${calf_width} ${calf_height}"/>
-                </geometry>
-            </collision>
             <inertial>
-                <origin rpy="0 0 0" xyz="${calf_com_x} ${calf_com_y} ${calf_com_z}"/>
-                <mass value="${calf_mass}"/>
+                <origin rpy="0 0 0" xyz="-0.03416 -0.00075 -0.01"/>
+                <mass value="0.70"/>
                 <inertia
-                        ixx="${calf_ixx}" ixy="${calf_ixy}" ixz="${calf_ixz}"
-                        iyy="${calf_iyy}" iyz="${calf_iyz}"
-                        izz="${calf_izz}"/>
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
             </inertial>
         </link>
 
-        <joint name="${prefix}_foot_fixed" type="fixed">
-            <origin rpy="0 0 0" xyz="0 0 ${-(calf_length)}"/>
-            <parent link="${prefix}_calf"/>
-            <child link="${prefix}_FOOT"/>
+        <joint name="${prefix}_JAnkle" type="revolute">
+            <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
+            <parent link="${prefix}__LShank"/>
+            <child link="${prefix}_Foot"/>
+            <axis xyz="0 1 0"/>
+            <dynamics damping="${damping}" friction="${friction}"/>
+            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+                   upper="${hip_min}"/>
         </joint>
 
-        <link name="${prefix}_FOOT">
+        <link name="${prefix}_Foot">
             <visual>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <origin rpy="1.57 1.57 0" xyz="0 0 0"/>
                 <geometry>
-                    <sphere radius="${foot_radius-0.01}"/>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_foot_drawing.dae"
+                            scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
             </visual>
-            <collision>
-                <origin rpy="0 0 0" xyz="0 0 0"/>
+            <visual>
                 <geometry>
-                    <sphere radius="${foot_radius}"/>
+                    <sphere radius="0.001"/>
                 </geometry>
+                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="0.0"/>
+                </geometry>
+                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
             </collision>
+
+            <visual>
+                <geometry>
+                    <sphere radius="0.001"/>
+                </geometry>
+                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="0.0"/>
+                </geometry>
+                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+            </collision>
+
             <inertial>
-                <mass value="${foot_mass}"/>
+                <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
+                <mass value="0.30"/>
                 <inertia
-                        ixx="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" ixy="0.0" ixz="0.0"
-                        iyy="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" iyz="0.0"
-                        izz="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}"/>
+                        ixx="0.003735" ixy="0.0" ixz="0.0"
+                        iyy="0.01391" iyz="0.0"
+                        izz="0.01355"/>
             </inertial>
         </link>
 
-        <gazebo reference="${prefix}_foot_fixed">
-            <disableFixedJointLumping>true</disableFixedJointLumping>
-        </gazebo>
-
-        <gazebo reference="${prefix}_hip">
+        <gazebo reference="${prefix}_LHipRz">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
-            <material>Gazebo/DarkGrey</material>
-        </gazebo>
-        <gazebo reference="${prefix}_thigh">
-            <mu1>0.2</mu1>
-            <mu2>0.2</mu2>
-            <self_collide>0</self_collide>
             <material>Gazebo/DarkGrey</material>
             <kp value="1000000.0"/>
             <kd value="100.0"/>
         </gazebo>
-        <gazebo reference="${prefix}_calf">
-            <mu1>0.6</mu1>
-            <mu2>0.6</mu2>
-            <self_collide>1</self_collide>
-        </gazebo>
-        <gazebo reference="${prefix}_FOOT">
-            <mu1>0.6</mu1>
-            <mu2>0.6</mu2>
-            <self_collide>1</self_collide>
+        <gazebo reference="${prefix}_LHipRx">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
             <material>Gazebo/DarkGrey</material>
             <kp value="1000000.0"/>
             <kd value="100.0"/>
         </gazebo>
-
+        <gazebo reference="${prefix}_LThigh">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
+        <gazebo reference="${prefix}_LShank">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
+        <gazebo reference="${prefix}_Foot">
+            <mu1>0.2</mu1>
+            <mu2>0.2</mu2>
+            <material>Gazebo/DarkGrey</material>
+            <kp value="1000000.0"/>
+            <kd value="100.0"/>
+        </gazebo>
         <xacro:leg_transmission name="${prefix}"/>
     </xacro:macro>
 </robot>
