@@ -36,7 +36,7 @@
 
         <joint name="${prefix}_JHipRx" type="revolute">
             <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
-            <parent link="${prefix}__LHipRz"/>
+            <parent link="${prefix}_LHipRz"/>
             <child link="${prefix}_LHipRx"/>
             <axis xyz="1 0 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
@@ -65,7 +65,7 @@
 
         <joint name="${prefix}_JThigh" type="revolute">
             <origin rpy="0 0 0" xyz="0.065 0.0 0.0"/>
-            <parent link="${prefix}__LHipRx"/>
+            <parent link="${prefix}_LHipRx"/>
             <child link="${prefix}_LThigh"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
@@ -93,8 +93,8 @@
         </link>
 
         <joint name="${prefix}_JKnee" type="revolute">
-            <origin rpy="0 0 0" xyz="0.0 -0.017875*mirror -0.247"/>
-            <parent link="${prefix}__LThigh"/>
+            <origin rpy="0 0 0" xyz="0.0 ${-0.017875*mirror} -0.247"/>
+            <parent link="${prefix}_LThigh"/>
             <child link="${prefix}_LShank"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
@@ -123,7 +123,7 @@
 
         <joint name="${prefix}_JAnkle" type="revolute">
             <origin rpy="0 0 0" xyz="0.0 0.0 -0.247"/>
-            <parent link="${prefix}__LShank"/>
+            <parent link="${prefix}_LShank"/>
             <child link="${prefix}_Foot"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
