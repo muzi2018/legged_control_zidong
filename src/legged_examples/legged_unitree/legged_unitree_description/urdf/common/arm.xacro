@@ -16,7 +16,7 @@
         </joint>
         <link name="${prefix}_LShoulderRx">
             <visual>
-                <origin rpy="0 0 0.0" xyz="0.06 0.02 -0.055"/>
+                <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
                 <geometry>
                     <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ShoulderRx.dae"
                             scale="1 1 1"/>
@@ -45,7 +45,12 @@
         </joint>
         <link name="${prefix}_LUpperArm">
             <visual>
-                <origin rpy="0 1.57 -1.57" xyz="0. ${0.07*mirror} 0"/>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 1.57 -1.57" xyz="0. 0.07 0"/>
+            </xacro:if>
+            <xacro:if value="${(mirror == False)}">
+                <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+            </xacro:if>
                 <geometry>
                     <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_UpperArm.dae"
                             scale="1 1 1"/>
@@ -74,7 +79,7 @@
         </joint>
         <link name="${prefix}_LForeArm">
             <visual>
-                <origin rpy="0 1.57 0" xyz="0. 0 0"/>
+                <origin rpy="0 0 0.0" xyz="0. 0 0"/>
                 <geometry>
                     <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ForeArm2.dae"
                             scale="1 1 1"/>
