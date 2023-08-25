@@ -17,7 +17,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0"/>
             <geometry>
-                <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/Body.dae" scale="1 1 1"/>
+                <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/Body.obj" scale="1 1 1"/>
             </geometry>
         </visual>
         <collision>

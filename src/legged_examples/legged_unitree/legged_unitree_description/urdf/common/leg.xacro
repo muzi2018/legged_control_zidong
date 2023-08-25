@@ -19,7 +19,7 @@
             <visual>
                 <origin rpy="0 0 0.0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRz.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRz.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
@@ -46,9 +46,14 @@
 
         <link name="${prefix}_LHipRx">
             <visual>
-                <origin rpy="0 -1.57 0.0" xyz="0 0 0"/>
+                <xacro:if value="${(mirror == True)}">
+                    <origin rpy="0 -3.14 -3.14" xyz="0. 0.00 -0.0"/>
+                </xacro:if>
+                <xacro:if value="${(mirror == False)}">
+                    <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+                </xacro:if>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRx.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_HipRx.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
@@ -75,9 +80,14 @@
 
         <link name="${prefix}_LThigh">
             <visual>
-                <origin rpy="0 1.57 -1.57" xyz="0 0 0"/>
+                <xacro:if value="${(mirror == True)}">
+                    <origin rpy="0 0 -3.14" xyz="0. 0.00 -0.0"/>
+                </xacro:if>
+                <xacro:if value="${(mirror == False)}">
+                    <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+                </xacro:if>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_Thigh.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_Thigh.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
@@ -104,9 +114,9 @@
 
         <link name="${prefix}_LShank">
             <visual>
-                <origin rpy="1.57 1.57 0" xyz="0 0 0"/>
+                <origin rpy="0 -3.14 0" xyz="0 -0.6 0"/>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_LowerLeg3_drawing.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_LowerLeg3_drawing.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
@@ -135,7 +145,7 @@
             <visual>
                 <origin rpy="1.57 1.57 0" xyz="0 0 0"/>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_foot_drawing.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_foot_drawing.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>

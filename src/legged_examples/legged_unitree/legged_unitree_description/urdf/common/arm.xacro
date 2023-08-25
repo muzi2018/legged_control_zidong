@@ -16,12 +16,17 @@
         </joint>
         <link name="${prefix}_LShoulderRx">
             <visual>
-                <origin rpy="0 0 0.0" xyz="0 0.0 0.0"/>
+                <xacro:if value="${(mirror == True)}">
+                    <origin rpy="3.14 0 -1.570" xyz="0.006 -0.005 -0.034"/>
+                </xacro:if>
+                <xacro:unless value="${(mirror == False)}">
+                    <origin rpy="3.14 0 -1.570" xyz="0.006 0.005 -0.034"/>
+                </xacro:unless>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ShoulderRx.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/L_ShoulderRx.obj"
                             scale="1 1 1"/>
                 </geometry>
-                <material name="orange"/>
+                <material name="red"/>
             </visual>
             <inertial>
                 <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
@@ -46,13 +51,13 @@
         <link name="${prefix}_LUpperArm">
             <visual>
             <xacro:if value="${(mirror == True)}">
-                <origin rpy="0 0 -3.14" xyz="0. 0.0 0"/>
+                <origin rpy="1.57 1.57 0" xyz="0. 0.07 0.02"/>
             </xacro:if>
-            <xacro:if value="${(mirror == False)}">
-                <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
-            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="1.57 1.57 0.0" xyz="0 -0.07 0.02"/>
+            </xacro:unless>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_UpperArm.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_UpperArm.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
@@ -79,9 +84,27 @@
         </joint>
         <link name="${prefix}_LForeArm">
             <visual>
-                <origin rpy="0 0 0.0" xyz="0. 0 0"/>
+                <xacro:if value="${(mirror == True)}">
+                    <origin rpy="0 0 0" xyz="-0.05 -0.075 0.16"/>
+                </xacro:if>
+                <xacro:unless value="${(mirror == False)}">
+                    <origin rpy="0 0 3.14" xyz="-0.05 0.075 0.16"/>
+                </xacro:unless>
                 <geometry>
-                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ForeArm2.dae"
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/R_ShoulderRx.obj"
+                            scale="1 1 1"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <visual>
+                <xacro:if value="${(mirror == True)}">
+                    <origin rpy="0 1.570 0.0" xyz="-0.0 -0.0 0.0"/>
+                </xacro:if>
+                <xacro:unless value="${(mirror == False)}">
+                    <origin rpy="0 1.570 0.0" xyz="-0.0 0.0 -0.102"/>
+                </xacro:unless>
+                <geometry>
+                    <mesh filename="package://legged_unitree_description/meshes/$(arg robot_type)/${prefix}_ForeArm2.obj"
                             scale="1 1 1"/>
                 </geometry>
                 <material name="orange"/>
