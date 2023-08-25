@@ -1,0 +1,56 @@
+digraph G {
+node [shape=box];
+"base" [label="base"];
+"L_LHipRz" [label="L_LHipRz"];
+"L_LHipRx" [label="L_LHipRx"];
+"L_LThigh" [label="L_LThigh"];
+"L_LShank" [label="L_LShank"];
+"L_Foot" [label="L_Foot"];
+"L_LShoulderRx" [label="L_LShoulderRx"];
+"L_LUpperArm" [label="L_LUpperArm"];
+"L_LForeArm" [label="L_LForeArm"];
+"R_LHipRz" [label="R_LHipRz"];
+"R_LHipRx" [label="R_LHipRx"];
+"R_LThigh" [label="R_LThigh"];
+"R_LShank" [label="R_LShank"];
+"R_Foot" [label="R_Foot"];
+"R_LShoulderRx" [label="R_LShoulderRx"];
+"R_LUpperArm" [label="R_LUpperArm"];
+"R_LForeArm" [label="R_LForeArm"];
+"unitree_imu" [label="unitree_imu"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base" -> "L_JHipRz" [label="xyz: 0 0.075 0 \nrpy: 0 -0 0"]
+"L_JHipRz" -> "L_LHipRz"
+"L_LHipRz" -> "L_JHipRx" [label="xyz: -0.041 0 -0.0885 \nrpy: 0 -0 0"]
+"L_JHipRx" -> "L_LHipRx"
+"L_LHipRx" -> "L_JThigh" [label="xyz: 0.065 0 0 \nrpy: 0 -0 0"]
+"L_JThigh" -> "L_LThigh"
+"L_LThigh" -> "L_JKnee" [label="xyz: 0 -0.017875 -0.247 \nrpy: 0 -0 0"]
+"L_JKnee" -> "L_LShank"
+"L_LShank" -> "L_JAnkle" [label="xyz: 0 0 -0.247 \nrpy: 0 -0 0"]
+"L_JAnkle" -> "L_Foot"
+"base" -> "L_JShoulderRx" [label="xyz: -0.0215 0.1115 0.202 \nrpy: 0 -0 0"]
+"L_JShoulderRx" -> "L_LShoulderRx"
+"L_LShoulderRx" -> "L_JUpperArm" [label="xyz: 0.0545 0 0 \nrpy: 0 -0 0"]
+"L_JUpperArm" -> "L_LUpperArm"
+"L_LUpperArm" -> "L_JForeArm" [label="xyz: 0 0.068 -0.195 \nrpy: 0 -0 0"]
+"L_JForeArm" -> "L_LForeArm"
+"base" -> "R_JHipRz" [label="xyz: 0 -0.075 0 \nrpy: 0 -0 0"]
+"R_JHipRz" -> "R_LHipRz"
+"R_LHipRz" -> "R_JHipRx" [label="xyz: -0.041 0 -0.0885 \nrpy: 0 -0 0"]
+"R_JHipRx" -> "R_LHipRx"
+"R_LHipRx" -> "R_JThigh" [label="xyz: 0.065 0 0 \nrpy: 0 -0 0"]
+"R_JThigh" -> "R_LThigh"
+"R_LThigh" -> "R_JKnee" [label="xyz: 0 0.017875 -0.247 \nrpy: 0 -0 0"]
+"R_JKnee" -> "R_LShank"
+"R_LShank" -> "R_JAnkle" [label="xyz: 0 0 -0.247 \nrpy: 0 -0 0"]
+"R_JAnkle" -> "R_Foot"
+"base" -> "R_JShoulderRx" [label="xyz: -0.0215 -0.1115 0.202 \nrpy: 0 -0 0"]
+"R_JShoulderRx" -> "R_LShoulderRx"
+"R_LShoulderRx" -> "R_JUpperArm" [label="xyz: 0.0545 0 0 \nrpy: 0 -0 0"]
+"R_JUpperArm" -> "R_LUpperArm"
+"R_LUpperArm" -> "R_JForeArm" [label="xyz: 0 -0.068 -0.195 \nrpy: 0 -0 0"]
+"R_JForeArm" -> "R_LForeArm"
+"base" -> "unitree_imu_joint" [label="xyz: 0 0 0 \nrpy: 0 -0 0"]
+"unitree_imu_joint" -> "unitree_imu"
+}

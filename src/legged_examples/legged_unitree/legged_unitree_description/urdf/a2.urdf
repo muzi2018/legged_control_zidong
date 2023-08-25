@@ -105,7 +105,7 @@
     <child link="L_LHipRz"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="0.8028514559173915" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LHipRz">
     <visual>
@@ -127,7 +127,7 @@
     <child link="L_LHipRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_LHipRx">
     <visual>
@@ -149,7 +149,7 @@
     <child link="L_LThigh"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_LThigh">
     <visual>
@@ -171,7 +171,7 @@
     <child link="L_LShank"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_LShank">
     <visual>
@@ -193,7 +193,7 @@
     <child link="L_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_Foot">
     <visual>
@@ -324,7 +324,7 @@
     <child link="R_LHipRz"/>
     <axis xyz="0 0 1"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="0.8028514559173915" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LHipRz">
     <visual>
@@ -346,7 +346,7 @@
     <child link="R_LHipRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_LHipRx">
     <visual>
@@ -368,7 +368,7 @@
     <child link="R_LThigh"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_LThigh">
     <visual>
@@ -390,7 +390,7 @@
     <child link="R_LShank"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_LShank">
     <visual>
@@ -412,7 +412,7 @@
     <child link="R_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_Foot">
     <visual>
@@ -543,7 +543,7 @@
     <child link="L_LShoulderRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="0.8028514559173915" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LShoulderRx">
     <visual>
@@ -565,7 +565,7 @@
     <child link="L_LUpperArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_LUpperArm">
     <visual>
@@ -587,7 +587,7 @@
     <child link="L_LForeArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="L_LForeArm">
     <visual>
@@ -660,7 +660,7 @@
     <child link="R_LShoulderRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="0.8028514559173915" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LShoulderRx">
     <visual>
@@ -682,7 +682,7 @@
     <child link="R_LUpperArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_LUpperArm">
     <visual>
@@ -704,7 +704,7 @@
     <child link="R_LForeArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="0" friction="0"/>
-    <limit effort="33.5" lower="-0.8028514559173915" upper="-0.8028514559173915" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
   </joint>
   <link name="R_LForeArm">
     <visual>

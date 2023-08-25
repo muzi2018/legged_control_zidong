@@ -41,7 +41,7 @@
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
             <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
-                   upper="${hip_min}"/>
+                   upper="${hip_max}"/>
         </joint>
         <link name="${prefix}_LUpperArm">
             <visual>
@@ -70,7 +70,7 @@
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
             <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
-                   upper="${hip_min}"/>
+                   upper="${hip_max}"/>
         </joint>
         <link name="${prefix}_LForeArm">
             <visual>
