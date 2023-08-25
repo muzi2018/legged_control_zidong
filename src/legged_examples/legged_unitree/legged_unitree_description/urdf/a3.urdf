@@ -131,7 +131,8 @@
   </joint>
   <link name="L_LHipRx">
     <visual>
-      <origin rpy="0 -3.14 -3.14" xyz="0. 0.00 -0.0"/>
+      <origin rpy="0 0 0" xyz="0. 0.00 0.0"/>
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/L_HipRx.obj" scale="1 1 1"/>
       </geometry>
@@ -153,7 +154,8 @@
   </joint>
   <link name="L_LThigh">
     <visual>
-      <origin rpy="0 0 -3.14" xyz="0. 0.00 -0.0"/>
+      <origin rpy="1.57 1.57 -0" xyz="0. 0.0 0.0"/>
+      <origin rpy="1.57 1.57 0.0" xyz="0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/L_Thigh.obj" scale="1 1 1"/>
       </geometry>
@@ -175,7 +177,7 @@
   </joint>
   <link name="L_LShank">
     <visual>
-      <origin rpy="0 -3.14 0" xyz="0 -0.6 0"/>
+      <origin rpy="1.57 1.57 0" xyz="0 -0.0 0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/L_LowerLeg3_drawing.obj" scale="1 1 1"/>
       </geometry>
@@ -350,6 +352,7 @@
   </joint>
   <link name="R_LHipRx">
     <visual>
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/R_HipRx.obj" scale="1 1 1"/>
       </geometry>
@@ -371,6 +374,7 @@
   </joint>
   <link name="R_LThigh">
     <visual>
+      <origin rpy="1.57 1.57 0.0" xyz="0 0.0 0.0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/R_Thigh.obj" scale="1 1 1"/>
       </geometry>
@@ -392,7 +396,7 @@
   </joint>
   <link name="R_LShank">
     <visual>
-      <origin rpy="0 -3.14 0" xyz="0 -0.6 0"/>
+      <origin rpy="1.57 1.57 0" xyz="0 -0.0 0"/>
       <geometry>
         <mesh filename="package://legged_unitree_description/meshes/a1/R_LowerLeg3_drawing.obj" scale="1 1 1"/>
       </geometry>
