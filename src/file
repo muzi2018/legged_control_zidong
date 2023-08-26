@@ -1,0 +1,6 @@
+amend:
+	legged_gazebo
+	|
+legged_common/hardware_interface
+	|
+	legged_controllers
