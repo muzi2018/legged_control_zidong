@@ -1,0 +1,7 @@
+legged_examples:legged_gazebo
+    roslaunch legged_unitree_description empty_world.launch
+        launch empty_world.launch; spawn_urdf
+        Loading gazebo_ros_control plugin
+
+legged_controllers:ocs2_legged_robot_ros legged_controllers
+    roslaunch legged_controllers load_controller.launch cheater:=false
