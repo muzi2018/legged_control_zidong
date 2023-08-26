@@ -1,0 +1,6 @@
+ocs2/ocs2_pinocchio/ocs2_self_collision
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_self_collision/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_self_collision/lib/libocs2_self_collision.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_self_collision.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_self_collision/lib/pkgconfig/ocs2_self_collision.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_self_collision.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_self_collision/share/ocs2_self_collision/cmake/ocs2_self_collisionConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_self_collision/cmake/ocs2_self_collisionConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_self_collision/share/ocs2_self_collision/cmake/ocs2_self_collisionConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_self_collision/cmake/ocs2_self_collisionConfig.cmake

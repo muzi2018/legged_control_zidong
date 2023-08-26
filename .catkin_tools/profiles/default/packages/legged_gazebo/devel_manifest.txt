@@ -1,0 +1,6 @@
+legged_gazebo
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_gazebo/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_gazebo/lib/liblegged_hw_sim.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_hw_sim.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_gazebo/lib/pkgconfig/legged_gazebo.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_gazebo.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_gazebo/share/legged_gazebo/cmake/legged_gazeboConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_gazebo/cmake/legged_gazeboConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_gazebo/share/legged_gazebo/cmake/legged_gazeboConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_gazebo/cmake/legged_gazeboConfig.cmake

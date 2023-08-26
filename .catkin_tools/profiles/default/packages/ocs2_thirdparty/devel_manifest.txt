@@ -1,0 +1,5 @@
+ocs2/ocs2_thirdparty
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_thirdparty/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_thirdparty/lib/pkgconfig/ocs2_thirdparty.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_thirdparty.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_thirdparty/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_thirdparty/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_thirdparty/cmake/ocs2_thirdpartyConfig-version.cmake

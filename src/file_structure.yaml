@@ -1,0 +1,266 @@
+../src/
+├── docs
+├── file_structure
+├── legged_common
+├── legged_control
+├── legged_controllers
+├── legged_estimation
+├── legged_examples
+├── legged_gazebo
+├── legged_hw
+├── legged_interface
+├── legged_wbc
+├── LICENSE
+├── ocs2
+├── ocs2_robotic_assets
+├── qpoases_catkin
+└── README.md
+catkin build legged_controllers legged_unitree_description
+catkin build legged_gazebo
+catkin build legged_unitree_hw
+
+export ROBOT_TYPE=a1
+roslaunch legged_unitree_description empty_world.launch
+roslaunch legged_unitree_hw legged_unitree_hw.launch
+roslaunch legged_controllers load_controller.launch cheater:=false
+
+<legged_common>
+├── CMakeLists.txt
+├── include
+│   └── legged_common
+│       └── hardware_interface
+│           ├── ContactSensorInterface.h
+│           └── HybridJointInterface.h
+├── package.xml
+└── scripts
+    └── generate_urdf.sh
+
+<legged_control>
+├── CMakeLists.txt
+└── package.xml
+
+<legged_controllers>
+├── CMakeLists.txt
+├── config
+│   ├── a1
+│   │   ├── gait.info
+│   │   ├── reference.info
+│   │   └── task.info
+│   ├── aliengo
+│   │   ├── gait.info
+│   │   ├── reference.info
+│   │   └── task.info
+│   ├── controllers.yaml
+│   └── joy.yaml
+├── include
+│   └── legged_controllers
+│       ├── LeggedController.h
+│       ├── SafetyChecker.h
+│       ├── TargetTrajectoriesPublisher.h
+│       └── visualization
+│           └── LeggedSelfCollisionVisualization.h
+├── launch
+│   ├── joy_teleop.launch
+│   └── load_controller.launch
+├── legged_controllers_plugins.xml
+├── package.xml
+└── src
+    ├── LeggedController.cpp
+    └── TargetTrajectoriesPublisher.cpp
+load_controller.launch:
+        <!-- make the files into global parameters -->
+    <param name="urdfFile" value="/tmp/legged_control/$(arg robot_type).urdf"/>
+    <param name="taskFile" value="$(find legged_controllers)/config/$(arg robot_type)/task.info"/>
+    <param name="referenceFile" value="$(find legged_controllers)/config/$(arg robot_type)/reference.info"/>
+    <param name="gaitCommandFile" value="$(find legged_controllers)/config/$(arg robot_type)/gait.info"/>
+    <rosparam file="$(find legged_controllers)/config/controllers.yaml" command="load"/>
+        controllers:
+            joint_state_controller:
+                type: joint_state_controller/JointStateController
+                publish_rate: 100
+            legged_controller:
+                type: legged/LeggedController
+            legged_cheater_controller:
+                type: legged/LeggedCheaterController
+    <node pkg="ocs2_legged_robot_ros" type="legged_robot_gait_command" name="legged_robot_gait_command"
+          output="screen"/>
+
+    <node pkg="legged_controllers" type="legged_target_trajectories_publisher" name="legged_robot_target"
+          output="screen"/>
+
+<legged_estimation>
+├── CMakeLists.txt
+├── include
+│   └── legged_estimation
+│       ├── FromTopiceEstimate.h
+│       ├── LinearKalmanFilter.h
+│       └── StateEstimateBase.h
+├── package.xml
+└── src
+    ├── FromTopicEstimate.cpp
+    ├── LinearKalmanFilter.cpp
+    └── StateEstimateBase.cpp
+
+
+
+<legged_examples>
+├── humanoid
+│   └── humanoid_description
+│       └── urdf
+│           └── humanoid
+└── legged_unitree
+    ├── legged_unitree_description
+    │   ├── CMakeLists.txt
+    │   ├── launch
+    │   │   └── empty_world.launch
+    │   ├── meshes
+    │   │   ├── a1
+    │   │   │   ├── calf.dae
+    │   │   │   ├── hip.dae
+    │   │   │   ├── thigh.dae
+    │   │   │   ├── thigh_mirror.dae
+    │   │   │   ├── trunk_A1.png
+    │   │   │   └── trunk.dae
+    │   │   └── aliengo
+    │   │       ├── calf.dae
+    │   │       ├── hip.dae
+    │   │       ├── thigh.dae
+    │   │       ├── thigh_mirror.dae
+    │   │       ├── trunk.dae
+    │   │       └── trunk_uv_base_final.png
+    │   ├── package.xml
+    │   └── urdf
+    │       ├── a1
+    │       │   └── const.xacro
+    │       ├── aliengo
+    │       │   └── const.xacro
+    │       ├── common
+    │       │   ├── gazebo.xacro
+    │       │   ├── imu.xacro
+    │       │   ├── leg.xacro
+    │       │   ├── materials.xacro
+    │       │   └── transmission.xacro
+    │       ├── robot.xacro
+    │       └── structure
+    └── legged_unitree_hw
+        ├── CMakeLists.txt
+        ├── config
+        │   ├── a1.yaml
+        │   └── aliengo.yaml
+        ├── include
+        │   ├── legged_unitree_hw
+        │   │   └── UnitreeHW.h
+        │   └── unitree_legged_sdk
+        │       ├── comm.h
+        │       ├── quadruped.h
+        │       ├── safety.h
+        │       └── udp.h
+        ├── launch
+        │   └── legged_unitree_hw.launch
+        ├── lib
+        │   └── libunitree_legged_sdk_amd64.so
+        ├── package.xml
+        └── src
+            ├── legged_unitree_hw.cpp
+            └── UnitreeHW.cpp
+empty_world.launch:
+<launch>
+    <arg name="robot_type" default="$(env ROBOT_TYPE)" doc="Robot type: [a1, aliengo, go1, laikago]"/>
+
+    <param name="legged_robot_description" command="$(find xacro)/xacro $(find legged_unitree_description)/urdf/robot.xacro
+       robot_type:=$(arg robot_type)
+    "/>
+    <node name="generate_urdf" pkg="legged_common" type="generate_urdf.sh" output="screen"
+          args="$(find legged_unitree_description)/urdf/robot.xacro $(arg robot_type)"/>
+
+    <rosparam file="$(find legged_gazebo)/config/default.yaml" command="load"/>
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find legged_gazebo)/worlds/empty_world.world"/>
+    </include>
+    <!-- push robot_description to factory and spawn robot in gazebo -->
+    <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
+          args="-z 0.5 -param legged_robot_description -urdf -model $(arg robot_type)" output="screen"/>
+
+</launch>
+
+
+<legged_gazebo>
+├── CMakeLists.txt
+├── config
+│   └── default.yaml
+├── include
+│   └── legged_gazebo
+│       └── LeggedHWSim.h
+├── legged_hw_sim_plugins.xml
+├── package.xml
+├── src
+│   └── LeggedHWSim.cpp
+└── worlds
+    └── empty_world.world
+
+
+<legged_hw>
+├── CMakeLists.txt
+├── include
+│   └── legged_hw
+│       ├── LeggedHW.h
+│       └── LeggedHWLoop.h
+├── package.xml
+└── src
+    ├── LeggedHW.cpp
+    └── LeggedHWLoop.cpp
+
+
+<legged_interface>
+├── CMakeLists.txt
+├── include
+│   └── legged_interface
+│       ├── constraint
+│       │   ├── EndEffectorLinearConstraint.h
+│       │   ├── FrictionConeConstraint.h
+│       │   ├── LeggedSelfCollisionConstraint.h
+│       │   ├── NormalVelocityConstraintCppAd.h
+│       │   ├── SwingTrajectoryPlanner.h
+│       │   ├── ZeroForceConstraint.h
+│       │   └── ZeroVelocityConstraintCppAd.h
+│       ├── cost
+│       │   └── LeggedRobotQuadraticTrackingCost.h
+│       ├── initialization
+│       │   └── LeggedRobotInitializer.h
+│       ├── LeggedInterface.h
+│       ├── LeggedRobotPreComputation.h
+│       └── SwitchedModelReferenceManager.h
+├── package.xml
+└── src
+    ├── constraint
+    │   ├── EndEffectorLinearConstraint.cpp
+    │   ├── FrictionConeConstraint.cpp
+    │   ├── NormalVelocityConstraintCppAd.cpp
+    │   ├── SwingTrajectoryPlanner.cpp
+    │   ├── ZeroForceConstraint.cpp
+    │   └── ZeroVelocityConstraintCppAd.cpp
+    ├── initialization
+    │   └── LeggedRobotInitializer.cpp
+    ├── LeggedInterface.cpp
+    ├── LeggedRobotPreComputation.cpp
+    └── SwitchedModelReferenceManager.cpp
+
+<legged_wbc>
+├── CMakeLists.txt
+├── include
+│   └── legged_wbc
+│       ├── HierarchicalWbc.h
+│       ├── HoQp.h
+│       ├── Task.h
+│       ├── WbcBase.h
+│       └── WeightedWbc.h
+├── package.xml
+├── src
+│   ├── HierarchicalWbc.cpp
+│   ├── HoQp.cpp
+│   ├── WbcBase.cpp
+│   └── WeightedWbc.cpp
+└── test
+    └── HoQp_test.cpp
+
+

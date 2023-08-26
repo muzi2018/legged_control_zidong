@@ -1,0 +1,6 @@
+legged_hw
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_hw/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_hw/lib/liblegged_hw.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_hw.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_hw/lib/pkgconfig/legged_hw.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_hw.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_hw/share/legged_hw/cmake/legged_hwConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_hw/cmake/legged_hwConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_hw/share/legged_hw/cmake/legged_hwConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_hw/cmake/legged_hwConfig.cmake
