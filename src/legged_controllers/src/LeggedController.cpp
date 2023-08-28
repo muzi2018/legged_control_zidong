@@ -51,8 +51,10 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
 
   // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();
-  std::vector<std::string> joint_names{"LF_HAA", "LF_HFE", "LF_KFE", "LH_HAA", "LH_HFE", "LH_KFE",
-                                       "RF_HAA", "RF_HFE", "RF_KFE", "RH_HAA", "RH_HFE", "RH_KFE"};
+  std::vector<std::string> joint_names{"R_JHipRz", "R_JHipRx", "R_JThigh", "R_JKnee", "R_JAnkle", "L_JHipRz",
+                                       "L_JHipRx", "L_JThigh", "L_JKnee", "L_JAnkle", "R_JShoulderRx", "R_JUpperArm",
+                                       "R_JForeArm","L_JShoulderRx", "L_JUpperArm", "L_JForeArm"};
+
   for (const auto& joint_name : joint_names) {
     hybridJointHandles_.push_back(hybridJointInterface->getHandle(joint_name));
   }
