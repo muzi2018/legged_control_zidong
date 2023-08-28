@@ -1,2 +1,5 @@
 catkin build legged_controllers legged_unitree_description
 legged_gazebo
+
+file: legged_controllers
+
