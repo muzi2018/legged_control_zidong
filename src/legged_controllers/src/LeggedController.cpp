@@ -26,6 +26,8 @@
 
 namespace legged {
 bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHandle& controller_nh) {
+    std::cout<<"XXXXXXXXXXXXXXXXXXXXXXXXXX"<<std::endl;
+
   // Initialize OCS2
   std::string urdfFile;
   std::string taskFile;
@@ -39,6 +41,7 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   setupLeggedInterface(taskFile, urdfFile, referenceFile, verbose);
   setupMpc();
   setupMrt();
+
   // Visualization
   ros::NodeHandle nh;
   CentroidalModelPinocchioMapping pinocchioMapping(leggedInterface_->getCentroidalModelInfo());
