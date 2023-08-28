@@ -122,7 +122,7 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
   vector_t x = wbc_->update(optimizedState, optimizedInput, measuredRbdState_, plannedMode, period.toSec());
   wbcTimer_.endTimer();
 
-  vector_t torque = x.tail(12);
+  vector_t torque = x.tail(16);
 
   vector_t posDes = centroidal_model::getJointAngles(optimizedState, leggedInterface_->getCentroidalModelInfo());
   vector_t velDes = centroidal_model::getJointVelocities(optimizedInput, leggedInterface_->getCentroidalModelInfo());
