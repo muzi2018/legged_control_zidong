@@ -30,7 +30,14 @@
           output="screen"/>
     <node pkg="ocs2_legged_robot_ros" type="legged_robot_target" name="legged_robot_target"
           output="screen" launch-prefix="gnome-terminal --"/>
+    <node pkg="ocs2_legged_robot_ros" type="legged_robot_dummy" name="legged_robot_dummy"
+          output="screen" launch-prefix="gnome-terminal --"/>
 <!--     <node pkg="legged_controllers" type="legged_target_trajectories_publisher" name="legged_robot_target" -->
 <!--           output="screen"/> -->
 
 </launch>
+<!-- rosservice call /controller_manager/switch_controller "start_controllers: ['controllers/legged_controller'] -->
+<!-- stop_controllers: [''] -->
+<!-- strictness: 0 -->
+<!-- start_asap: false -->
+<!-- timeout: 0.0" -->
