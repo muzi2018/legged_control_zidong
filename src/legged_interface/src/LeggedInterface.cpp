@@ -83,7 +83,7 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
   setupModel(taskFile, urdfFile, referenceFile, verbose);
 
   // Initial state
-
+  std::cout<<"centroidalModelInfo_.stateDim="<<centroidalModelInfo_.stateDim<<std::endl;
   initialState_.setZero(centroidalModelInfo_.stateDim);
 
   loadData::loadEigenMatrix(taskFile, "initialState", initialState_);
@@ -92,9 +92,12 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
   problemPtr_ = std::make_unique<OptimalControlProblem>();
   // Dynamics
   std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
-  dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_, "dynamics", modelSettings_);
-  problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
+    std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
 
+  dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_, "dynamics", modelSettings_);
+  std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
+  problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
+std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
   // Cost terms
   problemPtr_->costPtr->add("baseTrackingCost", getBaseTrackingCost(taskFile, centroidalModelInfo_, verbose));
 
