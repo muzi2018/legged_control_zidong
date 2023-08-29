@@ -166,9 +166,9 @@ initialState
    (14,0) -0.4         ; R_HipRx_to_R_Thigh
    (15,0) 1.36438      ; R_Knee
    (16,0) -0.876195   ; R_Ankle
-   (17,0)  9.66227e-14   ; torso_to_L_HipRz
-   (18,0)  0.0436501   ; L_HipRz_to_L_HipRx
-   (19,0)  -0.488181   ; L_HipRx_to_L_Thigh
+   (17,0) 9.66227e-14   ; torso_to_L_HipRz
+   (18,0) 0.0436501   ; L_HipRz_to_L_HipRx
+   (19,0) -0.488181   ; L_HipRx_to_L_Thigh
    (20,0) 1.36438   ; L_Knee
    (21,0) -0.876195   ; L_Ankle
    (22,0) 8.79443e-18   ; torso_to_R_ShoulderRx

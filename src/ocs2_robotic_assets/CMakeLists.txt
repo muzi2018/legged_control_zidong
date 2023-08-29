@@ -9,7 +9,7 @@ find_package(catkin)
 
 catkin_package(
   INCLUDE_DIRS
-        include
+    include
 )
 
 ###########

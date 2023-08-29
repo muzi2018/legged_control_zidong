@@ -26,20 +26,23 @@
 
 namespace legged {
 bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHandle& controller_nh) {
-    std::cout<<"XXXXXXXXXXXXXXXXXXXXXXXXXX"<<std::endl;
 
   // Initialize OCS2
   std::string urdfFile;
   std::string taskFile;
   std::string referenceFile;
   controller_nh.getParam("/urdfFile", urdfFile);
+  std::cout<<"---------------urdfFile-----------"<<std::endl;
+  std::cout<<urdfFile<<std::endl;
   controller_nh.getParam("/taskFile", taskFile);
   controller_nh.getParam("/referenceFile", referenceFile);
+  
   bool verbose = false;
   loadData::loadCppDataType(taskFile, "legged_robot_interface.verbose", verbose);
-std::cout<<"YYYYYYYYYYYYYYYYY"<<std::endl;
   setupLeggedInterface(taskFile, urdfFile, referenceFile, verbose);
+
   setupMpc();
+
   setupMrt();
 
   // Visualization
@@ -204,8 +207,12 @@ LeggedController::~LeggedController() {
 
 void LeggedController::setupLeggedInterface(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                             bool verbose) {
+
   leggedInterface_ = std::make_shared<LeggedInterface>(taskFile, urdfFile, referenceFile);
+    std::cout<<"-------------setupLeggedInterface------------------------------"<<std::endl;
+
   leggedInterface_->setupOptimalControlProblem(taskFile, urdfFile, referenceFile, verbose);
+
 }
 
 void LeggedController::setupMpc() {

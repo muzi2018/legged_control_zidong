@@ -37,7 +37,7 @@ namespace robotic_assets {
 
 /** Gets the path to the package source directory. */
 inline std::string getPath() {
-  return "/home/taizun/Desktop/legged_control_zidong/src/ocs2_robotic_assets";
+  return "/home/taizun/catkin_ocs2/src/ocs2_robotic_assets";
 }
 
 }  // namespace robotic_assets

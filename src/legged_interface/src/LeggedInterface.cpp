@@ -79,17 +79,17 @@ LeggedInterface::LeggedInterface(const std::string& taskFile, const std::string&
 /******************************************************************************************************/
 void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                                  bool verbose) {
+
   setupModel(taskFile, urdfFile, referenceFile, verbose);
 
   // Initial state
+
   initialState_.setZero(centroidalModelInfo_.stateDim);
+
   loadData::loadEigenMatrix(taskFile, "initialState", initialState_);
-
   setupReferenceManager(taskFile, urdfFile, referenceFile, verbose);
-
   // Optimal control problem
   problemPtr_ = std::make_unique<OptimalControlProblem>();
-
   // Dynamics
   std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
   dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_, "dynamics", modelSettings_);
@@ -142,9 +142,10 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
 void LeggedInterface::setupModel(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                  bool /*verbose*/) {
   // PinocchioInterface
+  std::cout<<"PinocchioInterface urdfFile: "<< urdfFile<<std::endl;
   pinocchioInterfacePtr_ =
       std::make_unique<PinocchioInterface>(centroidal_model::createPinocchioInterface(urdfFile, modelSettings_.jointNames));
-
+  std::cout<<"pinocchioInterfacePtr_->getModel().nq="<<pinocchioInterfacePtr_->getModel().nq<<std::endl;
   // CentroidalModelInfo
   centroidalModelInfo_ = centroidal_model::createCentroidalModelInfo(
       *pinocchioInterfacePtr_, centroidal_model::loadCentroidalType(taskFile),
