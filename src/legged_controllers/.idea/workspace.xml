@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakePresetLoader">{
+  &quot;useNewFormat&quot;: true
+}</component>
+  <component name="CMakeReloadState">
+    <option name="reloaded" value="true" />
+  </component>
+  <component name="CMakeRunConfigurationManager">
     <generated />
   </component>
   <component name="CMakeSettings">
@@ -10,7 +19,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/launch/load_controller.launch" beforeDir="false" afterPath="$PROJECT_DIR$/launch/load_controller.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/a1/gait.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/gait.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/a1/reference.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/reference.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +45,25 @@
     <option name="majorVersion" value="2021" />
     <option name="minorVersion" value="3.4" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2UVdjO5Wf8kXxR8mu0hgfxISVwZ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/CMakeLists.txt" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/CMakeLists.txt&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,10 +77,20 @@
       <workItem from="1693041093955" duration="1000" />
       <workItem from="1693041367486" duration="160000" />
       <workItem from="1693041533435" duration="18000" />
+      <workItem from="1693290550725" duration="28000" />
+      <workItem from="1693290579503" duration="79000" />
+      <workItem from="1693290802210" duration="32000" />
+      <workItem from="1693290834666" duration="42000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticEditVcpkgJson value="false" />
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticFoundErrors value="true" />
   </component>
 </project>

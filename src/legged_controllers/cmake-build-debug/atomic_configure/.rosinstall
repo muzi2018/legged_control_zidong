@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel/setup.sh
