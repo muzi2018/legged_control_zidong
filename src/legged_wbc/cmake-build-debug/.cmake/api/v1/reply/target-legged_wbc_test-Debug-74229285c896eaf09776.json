@@ -1,0 +1,853 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "devel/lib/legged_wbc/legged_wbc_test"
+		}
+	],
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"_catkin_add_executable_with_google_test",
+			"_catkin_add_google_test",
+			"catkin_add_gtest",
+			"target_link_libraries",
+			"link_directories",
+			"set_property",
+			"find_package",
+			"include",
+			"add_definitions",
+			"configure_shared_library_build_settings",
+			"include_directories"
+		],
+		"files" : 
+		[
+			"/opt/ros/noetic/share/catkin/cmake/test/gtest.cmake",
+			"CMakeLists.txt",
+			"/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindThreads.cmake",
+			"/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/share/cmake-3.26/Modules/FindGTest.cmake",
+			"/opt/ros/noetic/share/catkin/cmake/all.cmake",
+			"/opt/ros/noetic/share/catkin/cmake/catkinConfig.cmake",
+			"/opt/ros/noetic/share/rosconsole/cmake/rosconsole-extras.cmake",
+			"/opt/ros/noetic/share/rosconsole/cmake/rosconsoleConfig.cmake",
+			"/opt/ros/noetic/share/roscpp/cmake/roscppConfig.cmake",
+			"/opt/ros/noetic/share/catkin/cmake/tools/libraries.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 94,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 37,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 89,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 180,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 98,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 41,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 0,
+				"line" : 179,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 52,
+				"parent" : 0
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 186,
+				"parent" : 3
+			},
+			{
+				"command" : 7,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 0
+			},
+			{
+				"file" : 5,
+				"parent" : 10
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 20,
+				"parent" : 11
+			},
+			{
+				"file" : 4,
+				"parent" : 12
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 164,
+				"parent" : 13
+			},
+			{
+				"file" : 0,
+				"parent" : 14
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 340,
+				"parent" : 15
+			},
+			{
+				"file" : 3,
+				"parent" : 16
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 283,
+				"parent" : 17
+			},
+			{
+				"file" : 2,
+				"parent" : 18
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 238,
+				"parent" : 19
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 76,
+				"parent" : 11
+			},
+			{
+				"file" : 8,
+				"parent" : 21
+			},
+			{
+				"command" : 7,
+				"file" : 8,
+				"line" : 197,
+				"parent" : 22
+			},
+			{
+				"file" : 7,
+				"parent" : 23
+			},
+			{
+				"command" : 8,
+				"file" : 7,
+				"line" : 222,
+				"parent" : 24
+			},
+			{
+				"file" : 6,
+				"parent" : 25
+			},
+			{
+				"command" : 9,
+				"file" : 6,
+				"line" : 12,
+				"parent" : 26
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 174,
+				"parent" : 13
+			},
+			{
+				"command" : 9,
+				"file" : 9,
+				"line" : 18,
+				"parent" : 28
+			},
+			{
+				"command" : 9,
+				"file" : 6,
+				"line" : 8,
+				"parent" : 26
+			},
+			{
+				"command" : 11,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -std=gnu++14 -fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-DGTEST_HAS_PTHREAD=1"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-pthread"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wl,--no-as-needed"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-DBOOST_ALL_DYN_LINK"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fopenmp"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 27,
+					"define" : "ROSCONSOLE_BACKEND_LOG4CXX"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "ROS_BUILD_SHARED_LIBS=1"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "ROS_PACKAGE_NAME=\"legged_wbc\""
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/blasfeo_catkin/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/hpipm_catkin/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/qpoases_catkin/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2_robotic_assets/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_thirdparty/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_core/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_core/test/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_oc/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_oc/test/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_mpc/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_test_tools/ocs2_qp_solver/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_test_tools/ocs2_qp_solver/test/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_sqp/hpipm_catkin/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_ddp/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_ipm/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_tools/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_pinocchio/ocs2_pinocchio_interface/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_pinocchio/ocs2_centroidal_model/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_sqp/ocs2_sqp/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/opt/ros/noetic/include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/usr/include/eigen3"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/opt/openrobots/lib/pkgconfig/../../include"
+				},
+				{
+					"backtrace" : 31,
+					"path" : "/opt/openrobots/include"
+				},
+				{
+					"backtrace" : 9,
+					"isSystem" : true,
+					"path" : "/usr/src/googletest/googletest/include"
+				},
+				{
+					"backtrace" : 9,
+					"isSystem" : true,
+					"path" : "/usr/src/googletest/googletest"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					4
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 5,
+			"id" : "legged_wbc::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "gtest::@b738d542747fbb7ea6e3"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "gtest_main::@b738d542747fbb7ea6e3"
+		}
+	],
+	"id" : "legged_wbc_test::@6890427a1f51a3e7e1df",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "-g",
+				"role" : "flags"
+			},
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-pthread",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-L/opt/openrobots/lib/pkgconfig/../../lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 6,
+				"fragment" : "-L/opt/openrobots/lib",
+				"role" : "libraryPath"
+			},
+			{
+				"backtrace" : 7,
+				"fragment" : "-L/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/cmake-build-debug/gtest",
+				"role" : "libraryPath"
+			},
+			{
+				"fragment" : "-Wl,-rpath,/opt/openrobots/lib/pkgconfig/../../lib:/opt/openrobots/lib:/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/cmake-build-debug/gtest:/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/cmake-build-debug/devel/lib:/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/cmake-build-debug/gtest/lib:/opt/ros/noetic/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ddp/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/hpipm_catkin/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/blasfeo_catkin/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_centroidal_model/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_tools/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_oc/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/lib:/home/taizun/Desktop/legged_control_zidong/devel/.private/qpoases_catkin/lib",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "devel/lib/liblegged_wbc.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lpinocchio",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_serialization",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_sensor",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_model_state",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_model",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_world",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lconsole_bridge",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lhpp-fcl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-loctomap",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-loctomath",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "gtest/lib/libgtest_maind.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/libroscpp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/librosconsole.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/librosconsole_log4cxx.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/librosconsole_backend_interface.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liblog4cxx.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/libroscpp_serialization.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/libxmlrpcpp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/librostime.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/ros/noetic/lib/libcpp_common.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/lib/libocs2_legged_robot.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ddp/lib/libocs2_ddp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/lib/libocs2_sqp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/lib/libocs2_qp_solver.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ipm/lib/libocs2_ipm.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/lib/libocs2_mpc.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/hpipm_catkin/lib/libhpipm_catkin.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/hpipm_catkin/lib/libhpipm.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/blasfeo_catkin/lib/libblasfeo.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_centroidal_model/lib/libocs2_centroidal_model.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_pinocchio_interface/lib/libocs2_pinocchio_interface.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/openrobots/lib/libpinocchio.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_filesystem.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_serialization.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liburdfdom_model.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liburdfdom_world.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libconsole_bridge.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/opt/openrobots/lib/libhpp-fcl.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liboctomap.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/liboctomath.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_tools/lib/libocs2_robotic_tools.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_oc/lib/libocs2_oc.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/lib/libocs2_core.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_log_setup.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libboost_log.so.1.71.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/gcc/x86_64-linux-gnu/9/libgomp.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/libpthread.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "/home/taizun/Desktop/legged_control_zidong/devel/.private/qpoases_catkin/lib/libqpOASES.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lpinocchio",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_filesystem",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_serialization",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lboost_system",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_sensor",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_model_state",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_model",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lurdfdom_world",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lconsole_bridge",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-lhpp-fcl",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-loctomap",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 5,
+				"fragment" : "-loctomath",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "gtest/lib/libgtestd.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 20,
+				"fragment" : "-lpthread",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "legged_wbc_test",
+	"nameOnDisk" : "legged_wbc_test",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 4,
+			"compileGroupIndex" : 0,
+			"path" : "test/HoQp_test.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

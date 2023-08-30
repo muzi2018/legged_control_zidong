@@ -5,24 +5,56 @@
     <!-- Constants for robot dimensions -->
     <xacro:property name="stick_mass" value="0.00001"/>
 
+    <!-- <xacro:property name="trunk_width" value="0.08"/>
+    <xacro:property name="trunk_length" value="0.22"/>
+    <xacro:property name="trunk_height" value="0.14"/> -->
     <!-- simplified collision value -->
     <xacro:property name="trunk_width" value="0.194"/>
     <xacro:property name="trunk_length" value="0.267"/>
-    <xacro:property name="trunk_height" value="0.114"/>
-    <xacro:property name="hip_radius" value="0.046"/>
-    <xacro:property name="hip_length" value="0.04"/>
-    <xacro:property name="thigh_shoulder_radius" value="0.041"/>
-    <xacro:property name="thigh_shoulder_length" value="0.04"/>
-    <xacro:property name="thigh_shoulder_y_offset" value="-0.008"/>
+    <xacro:property name="trunk_height" value="0.178"/>
 
-    <xacro:property name="thigh_width" value="0.03"/>
-    <xacro:property name="thigh_height" value="0.034"/>
-    <xacro:property name="thigh_x_offset" value="-0.015"/>
-    <xacro:property name="calf_width" value="0.016"/>
-    <xacro:property name="calf_height" value="0.016"/>
-    <xacro:property name="calf_x_offset" value="0.0"/>
-    <xacro:property name="foot_radius" value="0.02"/>
+    <xacro:property name="shoudlerarm_radius" value="0.05"/>
+    <xacro:property name="shoudlerarm_length" value="0.02"/>
+    <xacro:property name="shoudlerarm_x_offset" value="-0.05"/>
+    <xacro:property name="shoudlerarm_y_offset" value="0.0"/>
+    <xacro:property name="shoudlerarm_z_offset" value="-0.0"/>
+    <xacro:property name="shoudlerarm_ry_offset" value="1.57"/>
 
+
+    <xacro:property name="upperarm_radius" value="0.025"/>
+    <xacro:property name="upperarm_length" value="0.23"/>
+    <xacro:property name="upperarm_x_offset" value="0.01"/>
+    <xacro:property name="upperarm_y_offset" value="0.068"/>
+    <xacro:property name="upperarm_z_offset" value="-0.05"/>
+
+
+    <xacro:property name="forearm_radius" value="0.025"/>
+    <xacro:property name="forearm_length" value="0.23"/>
+    <xacro:property name="forearm_x_offset" value="0.015"/>
+    <xacro:property name="forearm_y_offset" value="0.007"/>
+    <xacro:property name="forearm_z_offset" value="-0.1"/>
+
+    <xacro:property name="HipRx_radius" value="0.04"/>
+    <xacro:property name="HipRx_length" value="0.05"/>
+    <xacro:property name="HipRx_x_offset" value="-0.07"/>
+    <xacro:property name="HipRx_y_offset" value="-0.0"/>
+    <xacro:property name="HipRx_z_offset" value="-0.0"/>
+    <xacro:property name="HipRx_ry_offset" value="1.57"/>
+
+
+    <xacro:property name="Shank_radius" value="0.04"/>
+    <xacro:property name="Shank_length" value="0.2"/>
+    <xacro:property name="Shank_x_offset" value="-0.0"/>
+    <xacro:property name="Shank_y_offset" value="-0.0"/>
+    <xacro:property name="Shank_z_offset" value="-0.15"/>
+    <xacro:property name="Shank_ry_offset" value="0"/>
+
+    <xacro:property name="Thigh_radius" value="0.04"/>
+    <xacro:property name="Thigh_length" value="0.23"/>
+    <xacro:property name="Thigh_x_offset" value="-0.0"/>
+    <xacro:property name="Thigh_y_offset" value="-0.0"/>
+    <xacro:property name="Thigh_z_offset" value="-0.17"/>
+    <xacro:property name="Thigh_ry_offset" value="0"/>
     <!-- kinematic value -->
     <xacro:property name="thigh_offset" value="0.0838"/>
     <xacro:property name="thigh_length" value="0.2"/>

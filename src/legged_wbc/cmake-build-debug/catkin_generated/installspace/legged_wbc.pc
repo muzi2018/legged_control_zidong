@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: legged_wbc
+Description: Description of legged_wbc
+Version: 0.0.0
+Cflags: -I${prefix}/include -I/opt/openrobots/lib/pkgconfig/../../include -I/opt/openrobots/include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -llegged_wbc -lpinocchio -lboost_filesystem -lboost_serialization -lboost_system -lurdfdom_sensor -lurdfdom_model_state -lurdfdom_model -lurdfdom_world -lconsole_bridge -lhpp-fcl -loctomap -loctomath
+Requires: roscpp ocs2_legged_robot

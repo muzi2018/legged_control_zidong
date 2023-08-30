@@ -45,6 +45,17 @@
         </joint>
 
         <link name="${prefix}_LHipRx">
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 ${HipRx_ry_offset} 0" xyz="${HipRx_x_offset} ${HipRx_y_offset} ${HipRx_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 ${HipRx_ry_offset} 0" xyz="${HipRx_x_offset} ${-HipRx_y_offset} ${HipRx_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${HipRx_length}" radius="${HipRx_radius}"/>
+                </geometry>
+            </collision>
             <visual>
                 <xacro:if value="${(mirror == True)}">
                     <origin rpy="0 0 0" xyz="0. 0.00 0.0"/>
@@ -92,6 +103,17 @@
                 </geometry>
                 <material name="orange"/>
             </visual>
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${Thigh_x_offset} ${Thigh_y_offset} ${Thigh_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${Thigh_x_offset} ${-Thigh_y_offset} ${Thigh_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${Thigh_length}" radius="${Thigh_radius}"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
                 <mass value="1.0"/>
@@ -121,6 +143,17 @@
                 </geometry>
                 <material name="orange"/>
             </visual>
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${Shank_x_offset} ${Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${Shank_x_offset} ${-Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="-0.03416 -0.00075 -0.01"/>
                 <mass value="0.70"/>
@@ -150,20 +183,20 @@
                 </geometry>
                 <material name="orange"/>
             </visual>
-            <visual>
+            <!-- <visual>
                 <geometry>
                     <sphere radius="0.001"/>
                 </geometry>
                 <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
-            </visual>
+            </visual> -->
             <collision>
                 <geometry>
-                    <sphere radius="0.0"/>
+                    <sphere radius="0.02"/>
                 </geometry>
-                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+                <origin xyz="0 0.0 -0.033" rpy="0 0 0"/>
             </collision>
 
-            <visual>
+            <!-- <visual>
                 <geometry>
                     <sphere radius="0.001"/>
                 </geometry>
@@ -174,7 +207,7 @@
                     <sphere radius="0.0"/>
                 </geometry>
                 <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </collision>
+            </collision> -->
 
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>

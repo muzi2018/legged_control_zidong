@@ -83,7 +83,6 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
   setupModel(taskFile, urdfFile, referenceFile, verbose);
 
   // Initial state
-  std::cout<<"centroidalModelInfo_.stateDim="<<centroidalModelInfo_.stateDim<<std::endl;
   initialState_.setZero(centroidalModelInfo_.stateDim);
 
   loadData::loadEigenMatrix(taskFile, "initialState", initialState_);
@@ -92,27 +91,21 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
   problemPtr_ = std::make_unique<OptimalControlProblem>();
   // Dynamics
   std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
-    std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
 
   dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_, "dynamics", modelSettings_);
-  std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
   problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
-std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
   // Cost terms
   problemPtr_->costPtr->add("baseTrackingCost", getBaseTrackingCost(taskFile, centroidalModelInfo_, verbose));
-        std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
   // Constraint terms
   // friction cone settings
   scalar_t frictionCoefficient = 0.7;
   RelaxedBarrierPenalty::Config barrierPenaltyConfig;
   std::tie(frictionCoefficient, barrierPenaltyConfig) = loadFrictionConeSettings(taskFile, verbose);
-        std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
   for (size_t i = 0; i < centroidalModelInfo_.numThreeDofContacts; i++) {
     const std::string& footName = modelSettings_.contactNames3DoF[i];
     std::unique_ptr<EndEffectorKinematics<scalar_t>> eeKinematicsPtr = getEeKinematicsPtr({footName}, footName);
-      std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
     if (useHardFrictionConeConstraint_) {
       problemPtr_->inequalityConstraintPtr->add(footName + "_frictionCone", getFrictionConeConstraint(i, frictionCoefficient));
@@ -140,6 +133,7 @@ std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
   // Initialization
   constexpr bool extendNormalizedNomentum = true;
   initializerPtr_ = std::make_unique<LeggedRobotInitializer>(centroidalModelInfo_, *referenceManagerPtr_, extendNormalizedNomentum);
+
 }
 
 /******************************************************************************************************/
@@ -148,10 +142,8 @@ std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
 void LeggedInterface::setupModel(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                  bool /*verbose*/) {
   // PinocchioInterface
-  std::cout<<"PinocchioInterface urdfFile: "<< urdfFile<<std::endl;
   pinocchioInterfacePtr_ =
       std::make_unique<PinocchioInterface>(centroidal_model::createPinocchioInterface(urdfFile, modelSettings_.jointNames));
-  std::cout<<"pinocchioInterfacePtr_->getModel().nq="<<pinocchioInterfacePtr_->getModel().nq<<std::endl;
   // CentroidalModelInfo
   centroidalModelInfo_ = centroidal_model::createCentroidalModelInfo(
       *pinocchioInterfacePtr_, centroidal_model::loadCentroidalType(taskFile),

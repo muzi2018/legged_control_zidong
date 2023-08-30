@@ -86,28 +86,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../legged_estimation/.idea/legged_estimation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/legged_unitree_description.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../legged_gazebo/.idea/legged_gazebo.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../legged_hw/.idea/legged_hw.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../legged_interface/.idea/legged_interface.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CTestConfiguration.ini" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CTestConfiguration.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/atomic_configure/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/atomic_configure/_setup_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/generate_cached_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/generate_cached_setup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/installspace/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/installspace/_setup_util.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/stamps/legged_controllers/_setup_util.py.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/stamps/legged_controllers/_setup_util.py.stamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/stamps/legged_controllers/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/catkin_generated/stamps/legged_controllers/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/task.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/launch/empty_world.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/launch/empty_world.launch" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_gazebo/config/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/config/default.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,23 +123,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/taizun/Desktop/legged_control_zidong/src/legged_interface/CMakeLists.txt&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/taizun/Desktop/legged_control_zidong/src/legged_wbc/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="CMake Application.legged_target_trajectories_publisher">
     <configuration name="actionlib_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="legged_controllers" TARGET_NAME="actionlib_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
@@ -580,7 +563,7 @@
       <workItem from="1693366331084" duration="2232000" />
       <workItem from="1693376106984" duration="2786000" />
       <workItem from="1693379995038" duration="815000" />
-      <workItem from="1693382221272" duration="1696000" />
+      <workItem from="1693382221272" duration="3220000" />
     </task>
     <servers />
   </component>

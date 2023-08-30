@@ -28,6 +28,17 @@
                 </geometry>
                 <material name="red"/>
             </visual>
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 ${shoudlerarm_ry_offset} 0" xyz="${shoudlerarm_x_offset} ${shoudlerarm_y_offset} ${shoudlerarm_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 ${shoudlerarm_ry_offset} 0" xyz="${shoudlerarm_x_offset} ${-shoudlerarm_y_offset} ${shoudlerarm_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${shoudlerarm_length}" radius="${shoudlerarm_radius}"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
                 <mass value="0.30"/>
@@ -37,7 +48,6 @@
                         izz="0.01355"/>
             </inertial>
         </link>
-
 
         <joint name="${prefix}_JUpperArm" type="revolute">
             <origin rpy="0 0 0" xyz="0.0545 0.0 0.0"/>
@@ -62,6 +72,17 @@
                 </geometry>
                 <material name="orange"/>
             </visual>
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${upperarm_x_offset} ${upperarm_y_offset} ${upperarm_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${upperarm_x_offset} ${-upperarm_y_offset} ${upperarm_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${upperarm_length}" radius="${upperarm_radius}"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.09"/>
                 <mass value="0.37"/>
@@ -109,6 +130,18 @@
                 </geometry>
                 <material name="orange"/>
             </visual>
+            <collision>
+
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${forearm_x_offset} ${forearm_y_offset} ${forearm_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${forearm_x_offset} ${-forearm_y_offset} ${forearm_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${forearm_length}" radius="${forearm_radius}"/>
+                </geometry>
+            </collision>
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.04"/>
                 <mass value="0.1"/>

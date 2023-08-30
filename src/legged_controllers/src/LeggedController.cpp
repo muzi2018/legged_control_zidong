@@ -43,7 +43,6 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
 //        std::cout<<"contact name :"<<name<<std::endl;
 //    }
   setupLeggedInterface(taskFile, urdfFile, referenceFile, verbose);
-
   setupMpc();
 
   setupMrt();
@@ -58,7 +57,8 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   selfCollisionVisualization_.reset(new LeggedSelfCollisionVisualization(leggedInterface_->getPinocchioInterface(),
                                                                          leggedInterface_->getGeometryInterface(), pinocchioMapping, nh));
 
-  // Hardware interface
+
+    // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();
   std::vector<std::string> joint_names{"R_JHipRz", "R_JHipRx", "R_JThigh", "R_JKnee", "R_JAnkle", "L_JHipRz",
                                        "L_JHipRx", "L_JThigh", "L_JKnee", "L_JAnkle", "R_JShoulderRx", "R_JUpperArm",
@@ -79,7 +79,8 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   // Whole body control
   wbc_ = std::make_shared<WeightedWbc>(leggedInterface_->getPinocchioInterface(), leggedInterface_->getCentroidalModelInfo(),
                                        *eeKinematicsPtr_);
-  wbc_->loadTasksSetting(taskFile, verbose);
+
+    wbc_->loadTasksSetting(taskFile, verbose);
 
   // Safety Checker
   safetyChecker_ = std::make_shared<SafetyChecker>(leggedInterface_->getCentroidalModelInfo());
