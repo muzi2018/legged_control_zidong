@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: legged_hw
+Description: Description of legged_hw
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -llegged_hw
+Requires: roscpp legged_common controller_manager urdf

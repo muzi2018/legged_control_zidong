@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated />
   </component>
@@ -17,7 +20,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="948e50a1-5a49-404b-ad1e-5d597b2f0bb5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/launch/load_controller.launch" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/launch/load_controller.launch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../legged_estimation/.idea/legged_estimation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/legged_unitree_description.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../legged_gazebo/.idea/legged_gazebo.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../legged_hw/.idea/legged_hw.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../legged_interface/.idea/legged_interface.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CTestConfiguration.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/CTestConfiguration.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/atomic_configure/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/atomic_configure/_setup_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/generate_cached_setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/generate_cached_setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/installspace/_setup_util.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/installspace/_setup_util.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/stamps/legged_controllers/_setup_util.py.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/stamps/legged_controllers/_setup_util.py.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/stamps/legged_controllers/package.xml.stamp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/catkin_generated/stamps/legged_controllers/package.xml.stamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launch/empty_world.launch" beforeDir="false" afterPath="$PROJECT_DIR$/launch/empty_world.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/config/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/config/default.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,27 +56,37 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="CLion" />
     <option name="majorVersion" value="2021" />
     <option name="minorVersion" value="3.4" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2UVorjrPv9s1fga3kN581JsChPv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="cidr.known.project.marker" value="true" />
-    <property name="cmake.loaded.for.project" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/taizun/Desktop/legged_control_zidong/src/legged_gazebo/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -65,10 +98,23 @@
       <workItem from="1693034310862" duration="1752000" />
       <workItem from="1693041061760" duration="2000" />
       <workItem from="1693041367486" duration="2000" />
+      <workItem from="1693375472013" duration="427000" />
+      <workItem from="1693376104719" duration="1212000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

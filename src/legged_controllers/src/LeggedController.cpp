@@ -39,6 +39,9 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   
   bool verbose = false;
   loadData::loadCppDataType(taskFile, "legged_robot_interface.verbose", verbose);
+//    for (const auto& name : leggedInterface_->modelSettings().contactNames3DoF) {
+//        std::cout<<"contact name :"<<name<<std::endl;
+//    }
   setupLeggedInterface(taskFile, urdfFile, referenceFile, verbose);
 
   setupMpc();

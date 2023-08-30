@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: legged_controllers
+Description: Description of legged_controllers
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -llegged_controllers
+Requires: roscpp legged_common legged_interface legged_wbc legged_estimation controller_interface ocs2_legged_robot_ros ocs2_self_collision_visualization angles

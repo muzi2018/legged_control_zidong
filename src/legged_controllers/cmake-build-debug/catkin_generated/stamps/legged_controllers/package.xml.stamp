@@ -1,49 +1,30 @@
 <?xml version="1.0"?>
-<?xml-model
-  href="http://download.ros.org/schema/package_format3.xsd"
-  schematypens="http://www.w3.org/2001/XMLSchema"?>
-<package format="3">
-  <name>catkin</name>
-  <version>0.8.10</version>
-  <description>Low-level build system macros and infrastructure for ROS.</description>
-  <maintainer email="michael@openrobotics.org">Michael Carroll</maintainer>
-  <maintainer email="tfoote@openrobotics.org">Tully Foote</maintainer>
-  <license>BSD</license>
+<package format="2">
+    <name>legged_controllers</name>
+    <version>0.0.0</version>
+    <description>The legged_controllers packages.</description>
+    <maintainer email="liaoqiayuan@gmail.com">Qiayuan Liao</maintainer>
+    <license>BSD</license>
+    <author email="liaoqiayuan@gmail.com">Qiayuan Liao</author>
 
-  <url type="website">http://wiki.ros.org/catkin</url>
-  <url type="bugtracker">https://github.com/ros/catkin/issues</url>
-  <url type="repository">https://github.com/ros/catkin</url>
+    <buildtool_depend>catkin</buildtool_depend>
 
-  <author>Troy Straszheim</author>
-  <author>Morten Kjaergaard</author>
-  <author>Brian Gerkey</author>
-  <author>Dirk Thomas</author>
+    <build_depend>cmake_clang_tools</build_depend>
+    <depend>roscpp</depend>
+    <depend>legged_common</depend>
+    <depend>legged_interface</depend>
+    <depend>legged_estimation</depend>
+    <depend>legged_wbc</depend>
 
-  <depend condition="$ROS_PYTHON_VERSION == 2">python-argparse</depend>
-  <depend condition="$ROS_PYTHON_VERSION == 2" version_gt="0.4.3">python-catkin-pkg</depend>
-  <depend condition="$ROS_PYTHON_VERSION == 3" version_gt="0.4.3">python3-catkin-pkg</depend>
-  <depend condition="$ROS_PYTHON_VERSION == 2">python-empy</depend>
-  <depend condition="$ROS_PYTHON_VERSION == 3">python3-empy</depend>
+    <depend>controller_interface</depend>
+    <depend>ocs2_legged_robot_ros</depend>
+    <depend>ocs2_self_collision_visualization</depend>
 
-  <buildtool_depend>cmake</buildtool_depend>
-  <buildtool_depend condition="$ROS_PYTHON_VERSION == 2">python-setuptools</buildtool_depend>
-  <buildtool_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_depend>
+    <depend>angles</depend>
 
-  <buildtool_export_depend>cmake</buildtool_export_depend>
-  <buildtool_export_depend condition="$ROS_PYTHON_VERSION == 3">python3-setuptools</buildtool_export_depend>
+    <exec_depend>controller_manager</exec_depend>
 
-  <build_export_depend>google-mock</build_export_depend>
-  <build_export_depend>gtest</build_export_depend>
-  <build_export_depend condition="$ROS_PYTHON_VERSION == 2">python-nose</build_export_depend>
-  <build_export_depend condition="$ROS_PYTHON_VERSION == 3">python3-nose</build_export_depend>
-
-  <test_depend condition="$ROS_PYTHON_VERSION == 2">python-mock</test_depend>
-  <test_depend condition="$ROS_PYTHON_VERSION == 3">python3-mock</test_depend>
-  <test_depend condition="$ROS_PYTHON_VERSION == 2">python-nose</test_depend>
-  <test_depend condition="$ROS_PYTHON_VERSION == 3">python3-nose</test_depend>
-
-  <export>
-    <rosdoc config="rosdoc.yaml"/>
-    <architecture_independent/>
-  </export>
+    <export>
+        <controller_interface plugin="${prefix}/legged_controllers_plugins.xml"/>
+    </export>
 </package>

@@ -7,9 +7,8 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH='/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel:/opt/ros/noetic:/opt/openrobots'
-export LD_LIBRARY_PATH='/opt/ros/noetic/lib:/opt/openrobots/lib:/home/taizun/OCS2_humanoid/raisim/linux/lib'
-export PKG_CONFIG_PATH='/opt/ros/noetic/lib/pkgconfig:/opt/openrobots/lib/pkgconfig'
-export PYTHONPATH='/opt/ros/noetic/lib/python3/dist-packages:/opt/openrobots/lib/python3.8/site-packages:/home/taizun/OCS2_humanoid/raisim/linux/lib'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel/share/common-lisp'
+export CMAKE_PREFIX_PATH="/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/cmake-build-debug/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/taizun/Desktop/legged_control_zidong/src/legged_controllers:$ROS_PACKAGE_PATH"

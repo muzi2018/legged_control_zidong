@@ -100,16 +100,19 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
 std::cout<<"xxxxxxxxxxx2xxxxxxxxxx"<<std::endl;
   // Cost terms
   problemPtr_->costPtr->add("baseTrackingCost", getBaseTrackingCost(taskFile, centroidalModelInfo_, verbose));
+        std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
   // Constraint terms
   // friction cone settings
   scalar_t frictionCoefficient = 0.7;
   RelaxedBarrierPenalty::Config barrierPenaltyConfig;
   std::tie(frictionCoefficient, barrierPenaltyConfig) = loadFrictionConeSettings(taskFile, verbose);
+        std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
   for (size_t i = 0; i < centroidalModelInfo_.numThreeDofContacts; i++) {
     const std::string& footName = modelSettings_.contactNames3DoF[i];
     std::unique_ptr<EndEffectorKinematics<scalar_t>> eeKinematicsPtr = getEeKinematicsPtr({footName}, footName);
+      std::cout<<"xxxxxxxxxxx333xxxxxxxxxx"<<std::endl;
 
     if (useHardFrictionConeConstraint_) {
       problemPtr_->inequalityConstraintPtr->add(footName + "_frictionCone", getFrictionConeConstraint(i, frictionCoefficient));
