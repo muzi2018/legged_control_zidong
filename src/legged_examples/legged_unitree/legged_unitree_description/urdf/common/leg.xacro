@@ -184,7 +184,7 @@
                 <material name="orange"/>
             </visual>
 
-            <collision>
+            <!-- <collision>
                 <geometry>
                     <sphere radius="0.02"/>
                 </geometry>
@@ -195,14 +195,14 @@
                     <sphere radius="0.02"/>
                 </geometry>
                 <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>
-            </collision> 
+            </collision>  -->
 
-            <!-- <collision>
+            <collision>
                 <origin rpy="0 0 0" xyz="0 0 -0.033"/>
                 <geometry>
                     <box size="${foot_width} ${foot_length} ${foot_height}"/>
                 </geometry>
-            </collision>             -->
+            </collision>            
 
 
             <!-- <collision>

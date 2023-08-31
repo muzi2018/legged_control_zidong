@@ -56,7 +56,7 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
                                                              leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_, nh);
   selfCollisionVisualization_.reset(new LeggedSelfCollisionVisualization(leggedInterface_->getPinocchioInterface(),
                                                                          leggedInterface_->getGeometryInterface(), pinocchioMapping, nh));
-
+  std::cout<<"__---__"<<std::endl;
 
     // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();

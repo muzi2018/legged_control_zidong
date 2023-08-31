@@ -160,14 +160,14 @@
             <kp value="1000000.0"/>
             <kd value="100.0"/>
         </gazebo>
-        <gazebo reference="${prefix}_LShoulderRx">
+        <gazebo reference="${prefix}_LUpperArm">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/DarkGrey</material>
             <kp value="1000000.0"/>
             <kd value="100.0"/>
         </gazebo>
-        <gazebo reference="${prefix}_LUpperArm">
+        <gazebo reference="${prefix}_LForeArm">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>
             <material>Gazebo/DarkGrey</material>

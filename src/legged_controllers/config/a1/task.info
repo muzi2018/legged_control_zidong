@@ -249,6 +249,9 @@ frictionConeSoftConstraint
   mu                     0.1
   delta                  5.0
 }
+
+
+
 selfCollision
 {
   ; Self Collision raw object pairs
@@ -259,14 +262,11 @@ selfCollision
   ; Self Collision pairs
   collisionLinkPairs
   {
-    [0] "LF_calf, RF_calf"
-    [1] "LH_calf, RH_calf"
-    [2] "LF_calf, LH_calf"
-    [3] "RF_calf, RH_calf"
-    [4] "LF_FOOT, RF_FOOT"
-    [5] "LH_FOOT, RH_FOOT"
-    [6] "LF_FOOT, LH_FOOT"
-    [7] "RF_FOOT, RH_FOOT"
+    [0] "R_LThigh, L_LThigh"
+    [1] "R_LShank, L_LShank"
+    [2] "R_Foot, L_Foot"
+    [3] "R_LUpperArm, L_LUpperArm"
+    [4] "R_LForeArm, L_LForeArm"
   }
 
   minimumDistance  0.05
@@ -276,12 +276,26 @@ selfCollision
   delta   1e-3
 }
 
+
 ; Whole body control
 torqueLimitsTask
 {
-   (0,0)  33.5     ; HAA
-   (1,0)  33.5     ; HFE
-   (2,0)  33.5     ; KFE
+   (0,0)  33.5     ; R_JHipRz
+   (1,0)  33.5     ; R_JHipRx
+   (2,0)  33.5     ; R_JThigh
+   (3,0)  33.5     ; R_JKnee
+   (4,0)  33.5     ; R_JAnkle
+   (5,0)  33.5     ; L_JHipRz
+   (6,0)  33.5     ; L_JHipRx
+   (7,0)  33.5     ; L_JThigh
+   (8,0)  33.5     ; L_JKnee
+   (9,0)  33.5     ; L_JAnkle
+   (10,0)  33.5     ; R_JShoulderRx
+   (11,0)  33.5     ; R_JUpperArm
+   (12,0)  33.5     ; R_JForeArm
+   (13,0)  33.5     ; L_JShoulderRx
+   (14,0)  33.5     ; L_JUpperArm
+   (15,0)  33.5     ; L_JForeArm
 }
 
 frictionConeTask
