@@ -56,7 +56,7 @@
     <xacro:property name="Thigh_z_offset" value="-0.17"/>
     <xacro:property name="Thigh_ry_offset" value="0"/>
 
-    <xacro:property name="foot_width" value="0.16"/>
+    <xacro:property name="foot_width" value="0.3"/>
     <xacro:property name="foot_length" value="0.042"/>
     <xacro:property name="foot_height" value="0.016"/>
 

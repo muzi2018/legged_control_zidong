@@ -127,7 +127,7 @@
     <child link="L_LHipRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LHipRx">
     <collision>
@@ -157,7 +157,7 @@
     <child link="L_LThigh"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LThigh">
     <visual>
@@ -187,7 +187,7 @@
     <child link="L_LShank"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LShank">
     <visual>
@@ -216,7 +216,7 @@
     <child link="L_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_Foot">
     <visual>
@@ -264,7 +264,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.033"/>
       <geometry>
-        <box size="0.16 0.042 0.016"/>
+        <box size="0.3 0.042 0.016"/>
       </geometry>
     </collision>
     <inertial>
@@ -386,7 +386,7 @@
     <child link="R_LHipRx"/>
     <axis xyz="1 0 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LHipRx">
     <collision>
@@ -414,7 +414,7 @@
     <child link="R_LThigh"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LThigh">
     <visual>
@@ -442,7 +442,7 @@
     <child link="R_LShank"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LShank">
     <visual>
@@ -470,7 +470,7 @@
     <child link="R_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_Foot">
     <visual>
@@ -518,7 +518,7 @@
     <collision>
       <origin rpy="0 0 0" xyz="0 0 -0.033"/>
       <geometry>
-        <box size="0.16 0.042 0.016"/>
+        <box size="0.3 0.042 0.016"/>
       </geometry>
     </collision>
     <inertial>
