@@ -40,7 +40,7 @@
                 </geometry>
             </collision>
             <inertial>
-                <origin rpy="0 0 0" xyz="0.01 0.0 0.0"/>
+                <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
                 <mass value="0.30"/>
                 <inertia
                         ixx="0.003735" ixy="0.0" ixz="0.0"
