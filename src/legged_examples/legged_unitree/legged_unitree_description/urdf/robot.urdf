@@ -226,30 +226,47 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <visual>
-      <geometry>
-        <sphere radius="0.001"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0.125 0.0 -0.033"/>
-    </visual>
-    <collision>
-      <geometry>
-        <sphere radius="0.02"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0.0 -0.033"/>
-    </collision>
+    <!-- <visual>
+                <geometry>
+                    <sphere radius="0.001"/>
+                </geometry>
+                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+            </visual> -->
+    <!-- <collision>
+                <geometry>
+                    <sphere radius="0.02"/>
+                </geometry>
+                <origin xyz="0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision> -->
     <!-- <visual>
                 <geometry>
                     <sphere radius="0.001"/>
                 </geometry>
                 <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </visual>
-            <collision>
+            </visual>-->
+    <!-- <collision>
                 <geometry>
-                    <sphere radius="0.0"/>
+                    <sphere radius="0.02"/>
                 </geometry>
-                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+                <origin xyz="-0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision>  -->
+    <!-- <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${Shank_x_offset} ${-Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
+                </geometry>
             </collision> -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
+      <geometry>
+        <box size="0.16 0.042 0.016"/>
+      </geometry>
+    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
       <mass value="0.30"/>
@@ -463,30 +480,47 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <visual>
-      <geometry>
-        <sphere radius="0.001"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0.125 0.0 -0.033"/>
-    </visual>
-    <collision>
-      <geometry>
-        <sphere radius="0.02"/>
-      </geometry>
-      <origin rpy="0 0 0" xyz="0 0.0 -0.033"/>
-    </collision>
+    <!-- <visual>
+                <geometry>
+                    <sphere radius="0.001"/>
+                </geometry>
+                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
+            </visual> -->
+    <!-- <collision>
+                <geometry>
+                    <sphere radius="0.02"/>
+                </geometry>
+                <origin xyz="0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision> -->
     <!-- <visual>
                 <geometry>
                     <sphere radius="0.001"/>
                 </geometry>
                 <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </visual>
-            <collision>
+            </visual>-->
+    <!-- <collision>
                 <geometry>
-                    <sphere radius="0.0"/>
+                    <sphere radius="0.02"/>
                 </geometry>
-                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+                <origin xyz="-0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision>  -->
+    <!-- <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${Shank_x_offset} ${-Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
+                </geometry>
             </collision> -->
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
+      <geometry>
+        <box size="0.16 0.042 0.016"/>
+      </geometry>
+    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
       <mass value="0.30"/>

@@ -12,8 +12,12 @@
         <arg name="world_name" value="$(find legged_gazebo)/worlds/empty_world.world"/>
     </include>
     <!-- push robot_description to factory and spawn robot in gazebo -->
+    <!-- <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
+          args="-param legged_robot_description -urdf -x 0 -y 0 -z 0 -model $(arg robot_type)" output="screen"/> -->
+
+
     <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" clear_params="true"
-          args="-param legged_robot_description -urdf -x 0 -y 0.5 -z 0.5 -model $(arg robot_type)
+          args="-param legged_robot_description -urdf -x 0 -y 0 -z 0.5 -model $(arg robot_type)
           -J R_JHipRz -0.0 
           -J R_JHipRx -0.0436501
           -J R_JThigh -0.4
@@ -29,11 +33,7 @@
           -J R_JForeArm 0
           -J L_JShoulderRx 0
           -J L_JUpperArm 0
-          -J L_JForeArm 0 
-
-" 
-          
-           output="screen"/>
+          -J L_JForeArm 0 " output="screen"/>
 
 </launch>
 

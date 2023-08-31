@@ -40,7 +40,7 @@
             <child link="${prefix}_LHipRx"/>
             <axis xyz="1 0 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
                    upper="${hip_max}"/>
         </joint>
 
@@ -85,7 +85,7 @@
             <child link="${prefix}_LThigh"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
                    upper="${hip_max}"/>
         </joint>
 
@@ -130,7 +130,7 @@
             <child link="${prefix}_LShank"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
                    upper="${hip_max}"/>
         </joint>
 
@@ -170,7 +170,7 @@
             <child link="${prefix}_Foot"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${hip_torque_max}" velocity="${hip_torque_max}" lower="${hip_min}"
+            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
                    upper="${hip_max}"/>
         </joint>
 
@@ -189,25 +189,44 @@
                 </geometry>
                 <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
             </visual> -->
-            <collision>
+            <!-- <collision>
                 <geometry>
                     <sphere radius="0.02"/>
                 </geometry>
-                <origin xyz="0 0.0 -0.033" rpy="0 0 0"/>
-            </collision>
+                <origin xyz="0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision> -->
 
             <!-- <visual>
                 <geometry>
                     <sphere radius="0.001"/>
                 </geometry>
                 <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </visual>
-            <collision>
+            </visual>-->
+            <!-- <collision>
                 <geometry>
-                    <sphere radius="0.0"/>
+                    <sphere radius="0.02"/>
                 </geometry>
-                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
+                <origin xyz="-0.01 0.0 -0.033" rpy="0 0 0"/>
+            </collision>  -->
+
+            <!-- <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 0 0" xyz="${Shank_x_offset} ${-Shank_y_offset} ${Shank_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
+                </geometry>
             </collision> -->
+
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 -0.033"/>
+                <geometry>
+                    <box size="${foot_width} ${foot_length} ${foot_height}"/>
+                </geometry>
+            </collision>            
 
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
