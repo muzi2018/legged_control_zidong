@@ -65,7 +65,7 @@
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0 0.0 0.15"/>
+      <origin rpy="0 0 0" xyz="0.0 0.15 0.15"/>
       <mass value="6.5"/>
       <inertia ixx="0.3006167" ixy="-0.0" ixz="-0.0" iyy="0.23837" iyz="-0.0" izz="0.09690467"/>
     </inertial>
@@ -100,7 +100,7 @@
     <disableFixedJointLumping>true</disableFixedJointLumping>
   </gazebo>
   <joint name="L_JHipRz" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0.075 0"/>
+    <origin rpy="0 0 0" xyz="0 0.1 0"/>
     <parent link="base"/>
     <child link="L_LHipRz"/>
     <axis xyz="0 0 1"/>
@@ -226,30 +226,24 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <!-- <visual>
-                <geometry>
-                    <sphere radius="0.001"/>
-                </geometry>
-                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
-            </visual> -->
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03"/>
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.12 0.0 -0.03"/>
+    </collision>
     <!-- <collision>
+                <origin rpy="0 0 0" xyz="0 0 -0.033"/>
                 <geometry>
-                    <sphere radius="0.02"/>
+                    <box size="${foot_width} ${foot_length} ${foot_height}"/>
                 </geometry>
-                <origin xyz="0.01 0.0 -0.033" rpy="0 0 0"/>
-            </collision> -->
-    <!-- <visual>
-                <geometry>
-                    <sphere radius="0.001"/>
-                </geometry>
-                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </visual>-->
-    <!-- <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="-0.01 0.0 -0.033" rpy="0 0 0"/>
-            </collision>  -->
+            </collision>             -->
     <!-- <collision>
             <xacro:if value="${(mirror == True)}">
                 <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
@@ -261,12 +255,6 @@
                     <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
                 </geometry>
             </collision> -->
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
-      <geometry>
-        <box size="0.3 0.042 0.016"/>
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
       <mass value="0.30"/>
@@ -302,8 +290,8 @@
     <kd value="100.0"/>
   </gazebo>
   <gazebo reference="L_Foot">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="100.0"/>
@@ -359,7 +347,7 @@
     </actuator>
   </transmission>
   <joint name="R_JHipRz" type="revolute">
-    <origin rpy="0 0 0" xyz="0 -0.075 0"/>
+    <origin rpy="0 0 0" xyz="0 -0.1 0"/>
     <parent link="base"/>
     <child link="R_LHipRz"/>
     <axis xyz="0 0 1"/>
@@ -480,30 +468,24 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <!-- <visual>
-                <geometry>
-                    <sphere radius="0.001"/>
-                </geometry>
-                <origin xyz="0.125 0.0 -0.033" rpy="0 0 0"/>
-            </visual> -->
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03"/>
+    </collision>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0.12 0.0 -0.03"/>
+    </collision>
     <!-- <collision>
+                <origin rpy="0 0 0" xyz="0 0 -0.033"/>
                 <geometry>
-                    <sphere radius="0.02"/>
+                    <box size="${foot_width} ${foot_length} ${foot_height}"/>
                 </geometry>
-                <origin xyz="0.01 0.0 -0.033" rpy="0 0 0"/>
-            </collision> -->
-    <!-- <visual>
-                <geometry>
-                    <sphere radius="0.001"/>
-                </geometry>
-                <origin xyz="-0.025 0.0 -0.033" rpy="0 0 0"/>
-            </visual>-->
-    <!-- <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="-0.01 0.0 -0.033" rpy="0 0 0"/>
-            </collision>  -->
+            </collision>             -->
     <!-- <collision>
             <xacro:if value="${(mirror == True)}">
                 <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
@@ -515,12 +497,6 @@
                     <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
                 </geometry>
             </collision> -->
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
-      <geometry>
-        <box size="0.3 0.042 0.016"/>
-      </geometry>
-    </collision>
     <inertial>
       <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
       <mass value="0.30"/>
@@ -556,8 +532,8 @@
     <kd value="100.0"/>
   </gazebo>
   <gazebo reference="R_Foot">
-    <mu1>0.2</mu1>
-    <mu2>0.2</mu2>
+    <mu1>0.6</mu1>
+    <mu2>0.6</mu2>
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="100.0"/>
