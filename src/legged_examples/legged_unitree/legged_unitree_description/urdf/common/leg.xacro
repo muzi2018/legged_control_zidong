@@ -170,7 +170,7 @@
             <child link="${prefix}_Foot"/>
             <axis xyz="0 1 0"/>
             <dynamics damping="${damping}" friction="${friction}"/>
-            <limit effort="${hip_torque_max}" velocity="${hip_velocity_max}" lower="${hip_min}"
+            <limit effort="${hip_torque_max}" velocity="${hip_max}" lower="${hip_min}"
                    upper="${hip_max}"/>
         </joint>
 

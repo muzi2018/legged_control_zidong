@@ -56,7 +56,6 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
                                                              leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_, nh);
   selfCollisionVisualization_.reset(new LeggedSelfCollisionVisualization(leggedInterface_->getPinocchioInterface(),
                                                                          leggedInterface_->getGeometryInterface(), pinocchioMapping, nh));
-  std::cout<<"__---__"<<std::endl;
 
     // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();
@@ -84,20 +83,27 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
 
   // Safety Checker
   safetyChecker_ = std::make_shared<SafetyChecker>(leggedInterface_->getCentroidalModelInfo());
-
   return true;
 }
 
 void LeggedController::starting(const ros::Time& time) {
   // Initial state
   currentObservation_.state.setZero(leggedInterface_->getCentroidalModelInfo().stateDim);
+
+//    std::cout<<"leggedInterface_->getCentroidalModelInfo().stateDim"<<leggedInterface_->getCentroidalModelInfo().stateDim<<std::endl;
+//    std::cout<<"0currentObservation_.state"<<currentObservation_.state<<std::endl;
+
   updateStateEstimation(time, ros::Duration(0.002));
+//    std::cout<<"1currentObservation_.state.size"<<currentObservation_.state.size()<<std::endl;
+//    std::cout<<"1currentObservation_.state"<<currentObservation_.state<<std::endl;
   currentObservation_.input.setZero(leggedInterface_->getCentroidalModelInfo().inputDim);
   currentObservation_.mode = ModeNumber::STANCE;
-
   TargetTrajectories target_trajectories({currentObservation_.time}, {currentObservation_.state}, {currentObservation_.input});
 
   // Set the first observation and command and wait for optimization to finish
+
+//  std::cout<<"1currentObservation_.input.size"<<currentObservation_.input.size()<<std::endl;
+//  std::cout<<"1currentObservation_.input"<<currentObservation_.input<<std::endl;
   mpcMrtInterface_->setCurrentObservation(currentObservation_);
   mpcMrtInterface_->getReferenceManager().setTargetTrajectories(target_trajectories);
   ROS_INFO_STREAM("Waiting for the initial policy ...");
@@ -157,6 +163,8 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 
 void LeggedController::updateStateEstimation(const ros::Time& time, const ros::Duration& period) {
   vector_t jointPos(hybridJointHandles_.size()), jointVel(hybridJointHandles_.size());
+  std::cout<<"---- updateStateEstimation ----"<<std::endl;
+  std::cout<<"hybridJointHandles_.size() "<< hybridJointHandles_.size()<<std::endl;
   contact_flag_t contacts;
   Eigen::Quaternion<scalar_t> quat;
   contact_flag_t contactFlag;
@@ -167,9 +175,14 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     jointPos(i) = hybridJointHandles_[i].getPosition();
     jointVel(i) = hybridJointHandles_[i].getVelocity();
   }
+    std::cout<<"jointPos "<<std::endl<< jointPos<<std::endl;
+    std::cout<<"jointVel "<<std::endl<< jointVel<<std::endl;
+    std::cout<<"contactFlag "<<std::endl;
   for (size_t i = 0; i < contacts.size(); ++i) {
     contactFlag[i] = contactHandles_[i].isContact();
+      std::cout<<contactFlag[i] <<std::endl;
   }
+
   for (size_t i = 0; i < 4; ++i) {
     quat.coeffs()(i) = imuSensorHandle_.getOrientation()[i];
   }
@@ -189,6 +202,7 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
   measuredRbdState_ = stateEstimate_->update(time, period);
   currentObservation_.time += period.toSec();
   scalar_t yawLast = currentObservation_.state(9);
+  std::cout<<"measuredRbdState_： "<<std::endl<<measuredRbdState_<<std::endl;
   currentObservation_.state = rbdConversions_->computeCentroidalStateFromRbdModel(measuredRbdState_);
   currentObservation_.state(9) = yawLast + angles::shortest_angular_distance(yawLast, currentObservation_.state(9));
   currentObservation_.mode = stateEstimate_->getMode();
