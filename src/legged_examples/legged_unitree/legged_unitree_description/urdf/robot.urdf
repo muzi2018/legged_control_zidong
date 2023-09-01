@@ -65,7 +65,7 @@
       </geometry>
     </collision>
     <inertial>
-      <origin rpy="0 0 0" xyz="0.0 0.017 0.15"/>
+      <origin rpy="0 0 0" xyz="0.0 0.0 0.15"/>
       <mass value="6.5"/>
       <inertia ixx="0.3006167" ixy="-0.0" ixz="-0.0" iyy="0.23837" iyz="-0.0" izz="0.09690467"/>
     </inertial>
@@ -216,7 +216,7 @@
     <child link="L_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="3"/>
   </joint>
   <link name="L_Foot">
     <visual>
@@ -458,7 +458,7 @@
     <child link="R_Foot"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="3"/>
   </joint>
   <link name="R_Foot">
     <visual>
@@ -624,7 +624,7 @@
     <child link="L_LUpperArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LUpperArm">
     <visual>
@@ -654,7 +654,7 @@
     <child link="L_LForeArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="L_LForeArm">
     <visual>
@@ -771,7 +771,7 @@
     <child link="R_LUpperArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LUpperArm">
     <visual>
@@ -799,7 +799,7 @@
     <child link="R_LForeArm"/>
     <axis xyz="0 1 0"/>
     <dynamics damping="100" friction="100"/>
-    <limit effort="33.5" lower="-3" upper="3" velocity="33.5"/>
+    <limit effort="33.5" lower="-3" upper="3" velocity="21"/>
   </joint>
   <link name="R_LForeArm">
     <visual>

@@ -24,6 +24,10 @@ StateEstimateBase::StateEstimateBase(PinocchioInterface pinocchioInterface, Cent
 }
 
 void StateEstimateBase::updateJointStates(const vector_t& jointPos, const vector_t& jointVel) {
+//    std::cout<<"---- updateJointStates ----"<<rbdState_.size()<<std::endl;
+//    std::cout<<"---- info_.actuatedDofNum ----"<<info_.actuatedDofNum<<std::endl;
+//    std::cout<<"---- info_.generalizedCoordinatesNum ----"<<info_.generalizedCoordinatesNum<<std::endl;
+
   rbdState_.segment(6, info_.actuatedDofNum) = jointPos;
   rbdState_.segment(6 + info_.generalizedCoordinatesNum, info_.actuatedDofNum) = jointVel;
 }

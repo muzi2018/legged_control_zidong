@@ -86,13 +86,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/task.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/arm.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/arm.xacro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/leg.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/leg.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_estimation/src/StateEstimateBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/src/StateEstimateBase.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/a1/const.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/a1/const.xacro" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,24 +122,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_pinocchio/ocs2_centroidal_model/CMakeLists.txt&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
-    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/taizun/Desktop/legged_control_zidong/src/legged_estimation/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "CMakeSettings",
+    "structure.view.defaults.are.configured": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="CMake Application.legged_target_trajectories_publisher">
     <configuration name="actionlib_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="legged_controllers" TARGET_NAME="actionlib_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
@@ -572,7 +569,7 @@
       <workItem from="1693548022071" duration="2563000" />
       <workItem from="1693552984811" duration="3003000" />
       <workItem from="1693556043850" duration="1777000" />
-      <workItem from="1693558374411" duration="8000" />
+      <workItem from="1693558374411" duration="2523000" />
     </task>
     <servers />
   </component>

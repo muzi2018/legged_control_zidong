@@ -57,6 +57,7 @@ KalmanFilterEstimate::KalmanFilterEstimate(PinocchioInterface pinocchioInterface
 }
 
 vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration& period) {
+    std::cout<<"---- KalmanFilterEstimate::update ----"<<std::endl;
   scalar_t dt = period.toSec();
   a_.block(0, 3, 3, 3) = dt * Eigen::Matrix<scalar_t, 3, 3>::Identity();
   b_.block(0, 0, 3, 3) = 0.5 * dt * dt * Eigen::Matrix<scalar_t, 3, 3>::Identity();
