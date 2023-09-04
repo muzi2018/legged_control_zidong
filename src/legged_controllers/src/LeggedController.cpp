@@ -91,12 +91,12 @@ void LeggedController::starting(const ros::Time& time) {
   currentObservation_.state.setZero(leggedInterface_->getCentroidalModelInfo().stateDim);
 
 //    std::cout<<"leggedInterface_->getCentroidalModelInfo().stateDim"<<leggedInterface_->getCentroidalModelInfo().stateDim<<std::endl;
-    std::cout<<"before StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
-    std::cout<<"before StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
+//    std::cout<<"before StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
+//    std::cout<<"before StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
 
   updateStateEstimation(time, ros::Duration(0.002));
-    std::cout<<"after StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
-    std::cout<<"after StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
+//    std::cout<<"after StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
+//    std::cout<<"after StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
   currentObservation_.input.setZero(leggedInterface_->getCentroidalModelInfo().inputDim);
   currentObservation_.mode = ModeNumber::STANCE;
   TargetTrajectories target_trajectories({currentObservation_.time}, {currentObservation_.state}, {currentObservation_.input});
@@ -134,11 +134,16 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 
   // Whole body control
   currentObservation_.input = optimizedInput;
+  std::cout<<"-------------- Whole body control start-----------------"<<std::endl;
+  std::cout<<"optimizedInput size "<<optimizedInput.size()<<std::endl;
+  std::cout<<optimizedInput<<std::endl;
+  std::cout<<"optimizedState size "<<optimizedState.size()<<std::endl;
+  std::cout<<optimizedState<<std::endl;
 
   wbcTimer_.startTimer();
   vector_t x = wbc_->update(optimizedState, optimizedInput, measuredRbdState_, plannedMode, period.toSec());
   wbcTimer_.endTimer();
-
+    std::cout<<"-------------- Whole body control end-----------------"<<std::endl;
   vector_t torque = x.tail(16);
 
   vector_t posDes = centroidal_model::getJointAngles(optimizedState, leggedInterface_->getCentroidalModelInfo());
