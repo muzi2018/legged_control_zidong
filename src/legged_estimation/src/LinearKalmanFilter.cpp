@@ -53,7 +53,7 @@ KalmanFilterEstimate::KalmanFilterEstimate(PinocchioInterface pinocchioInterface
 }
 
 vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration& period) {
-   std::cout<<"---- KalmanFilterEstimate::update ----"<<std::endl;
+//   std::cout<<"---- KalmanFilterEstimate::update ----"<<std::endl;
   scalar_t dt = period.toSec();
   a_.block(0, 3, 3, 3) = dt * Eigen::Matrix<scalar_t, 3, 3>::Identity();
   b_.block(0, 0, 3, 3) = 0.5 * dt * dt * Eigen::Matrix<scalar_t, 3, 3>::Identity();
@@ -83,14 +83,14 @@ vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration
 
   const auto eePos = eeKinematics_->getPosition(vector_t());
   const auto eeVel = eeKinematics_->getVelocity(vector_t(), vector_t());
-  std::cout<<"eePos: "<<std::endl;
-    for (int i1 = 0; i1 < eePos.size(); ++i1) {
-        std::cout<<eePos[i1]<<std::endl;
-    }
-  std::cout<<"eeVel: "<<std::endl;
-    for (int i1 = 0; i1 < eeVel.size(); ++i1) {
-        std::cout<<eeVel[i1]<<std::endl;
-    }
+//  std::cout<<"eePos: "<<std::endl;
+//    for (int i1 = 0; i1 < eePos.size(); ++i1) {
+//        std::cout<<eePos[i1]<<std::endl;
+//    }
+//  std::cout<<"eeVel: "<<std::endl;
+//    for (int i1 = 0; i1 < eeVel.size(); ++i1) {
+//        std::cout<<eeVel[i1]<<std::endl;
+//    }
   Eigen::Matrix<scalar_t, 12, 12> q = Eigen::Matrix<scalar_t, 12, 12>::Identity();
   q.block(0, 0, 3, 3) = q_.block(0, 0, 3, 3) * imuProcessNoisePosition_;
   q.block(3, 3, 3, 3) = q_.block(3, 3, 3, 3) * imuProcessNoiseVelocity_;
@@ -161,8 +161,8 @@ vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration
   odom.header.frame_id = "odom";
   odom.child_frame_id = "base";
   publishMsgs(odom);
-    std::cout<<"rbdState_ size "<<rbdState_.size()<<std::endl;
-    std::cout<<rbdState_<<std::endl;
+//    std::cout<<"rbdState_ size "<<rbdState_.size()<<std::endl;
+//    std::cout<<rbdState_<<std::endl;
   return rbdState_;
 }
 

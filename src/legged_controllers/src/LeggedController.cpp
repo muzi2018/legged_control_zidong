@@ -176,30 +176,30 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     jointPos(i) = hybridJointHandles_[i].getPosition();
     jointVel(i) = hybridJointHandles_[i].getVelocity();
   }
-    std::cout<<"jointPos "<<std::endl<< jointPos.size()<<std::endl;
-    std::cout<<jointPos<<std::endl;
-    std::cout<<"jointVel "<<std::endl<< jointVel.size()<<std::endl;
-    std::cout<<jointVel<<std::endl;
+//    std::cout<<"jointPos "<<std::endl<< jointPos.size()<<std::endl;
+//    std::cout<<jointPos<<std::endl;
+//    std::cout<<"jointVel "<<std::endl<< jointVel.size()<<std::endl;
+//    std::cout<<jointVel<<std::endl;
 //    std::cout<<"contactFlag "<<std::endl;
   for (size_t i = 0; i < contacts.size(); ++i) {
     contactFlag[i] = contactHandles_[i].isContact();
 //      std::cout<<contactFlag[i] <<std::endl;
   }
 
-    std::cout<<"Imu get Orientation"<<std::endl;
+//    std::cout<<"Imu get Orientation"<<std::endl;
   for (size_t i = 0; i < 4; ++i) {
     quat.coeffs()(i) = imuSensorHandle_.getOrientation()[i];
-    std::cout<<imuSensorHandle_.getOrientation()[i]<<std::endl;
+//    std::cout<<imuSensorHandle_.getOrientation()[i]<<std::endl;
   }
-    std::cout<<"Imu get AngularVelocity"<<std::endl;
+//    std::cout<<"Imu get AngularVelocity"<<std::endl;
   for (size_t i = 0; i < 3; ++i) {
     angularVel(i) = imuSensorHandle_.getAngularVelocity()[i];
-      std::cout<<imuSensorHandle_.getAngularVelocity()[i]<<std::endl;
+//      std::cout<<imuSensorHandle_.getAngularVelocity()[i]<<std::endl;
   }
-    std::cout<<"Imu get LinearAcceleration"<<std::endl;
+//    std::cout<<"Imu get LinearAcceleration"<<std::endl;
     for (size_t i = 0; i < 3; ++i) {
         linearAccel(i) = imuSensorHandle_.getLinearAcceleration()[i];
-        std::cout<<imuSensorHandle_.getLinearAcceleration()[i]<<std::endl;
+//        std::cout<<imuSensorHandle_.getLinearAcceleration()[i]<<std::endl;
     }
   for (size_t i = 0; i < 9; ++i) {
     orientationCovariance(i) = imuSensorHandle_.getOrientationCovariance()[i];
@@ -213,15 +213,15 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
   measuredRbdState_ = stateEstimate_->update(time, period);
 //  std::cout<<"time: "<<time<<std::endl;
 //  std::cout<<"period: "<<period<<std::endl;
-  std::cout<<"measuredRbdState_ size "<<measuredRbdState_.size()<<std::endl;
-  std::cout<<measuredRbdState_<<std::endl;
+//  std::cout<<"measuredRbdState_ size "<<measuredRbdState_.size()<<std::endl;
+//  std::cout<<measuredRbdState_<<std::endl;
   currentObservation_.time += period.toSec();
   scalar_t yawLast = currentObservation_.state(9);
 //  std::cout<<"measuredRbdState_.size： "<<std::endl<<measuredRbdState_.size()<<std::endl;
   currentObservation_.state = rbdConversions_->computeCentroidalStateFromRbdModel(measuredRbdState_);
   currentObservation_.state(9) = yawLast + angles::shortest_angular_distance(yawLast, currentObservation_.state(9));
   currentObservation_.mode = stateEstimate_->getMode();
-  std::cout<<"currentObservation_.state"<<std::endl<<currentObservation_.state<<std::endl;
+//  std::cout<<"currentObservation_.state"<<std::endl<<currentObservation_.state<<std::endl;
 }
 
 LeggedController::~LeggedController() {

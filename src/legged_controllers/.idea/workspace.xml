@@ -87,7 +87,9 @@
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/include/legged_estimation/LinearKalmanFilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/include/legged_estimation/LinearKalmanFilter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -572,6 +574,7 @@
       <workItem from="1693797731605" duration="2478000" />
       <workItem from="1693809376721" duration="1452000" />
       <workItem from="1693811170536" duration="1570000" />
+      <workItem from="1693817264593" duration="467000" />
     </task>
     <servers />
   </component>
