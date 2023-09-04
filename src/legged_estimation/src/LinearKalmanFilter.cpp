@@ -24,7 +24,7 @@ KalmanFilterEstimate::KalmanFilterEstimate(PinocchioInterface pinocchioInterface
   a_.setZero();
   a_.block(0, 0, 3, 3) = Eigen::Matrix<scalar_t, 3, 3>::Identity();
   a_.block(3, 3, 3, 3) = Eigen::Matrix<scalar_t, 3, 3>::Identity();
-  a_.block(6, 6, 12, 12) = Eigen::Matrix<scalar_t, 12, 12>::Identity();
+  a_.block(6, 6, 6, 6) = Eigen::Matrix<scalar_t, 6, 6>::Identity();
   b_.setZero();
 
   Eigen::Matrix<scalar_t, Eigen::Dynamic, Eigen::Dynamic> c1(3, 6);
@@ -34,22 +34,18 @@ KalmanFilterEstimate::KalmanFilterEstimate(PinocchioInterface pinocchioInterface
   c_.setZero();
   c_.block(0, 0, 3, 6) = c1;
   c_.block(3, 0, 3, 6) = c1;
-  c_.block(6, 0, 3, 6) = c1;
-  c_.block(9, 0, 3, 6) = c1;
-  c_.block(0, 6, 12, 12) = -Eigen::Matrix<scalar_t, 12, 12>::Identity();
-  c_.block(12, 0, 3, 6) = c2;
-  c_.block(15, 0, 3, 6) = c2;
-  c_.block(18, 0, 3, 6) = c2;
-  c_.block(21, 0, 3, 6) = c2;
-  c_(27, 17) = 1.0;
-  c_(26, 14) = 1.0;
-  c_(25, 11) = 1.0;
-  c_(24, 8) = 1.0;
+//  c_.block(6, 0, 3, 6) = c1;
+//  c_.block(9, 0, 3, 6) = c1;
+  c_.block(0, 6, 6, 6) = -Eigen::Matrix<scalar_t, 6, 6>::Identity();
+  c_.block(6, 0, 3, 6) = c2;
+  c_.block(9, 0, 3, 6) = c2;
+  c_(13, 11) = 1.0;
+  c_(12, 8) = 1.0;
   p_.setIdentity();
   p_ = 100. * p_;
   q_.setIdentity();
   r_.setIdentity();
-  feetHeights_.setZero(4);
+  feetHeights_.setZero(2);
   eeKinematics_->setPinocchioInterface(pinocchioInterface_);
 
   world2odom_.setRotation(tf2::Quaternion::getIdentity());
@@ -64,7 +60,7 @@ vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration
   b_.block(3, 0, 3, 3) = dt * Eigen::Matrix<scalar_t, 3, 3>::Identity();
   q_.block(0, 0, 3, 3) = (dt / 20.f) * Eigen::Matrix<scalar_t, 3, 3>::Identity();
   q_.block(3, 3, 3, 3) = (dt * 9.81f / 20.f) * Eigen::Matrix<scalar_t, 3, 3>::Identity();
-  q_.block(6, 6, 12, 12) = dt * Eigen::Matrix<scalar_t, 12, 12>::Identity();
+  q_.block(6, 6, 6, 6) = dt * Eigen::Matrix<scalar_t, 12, 12>::Identity();
 
   const auto& model = pinocchioInterface_.getModel();
   auto& data = pinocchioInterface_.getData();
@@ -95,23 +91,23 @@ vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration
     for (int i1 = 0; i1 < eeVel.size(); ++i1) {
         std::cout<<eeVel[i1]<<std::endl;
     }
-  Eigen::Matrix<scalar_t, 18, 18> q = Eigen::Matrix<scalar_t, 18, 18>::Identity();
+  Eigen::Matrix<scalar_t, 12, 12> q = Eigen::Matrix<scalar_t, 12, 12>::Identity();
   q.block(0, 0, 3, 3) = q_.block(0, 0, 3, 3) * imuProcessNoisePosition_;
   q.block(3, 3, 3, 3) = q_.block(3, 3, 3, 3) * imuProcessNoiseVelocity_;
-  q.block(6, 6, 12, 12) = q_.block(6, 6, 12, 12) * footProcessNoisePosition_;
+  q.block(6, 6, 6, 6) = q_.block(6, 6, 6, 6) * footProcessNoisePosition_;
 
-  Eigen::Matrix<scalar_t, 28, 28> r = Eigen::Matrix<scalar_t, 28, 28>::Identity();
-  r.block(0, 0, 12, 12) = r_.block(0, 0, 12, 12) * footSensorNoisePosition_;
-  r.block(12, 12, 12, 12) = r_.block(12, 12, 12, 12) * footSensorNoiseVelocity_;
-  r.block(24, 24, 4, 4) = r_.block(24, 24, 4, 4) * footHeightSensorNoise_;
+  Eigen::Matrix<scalar_t, 14, 14> r = Eigen::Matrix<scalar_t, 14, 14>::Identity();
+  r.block(0, 0, 6, 6) = r_.block(0, 0, 6, 6) * footSensorNoisePosition_;
+  r.block(6, 6, 6, 6) = r_.block(6, 6, 6, 6) * footSensorNoiseVelocity_;
+  r.block(12, 12, 2, 2) = r_.block(12, 12, 2, 2) * footHeightSensorNoise_;
 
-  for (int i = 0; i < 4; i++) {
+  for (int i = 0; i < 2; i++) {
     int i1 = 3 * i;
 
     int qIndex = 6 + i1;
     int rIndex1 = i1;
-    int rIndex2 = 12 + i1;
-    int rIndex3 = 24 + i;
+    int rIndex2 = 6 + i1;
+    int rIndex3 = 12 + i;
     bool isContact = contactFlag_[i];
 
     scalar_t high_suspect_number(100);
@@ -128,28 +124,28 @@ vector_t KalmanFilterEstimate::update(const ros::Time& time, const ros::Duration
   vector3_t g(0, 0, -9.81);
   vector3_t accel = getRotationMatrixFromZyxEulerAngles(quatToZyx(quat_)) * linearAccelLocal_ + g;
 
-  Eigen::Matrix<scalar_t, 28, 1> y;
+  Eigen::Matrix<scalar_t, 14, 1> y;
   y << ps_, vs_, feetHeights_;
   xHat_ = a_ * xHat_ + b_ * accel;
-  Eigen::Matrix<scalar_t, 18, 18> at = a_.transpose();
-  Eigen::Matrix<scalar_t, 18, 18> pm = a_ * p_ * at + q;
-  Eigen::Matrix<scalar_t, 18, 28> cT = c_.transpose();
-  Eigen::Matrix<scalar_t, 28, 1> yModel = c_ * xHat_;
-  Eigen::Matrix<scalar_t, 28, 1> ey = y - yModel;
-  Eigen::Matrix<scalar_t, 28, 28> s = c_ * pm * cT + r;
+  Eigen::Matrix<scalar_t, 12, 12> at = a_.transpose();
+  Eigen::Matrix<scalar_t, 12, 12> pm = a_ * p_ * at + q;
+  Eigen::Matrix<scalar_t, 12, 14> cT = c_.transpose(); //////////////////////////////////////////////**////////////////////////////////////////
+  Eigen::Matrix<scalar_t, 14, 1> yModel = c_ * xHat_;
+  Eigen::Matrix<scalar_t, 14, 1> ey = y - yModel;
+  Eigen::Matrix<scalar_t, 14, 14> s = c_ * pm * cT + r;
 
-  Eigen::Matrix<scalar_t, 28, 1> sEy = s.lu().solve(ey);
+  Eigen::Matrix<scalar_t, 14, 1> sEy = s.lu().solve(ey);
   xHat_ += pm * cT * sEy;
 
-  Eigen::Matrix<scalar_t, 28, 18> sC = s.lu().solve(c_);
-  p_ = (Eigen::Matrix<scalar_t, 18, 18>::Identity() - pm * cT * sC) * pm;
+  Eigen::Matrix<scalar_t, 14, 12> sC = s.lu().solve(c_);
+  p_ = (Eigen::Matrix<scalar_t, 12, 12>::Identity() - pm * cT * sC) * pm;
 
-  Eigen::Matrix<scalar_t, 18, 18> pt = p_.transpose();
+  Eigen::Matrix<scalar_t, 12, 12> pt = p_.transpose();
   p_ = (p_ + pt) / 2.0;
 
   if (p_.block(0, 0, 2, 2).determinant() > 0.000001) {
-    p_.block(0, 2, 2, 16).setZero();
-    p_.block(2, 0, 16, 2).setZero();
+    p_.block(0, 2, 2, 10).setZero();
+    p_.block(2, 0, 10, 2).setZero();
     p_.block(0, 0, 2, 2) /= 10.;
   }
 
