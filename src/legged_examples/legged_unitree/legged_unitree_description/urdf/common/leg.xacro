@@ -32,6 +32,17 @@
                         iyy="0.01391" iyz="0.0"
                         izz="0.01355"/>
             </inertial>
+            <collision>
+            <xacro:if value="${(mirror == True)}">
+                <origin rpy="0 ${HipRz_ry_offset} 0" xyz="${HipRz_x_offset} ${HipRz_y_offset} ${HipRz_z_offset}"/>
+            </xacro:if>
+            <xacro:unless value="${(mirror == False)}">
+                <origin rpy="0 ${HipRz_ry_offset} 0" xyz="${HipRz_x_offset} ${HipRz_y_offset} ${HipRz_z_offset}"/>
+            </xacro:unless>
+                <geometry>
+                    <cylinder length="${HipRz_length}" radius="${HipRz_radius}"/>
+                </geometry>
+            </collision>
         </link>
 
         <joint name="${prefix}_JHipRx" type="revolute">

@@ -120,6 +120,13 @@
       <mass value="0.30"/>
       <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
     </inertial>
+    <collision>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.04"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="L_JHipRx" type="revolute">
     <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>
@@ -367,6 +374,12 @@
       <mass value="0.30"/>
       <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
     </inertial>
+    <collision>
+      <origin rpy="0 1.57 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder length="0.05" radius="0.04"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="R_JHipRx" type="revolute">
     <origin rpy="0 0 0" xyz="-0.041 0.0 -0.0885"/>

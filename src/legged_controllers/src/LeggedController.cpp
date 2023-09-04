@@ -91,11 +91,12 @@ void LeggedController::starting(const ros::Time& time) {
   currentObservation_.state.setZero(leggedInterface_->getCentroidalModelInfo().stateDim);
 
 //    std::cout<<"leggedInterface_->getCentroidalModelInfo().stateDim"<<leggedInterface_->getCentroidalModelInfo().stateDim<<std::endl;
-//    std::cout<<"0currentObservation_.state"<<currentObservation_.state<<std::endl;
+    std::cout<<"before StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
+    std::cout<<"before StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
 
   updateStateEstimation(time, ros::Duration(0.002));
-//    std::cout<<"1currentObservation_.state.size"<<currentObservation_.state.size()<<std::endl;
-//    std::cout<<"1currentObservation_.state"<<currentObservation_.state<<std::endl;
+    std::cout<<"after StateEstimation currentObservation_: size"<<currentObservation_.state.size()<<std::endl;
+    std::cout<<"after StateEstimation currentObservation_"<<std::endl<<currentObservation_.state<<std::endl;
   currentObservation_.input.setZero(leggedInterface_->getCentroidalModelInfo().inputDim);
   currentObservation_.mode = ModeNumber::STANCE;
   TargetTrajectories target_trajectories({currentObservation_.time}, {currentObservation_.state}, {currentObservation_.input});
@@ -163,8 +164,8 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 
 void LeggedController::updateStateEstimation(const ros::Time& time, const ros::Duration& period) {
   vector_t jointPos(hybridJointHandles_.size()), jointVel(hybridJointHandles_.size());
-  std::cout<<"---- updateStateEstimation ----"<<std::endl;
-  std::cout<<"hybridJointHandles_.size() "<< hybridJointHandles_.size()<<std::endl;
+//  std::cout<<"---- updateStateEstimation ----"<<std::endl;
+//  std::cout<<"hybridJointHandles_.size() "<< hybridJointHandles_.size()<<std::endl;
   contact_flag_t contacts;
   Eigen::Quaternion<scalar_t> quat;
   contact_flag_t contactFlag;
@@ -175,21 +176,31 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     jointPos(i) = hybridJointHandles_[i].getPosition();
     jointVel(i) = hybridJointHandles_[i].getVelocity();
   }
-    std::cout<<"jointPos "<<std::endl<< jointPos<<std::endl;
-    std::cout<<"jointVel "<<std::endl<< jointVel<<std::endl;
-    std::cout<<"contactFlag "<<std::endl;
+    std::cout<<"jointPos "<<std::endl<< jointPos.size()<<std::endl;
+    std::cout<<jointPos<<std::endl;
+    std::cout<<"jointVel "<<std::endl<< jointVel.size()<<std::endl;
+    std::cout<<jointVel<<std::endl;
+//    std::cout<<"contactFlag "<<std::endl;
   for (size_t i = 0; i < contacts.size(); ++i) {
     contactFlag[i] = contactHandles_[i].isContact();
-      std::cout<<contactFlag[i] <<std::endl;
+//      std::cout<<contactFlag[i] <<std::endl;
   }
 
+    std::cout<<"Imu get Orientation"<<std::endl;
   for (size_t i = 0; i < 4; ++i) {
     quat.coeffs()(i) = imuSensorHandle_.getOrientation()[i];
+    std::cout<<imuSensorHandle_.getOrientation()[i]<<std::endl;
   }
+    std::cout<<"Imu get AngularVelocity"<<std::endl;
   for (size_t i = 0; i < 3; ++i) {
     angularVel(i) = imuSensorHandle_.getAngularVelocity()[i];
-    linearAccel(i) = imuSensorHandle_.getLinearAcceleration()[i];
+      std::cout<<imuSensorHandle_.getAngularVelocity()[i]<<std::endl;
   }
+    std::cout<<"Imu get LinearAcceleration"<<std::endl;
+    for (size_t i = 0; i < 3; ++i) {
+        linearAccel(i) = imuSensorHandle_.getLinearAcceleration()[i];
+        std::cout<<imuSensorHandle_.getLinearAcceleration()[i]<<std::endl;
+    }
   for (size_t i = 0; i < 9; ++i) {
     orientationCovariance(i) = imuSensorHandle_.getOrientationCovariance()[i];
     angularVelCovariance(i) = imuSensorHandle_.getAngularVelocityCovariance()[i];
@@ -200,12 +211,17 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
   stateEstimate_->updateContact(contactFlag);
   stateEstimate_->updateImu(quat, angularVel, linearAccel, orientationCovariance, angularVelCovariance, linearAccelCovariance);
   measuredRbdState_ = stateEstimate_->update(time, period);
+//  std::cout<<"time: "<<time<<std::endl;
+//  std::cout<<"period: "<<period<<std::endl;
+  std::cout<<"measuredRbdState_ size "<<measuredRbdState_.size()<<std::endl;
+  std::cout<<measuredRbdState_<<std::endl;
   currentObservation_.time += period.toSec();
   scalar_t yawLast = currentObservation_.state(9);
-  std::cout<<"measuredRbdState_： "<<std::endl<<measuredRbdState_<<std::endl;
+//  std::cout<<"measuredRbdState_.size： "<<std::endl<<measuredRbdState_.size()<<std::endl;
   currentObservation_.state = rbdConversions_->computeCentroidalStateFromRbdModel(measuredRbdState_);
   currentObservation_.state(9) = yawLast + angles::shortest_angular_distance(yawLast, currentObservation_.state(9));
   currentObservation_.mode = stateEstimate_->getMode();
+  std::cout<<"currentObservation_.state"<<std::endl<<currentObservation_.state<<std::endl;
 }
 
 LeggedController::~LeggedController() {
@@ -227,7 +243,7 @@ void LeggedController::setupLeggedInterface(const std::string& taskFile, const s
                                             bool verbose) {
 
   leggedInterface_ = std::make_shared<LeggedInterface>(taskFile, urdfFile, referenceFile);
-    std::cout<<"-------------setupLeggedInterface------------------------------"<<std::endl;
+//    std::cout<<"-------------setupLeggedInterface------------------------------"<<std::endl;
 
   leggedInterface_->setupOptimalControlProblem(taskFile, urdfFile, referenceFile, verbose);
 
