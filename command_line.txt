@@ -1,3 +1,5 @@
+/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_sqp/ocs2_sqp/src/SqpSolver.cpp
+
 source ./devel/setup.bash
 export ROBOT_TYPE=a1
 roslaunch legged_unitree_description empty_world.launch
@@ -21,6 +23,7 @@ catkin build legged_gazebo
 catkin build ocs2_legged_robot_ros ocs2_self_collision_visualization
 catkin build legged_controllers legged_unitree_description
 
+
 source ~/Desktop/legged_control_zidong/devel/setup.bash
 rosrun xacro xacro robot.xacro -o robot.urdf
 roslaunch urdf_tutorial display.launch model:=robot.urdf
@@ -28,13 +31,474 @@ roslaunch urdf_tutorial display.launch model:=robot.urdf
 
 cd /home/taizun/Desktop/legged_control_zidong/src/legged_examples/legged_unitree/legged_unitree_description/urdf
 
-LeggedController.cpp
-    mpcMrtInterface_->advanceMpc();
-        controllerIsUpdated = mpc_.run(currentObservation.time, currentObservation.state);
 
 
-Eigen::Matrix<scalar_t, 12, 12> q = Eigen::Matrix<scalar_t, 12, 12>::Identity();
+initTime: 1.781
+finalTime: 2.781
+eventTimes: 
+0.5
+1.5
+2.5
+3.5
+4.5
+timeDiscretization  69
+1.781
+1.796
+1.811
+1.826
+1.841
+1.856
+1.871
+1.886
+1.901
+1.916
+1.931
+1.946
+1.961
+1.976
+1.991
+2.006
+2.021
+2.036
+2.051
+2.066
+2.081
+2.096
+2.111
+2.126
+2.141
+2.156
+2.171
+2.186
+2.201
+2.216
+2.231
+2.246
+2.261
+2.276
+2.291
+2.306
+2.321
+2.336
+2.351
+2.366
+2.381
+2.396
+2.411
+2.426
+2.441
+2.456
+2.471
+2.486
+2.5
+2.5
+2.515
+2.53
+2.545
+2.56
+2.575
+2.59
+2.605
+2.62
+2.635
+2.65
+2.665
+2.68
+2.695
+2.71
+2.725
+2.74
+2.755
+2.77
+2.781
+
+SQP iteration: 0
+delta_x0.size 
+28
+delta_x0[0]0.00777294
+delta_x0[1]0.101831
+delta_x0[2]0.0901756
+delta_x0[3]-0.0228338
+delta_x0[4]0.0394401
+delta_x0[5]-0.016332
+delta_x0[6]-0.0384348
+delta_x0[7]0.0982826
+delta_x0[8]0.0292869
+delta_x0[9]-0.140214
+delta_x0[10]0.138983
+delta_x0[11]-0.102187
+delta_x0[12]-0.245261
+delta_x0[13]-0.000999638
+delta_x0[14]-0.122623
+delta_x0[15]-0.271268
+delta_x0[16]0.000289663
+delta_x0[17]-0.000492769
+delta_x0[18]0.00112468
+delta_x0[19]0.00166012
+delta_x0[20]-0.0419147
+delta_x0[21]-0.131442
+delta_x0[22]-0.168279
+delta_x0[23]-0.156685
+delta_x0[24]3.37379e-05
+delta_x0[25]-0.000661446
+delta_x0[26]-1.65525e-05
+delta_x0[27]7.18266e-05
+initState.size 
+28
+initState[0]-0.00299654
+initState[1]-0.000820938
+initState[2]0.00311488
+initState[3]9.87995e-05
+initState[4]-0.000121628
+initState[5]-9.76165e-05
+initState[6]-0.122386
+initState[7]0.0336624
+initState[8]0.428474
+initState[9]-0.00906592
+initState[10]-0.109929
+initState[11]-0.0236823
+initState[12]0.00264954
+initState[13]-0.0604413
+initState[14]-0.388298
+initState[15]1.39665
+initState[16]-0.897234
+initState[17]-0.00121451
+initState[18]0.0267493
+initState[19]-0.389315
+initState[20]1.40432
+initState[21]-0.903841
+initState[22]0.00219407
+initState[23]-9.94504e-05
+initState[24]0.000404625
+initState[25]-0.00436802
+initState[26]-0.000112948
+initState[27]0.000384451
+x[0].size 
+28
+x[0][0]-0.0107695
+x[0][1]-0.102652
+x[0][2]-0.0870607
+x[0][3]0.0229326
+x[0][4]-0.0395617
+x[0][5]0.0162344
+x[0][6]-0.0839516
+x[0][7]-0.0646202
+x[0][8]0.399187
+x[0][9]0.131149
+x[0][10]-0.248912
+x[0][11]0.0785047
+x[0][12]0.24791
+x[0][13]-0.0594417
+x[0][14]-0.265675
+x[0][15]1.66792
+x[0][16]-0.897524
+x[0][17]-0.000721736
+x[0][18]0.0256246
+x[0][19]-0.390976
+x[0][20]1.44624
+x[0][21]-0.772399
+x[0][22]0.170473
+x[0][23]0.156585
+x[0][24]0.000370887
+x[0][25]-0.00370658
+x[0][26]-9.63954e-05
+x[0][27]0.000312625
+
+
+
+ocpDefinitions_.size: 3
+targetTrajectories.timeTrajectory[0]0.002
+targetTrajectories.stateTrajectory[0]  0.00257752
+-0.000525601
+ 0.000851944
+ 5.74341e-05
+ 0.000387078
+ 3.13224e-06
+   -0.122734
+   0.0348759
+    0.431063
+   -0.008198
+  -0.0979327
+  -0.0221675
+  0.00128338
+  -0.0622311
+   -0.393819
+     1.39217
+   -0.899071
+-0.000594761
+   0.0249899
+   -0.394717
+      1.3984
+   -0.904712
+  0.00228359
+-5.30788e-05
+ 0.000207097
+ -0.00205996
+-6.09162e-05
+ 0.000193688
+targetTrajectories.inputTrajectory[0]0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+targetTrajectories.timeTrajectory[0]0.002
+targetTrajectories.stateTrajectory[0]  0.00257752
+-0.000525601
+ 0.000851944
+ 5.74341e-05
+ 0.000387078
+ 3.13224e-06
+   -0.122734
+   0.0348759
+    0.431063
+   -0.008198
+  -0.0979327
+  -0.0221675
+  0.00128338
+  -0.0622311
+   -0.393819
+     1.39217
+   -0.899071
+-0.000594761
+   0.0249899
+   -0.394717
+      1.3984
+   -0.904712
+  0.00228359
+-5.30788e-05
+ 0.000207097
+ -0.00205996
+-6.09162e-05
+ 0.000193688
+targetTrajectories.inputTrajectory[0]0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+targetTrajectories.timeTrajectory[0]0.002
+targetTrajectories.stateTrajectory[0]  0.00257752
+-0.000525601
+ 0.000851944
+ 5.74341e-05
+ 0.000387078
+ 3.13224e-06
+   -0.122734
+   0.0348759
+    0.431063
+   -0.008198
+  -0.0979327
+  -0.0221675
+  0.00128338
+  -0.0622311
+   -0.393819
+     1.39217
+   -0.899071
+-0.000594761
+   0.0249899
+   -0.394717
+      1.3984
+   -0.904712
+  0.00228359
+-5.30788e-05
+ 0.000207097
+ -0.00205996
+-6.09162e-05
+ 0.000193688
+targetTrajectories.inputTrajectory[0]0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+
+primalSolution_.timeTrajectory_.size : 70
+primalSolution_.timeTrajectory_[0]2.047
+primalSolution_.timeTrajectory_[1]2.062
+primalSolution_.timeTrajectory_[2]2.077
+primalSolution_.timeTrajectory_[3]2.092
+primalSolution_.timeTrajectory_[4]2.107
+primalSolution_.timeTrajectory_[5]2.122
+primalSolution_.timeTrajectory_[6]2.137
+primalSolution_.timeTrajectory_[7]2.152
+primalSolution_.timeTrajectory_[8]2.167
+primalSolution_.timeTrajectory_[9]2.182
+primalSolution_.timeTrajectory_[10]2.197
+primalSolution_.timeTrajectory_[11]2.212
+primalSolution_.timeTrajectory_[12]2.227
+primalSolution_.timeTrajectory_[13]2.242
+primalSolution_.timeTrajectory_[14]2.257
+primalSolution_.timeTrajectory_[15]2.272
+primalSolution_.timeTrajectory_[16]2.287
+primalSolution_.timeTrajectory_[17]2.302
+primalSolution_.timeTrajectory_[18]2.317
+primalSolution_.timeTrajectory_[19]2.332
+primalSolution_.timeTrajectory_[20]2.347
+primalSolution_.timeTrajectory_[21]2.362
+primalSolution_.timeTrajectory_[22]2.377
+primalSolution_.timeTrajectory_[23]2.392
+primalSolution_.timeTrajectory_[24]2.407
+primalSolution_.timeTrajectory_[25]2.422
+primalSolution_.timeTrajectory_[26]2.437
+primalSolution_.timeTrajectory_[27]2.452
+primalSolution_.timeTrajectory_[28]2.467
+primalSolution_.timeTrajectory_[29]2.482
+primalSolution_.timeTrajectory_[30]2.497
+primalSolution_.timeTrajectory_[31]2.5
+primalSolution_.timeTrajectory_[32]2.5
+primalSolution_.timeTrajectory_[33]2.515
+primalSolution_.timeTrajectory_[34]2.53
+primalSolution_.timeTrajectory_[35]2.545
+primalSolution_.timeTrajectory_[36]2.56
+primalSolution_.timeTrajectory_[37]2.575
+primalSolution_.timeTrajectory_[38]2.59
+primalSolution_.timeTrajectory_[39]2.605
+primalSolution_.timeTrajectory_[40]2.62
+primalSolution_.timeTrajectory_[41]2.635
+primalSolution_.timeTrajectory_[42]2.65
+primalSolution_.timeTrajectory_[43]2.665
+primalSolution_.timeTrajectory_[44]2.68
+primalSolution_.timeTrajectory_[45]2.695
+primalSolution_.timeTrajectory_[46]2.71
+primalSolution_.timeTrajectory_[47]2.725
+primalSolution_.timeTrajectory_[48]2.74
+primalSolution_.timeTrajectory_[49]2.755
+primalSolution_.timeTrajectory_[50]2.77
+primalSolution_.timeTrajectory_[51]2.785
+primalSolution_.timeTrajectory_[52]2.8
+primalSolution_.timeTrajectory_[53]2.815
+primalSolution_.timeTrajectory_[54]2.83
+primalSolution_.timeTrajectory_[55]2.845
+primalSolution_.timeTrajectory_[56]2.86
+primalSolution_.timeTrajectory_[57]2.875
+primalSolution_.timeTrajectory_[58]2.89
+primalSolution_.timeTrajectory_[59]2.905
+primalSolution_.timeTrajectory_[60]2.92
+primalSolution_.timeTrajectory_[61]2.935
+primalSolution_.timeTrajectory_[62]2.95
+primalSolution_.timeTrajectory_[63]2.965
+primalSolution_.timeTrajectory_[64]2.98
+primalSolution_.timeTrajectory_[65]2.995
+primalSolution_.timeTrajectory_[66]3.01
+primalSolution_.timeTrajectory_[67]3.025
+primalSolution_.timeTrajectory_[68]3.04
+primalSolution_.timeTrajectory_[69]3.047
 
 
 
 
+
+oldModeSchedule.eventTimes.size : 5
+oldModeSchedule.eventTimes[0]1.5
+oldModeSchedule.eventTimes[1]2.5
+oldModeSchedule.eventTimes[2]3.5
+oldModeSchedule.eventTimes[3]4.5
+oldModeSchedule.eventTimes[4]5.5
+newModeSchedule.eventTimes.size : 5
+newModeSchedule.eventTimes[0]1.5
+newModeSchedule.eventTimes[1]2.5
+newModeSchedule.eventTimes[2]3.5
+newModeSchedule.eventTimes[3]4.5
+newModeSchedule.eventTimes[4]5.5
+
+
+
+interpolateStateTill: 4.324
+interpolateInputTill: 4.31
+initTime: 3.336
+timeDiscretization[0].time3.336
+u[64]    -0.08465
+  -0.0321938
+     65.0192
+   -0.102821
+  -0.0636977
+     64.9136
+  -0.0160528
+   0.0139717
+  -0.0153476
+   0.0159961
+-2.21915e-08
+ 8.71291e-18
+-1.44244e-19
+  1.6688e-21
+  -0.0225874
+ -0.00511969
+  -0.0349982
+  0.00526554
+-1.58665e-08
+-8.38477e-18
+ 1.47409e-19
+ 4.99641e-22
+u[65]  -0.0664574
+  -0.0232887
+      65.027
+  -0.0795303
+  -0.0459816
+     64.9524
+   -0.010609
+  0.00948731
+  -0.0130569
+   0.0116895
+-5.25047e-08
+ 4.09713e-18
+ 4.18229e-19
+  5.4588e-21
+  -0.0240213
+ -0.00460261
+  -0.0304945
+  0.00536602
+-5.76405e-08
+-4.00371e-18
+-4.22027e-19
+ -2.2243e-21
+
+hasStateInputConstraints： 1
