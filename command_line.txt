@@ -1,0 +1,40 @@
+source ./devel/setup.bash
+export ROBOT_TYPE=a1
+roslaunch legged_unitree_description empty_world.launch
+
+
+
+source ./devel/setup.bash
+export ROBOT_TYPE=a1
+roslaunch legged_controllers load_controller.launch cheater:=false
+
+rosservice call /controller_manager/switch_controller "start_controllers: ['controllers/legged_controller']                   
+stop_controllers: ['']
+strictness: 0
+start_asap: false
+timeout: 0.0" 
+
+source ./devel/setup.bash
+~/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/clion.sh
+
+catkin build legged_gazebo
+catkin build ocs2_legged_robot_ros ocs2_self_collision_visualization
+catkin build legged_controllers legged_unitree_description
+
+source ~/Desktop/legged_control_zidong/devel/setup.bash
+rosrun xacro xacro robot.xacro -o robot.urdf
+roslaunch urdf_tutorial display.launch model:=robot.urdf
+
+
+cd /home/taizun/Desktop/legged_control_zidong/src/legged_examples/legged_unitree/legged_unitree_description/urdf
+
+LeggedController.cpp
+    mpcMrtInterface_->advanceMpc();
+        controllerIsUpdated = mpc_.run(currentObservation.time, currentObservation.state);
+
+
+Eigen::Matrix<scalar_t, 12, 12> q = Eigen::Matrix<scalar_t, 12, 12>::Identity();
+
+
+
+

@@ -134,16 +134,16 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 
   // Whole body control
   currentObservation_.input = optimizedInput;
-  std::cout<<"-------------- Whole body control start-----------------"<<std::endl;
-  std::cout<<"optimizedInput size "<<optimizedInput.size()<<std::endl;
-  std::cout<<optimizedInput<<std::endl;
-  std::cout<<"optimizedState size "<<optimizedState.size()<<std::endl;
-  std::cout<<optimizedState<<std::endl;
+//  std::cout<<"-------------- Whole body control start-----------------"<<std::endl;
+//  std::cout<<"optimizedInput size "<<optimizedInput.size()<<std::endl;
+//  std::cout<<optimizedInput<<std::endl;
+//  std::cout<<"optimizedState size "<<optimizedState.size()<<std::endl;
+//  std::cout<<optimizedState<<std::endl;
 
   wbcTimer_.startTimer();
   vector_t x = wbc_->update(optimizedState, optimizedInput, measuredRbdState_, plannedMode, period.toSec());
   wbcTimer_.endTimer();
-    std::cout<<"-------------- Whole body control end-----------------"<<std::endl;
+//    std::cout<<"-------------- Whole body control end-----------------"<<std::endl;
   vector_t torque = x.tail(16);
 
   vector_t posDes = centroidal_model::getJointAngles(optimizedState, leggedInterface_->getCentroidalModelInfo());
@@ -277,7 +277,7 @@ void LeggedController::setupMrt() {
   mpcMrtInterface_ = std::make_shared<MPC_MRT_Interface>(*mpc_);
   mpcMrtInterface_->initRollout(&leggedInterface_->getRollout());
   mpcTimer_.reset();
-
+    /**采用setThreadPriority设置一个新线程，一直循环执行advanceMpc**/
   controllerRunning_ = true;
   mpcThread_ = std::thread([&]() {
     while (controllerRunning_) {
