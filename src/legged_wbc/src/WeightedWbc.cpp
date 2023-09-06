@@ -10,7 +10,9 @@ namespace legged {
 
 vector_t WeightedWbc::update(const vector_t& stateDesired, const vector_t& inputDesired, const vector_t& rbdStateMeasured, size_t mode,
                              scalar_t period) {
-  WbcBase::update(stateDesired, inputDesired, rbdStateMeasured, mode, period);
+    std::cout<<"-------------   WeightedWbc::update  -------------"<<std::endl;
+
+    WbcBase::update(stateDesired, inputDesired, rbdStateMeasured, mode, period);
 
   // Constraints
   Task constraints = formulateConstraints();
@@ -44,7 +46,9 @@ vector_t WeightedWbc::update(const vector_t& stateDesired, const vector_t& input
   vector_t qpSol(getNumDecisionVars());
 
   qpProblem.getPrimalSolution(qpSol.data());
-  return qpSol;
+//    std::cout<<"qpSol.size: "<<qpSol.cols()<<"X"<<qpSol.rows()<<std::endl<<qpSol<<std::endl;
+
+    return qpSol;
 }
 
 Task WeightedWbc::formulateConstraints() {
