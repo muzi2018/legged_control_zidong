@@ -221,12 +221,25 @@ matrix_t LeggedInterface::initializeInputCostWeight(const std::string& taskFile,
   }
 
   matrix_t rTaskspace(info.inputDim, info.inputDim);
+
+
   loadData::loadEigenMatrix(taskFile, "R", rTaskspace);
+        std::cout<<rTaskspace<<std::endl;
   matrix_t r = rTaskspace;
   // Joint velocities
-  r.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) =
+//    std::cout<<"r: " <<r.rows()<<"X"<< r.cols()<<std::endl;
+//    std::cout<<"base2feetJac: " <<base2feetJac.rows()<<"X"<< base2feetJac.cols()<<std::endl;
+//    std::cout<<"totalContactDim: " <<totalContactDim<<std::endl;
+//    auto aa=rTaskspace.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum);
+//        std::cout<<"aa: " <<aa.size()<<std::endl;
+
+        r.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) =
       base2feetJac.transpose() * rTaskspace.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) *
       base2feetJac;
+
+        auto cc= base2feetJac.transpose() ;
+        std::cout<<"cc: " <<cc.rows()<<"X"<<cc.cols()<<std::endl;
+
   return r;
 }
 
@@ -238,11 +251,13 @@ std::unique_ptr<StateInputCost> LeggedInterface::getBaseTrackingCost(const std::
   matrix_t Q(info.stateDim, info.stateDim);
   loadData::loadEigenMatrix(taskFile, "Q", Q);
   matrix_t R = initializeInputCostWeight(taskFile, info);
-
-  if (verbose) {
+  std::cout<<"taskFile: "<<taskFile<<std::endl;
+  if (1) {
     std::cerr << "\n #### Base Tracking Cost Coefficients: ";
     std::cerr << "\n #### =============================================================================\n";
+    std::cerr << "Q.size:\n" << Q.size() << "\n";
     std::cerr << "Q:\n" << Q << "\n";
+    std::cerr << "R.size:\n" << R.size() << "\n";
     std::cerr << "R:\n" << R << "\n";
     std::cerr << " #### =============================================================================\n";
   }
