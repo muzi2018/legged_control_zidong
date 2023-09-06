@@ -213,32 +213,30 @@ matrix_t LeggedInterface::initializeInputCostWeight(const std::string& taskFile,
   pinocchio::computeJointJacobians(model, data, q);
   pinocchio::updateFramePlacements(model, data);
 
-  matrix_t base2feetJac(totalContactDim, info.actuatedDofNum);
+  matrix_t base2feetJac(totalContactDim, info.actuatedDofNum); ///6 X 16
   for (size_t i = 0; i < info.numThreeDofContacts; i++) {
     matrix_t jac = matrix_t::Zero(6, info.generalizedCoordinatesNum);
     pinocchio::getFrameJacobian(model, data, model.getBodyId(modelSettings_.contactNames3DoF[i]), pinocchio::LOCAL_WORLD_ALIGNED, jac);
     base2feetJac.block(3 * i, 0, 3, info.actuatedDofNum) = jac.block(0, 6, 3, info.actuatedDofNum);
   }
 
-  matrix_t rTaskspace(info.inputDim, info.inputDim);
-
-
-  loadData::loadEigenMatrix(taskFile, "R", rTaskspace);
+  matrix_t rTaskspace(info.inputDim, info.inputDim); /// 22 X 22
+  loadData::loadEigenMatrix(taskFile, "R", rTaskspace); /// R: 12 X 12
         std::cout<<rTaskspace<<std::endl;
   matrix_t r = rTaskspace;
   // Joint velocities
 //    std::cout<<"r: " <<r.rows()<<"X"<< r.cols()<<std::endl;
 //    std::cout<<"base2feetJac: " <<base2feetJac.rows()<<"X"<< base2feetJac.cols()<<std::endl;
 //    std::cout<<"totalContactDim: " <<totalContactDim<<std::endl;
+//    std::cout<<"base2feetJac: " <<base2feetJac.rows()<<"X"<< base2feetJac.cols()<<std::endl;
+//    std::cout<<"totalContactDim: " <<totalContactDim<<std::endl;
 //    auto aa=rTaskspace.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum);
 //        std::cout<<"aa: " <<aa.size()<<std::endl;
 
-        r.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) =
-      base2feetJac.transpose() * rTaskspace.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) *
+        r.block(totalContactDim, totalContactDim, info.actuatedDofNum, info.actuatedDofNum) = ///16 X 16
+      base2feetJac.transpose() * rTaskspace.block(totalContactDim, totalContactDim, totalContactDim, totalContactDim) *
       base2feetJac;
 
-        auto cc= base2feetJac.transpose() ;
-        std::cout<<"cc: " <<cc.rows()<<"X"<<cc.cols()<<std::endl;
 
   return r;
 }
@@ -251,8 +249,9 @@ std::unique_ptr<StateInputCost> LeggedInterface::getBaseTrackingCost(const std::
   matrix_t Q(info.stateDim, info.stateDim);
   loadData::loadEigenMatrix(taskFile, "Q", Q);
   matrix_t R = initializeInputCostWeight(taskFile, info);
-  std::cout<<"taskFile: "<<taskFile<<std::endl;
-  if (1) {
+//  std::cout<<"taskFile: "<<taskFile<<std::endl;
+  bool flag= true;
+  if (!flag) {
     std::cerr << "\n #### Base Tracking Cost Coefficients: ";
     std::cerr << "\n #### =============================================================================\n";
     std::cerr << "Q.size:\n" << Q.size() << "\n";
@@ -261,6 +260,13 @@ std::unique_ptr<StateInputCost> LeggedInterface::getBaseTrackingCost(const std::
     std::cerr << "R:\n" << R << "\n";
     std::cerr << " #### =============================================================================\n";
   }
+//    std::cout<<"------------ R  -----------------"<<std::endl;
+//    std::cout<<R.row(1)<<std::endl;
+//    std::cout<<R.row(2)<<std::endl;
+//    std::cout<<R.row(3)<<std::endl;
+//    std::cout<<R.row(4)<<std::endl;
+//    std::cout<<R.row(5)<<std::endl;
+//    std::cout<<R.row(6)<<std::endl;
 
   return std::make_unique<LeggedRobotStateInputQuadraticCost>(std::move(Q), std::move(R), info, *referenceManagerPtr_);
 }
