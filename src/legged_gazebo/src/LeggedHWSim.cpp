@@ -111,10 +111,12 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
     imu.linearAcc_[1] = accel.Y();
     imu.linearAcc_[2] = accel.Z();
   }
-
+    int i=0;
   // Contact Sensor
   for (auto& state : name2contact_) {
     state.second = false;
+    std::cout<<"Contact_"<<"["<<i<<"]="<<state.first<<std::endl;
+    i++;
   }
   for (const auto& contact : contactManager_->GetContacts()) {
     if (static_cast<uint32_t>(contact->time.sec) != (time - period).sec ||
@@ -122,13 +124,18 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
       continue;
     }
     std::string linkName = contact->collision1->GetLink()->GetName();
+    std::cout<<"collision1 linkName: "<<linkName<<std::endl;
+
     if (name2contact_.find(linkName) != name2contact_.end()) {
       name2contact_[linkName] = true;
     }
     linkName = contact->collision2->GetLink()->GetName();
-    if (name2contact_.find(linkName) != name2contact_.end()) {
+      std::cout<<"collision2 linkName: "<<linkName<<std::endl;
+
+      if (name2contact_.find(linkName) != name2contact_.end()) {
       name2contact_[linkName] = true;
     }
+
   }
 
   // Set cmd to zero to avoid crazy soft limit oscillation when not controller loaded

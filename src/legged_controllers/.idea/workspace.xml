@@ -86,29 +86,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../legged_gazebo/src/.idea/src.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/.idea/automatic_differentation.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/.idea/ocs2_centroidal_model.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/.idea/ocs2_legged_robot.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/task.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/cache-v2-711c47fedf2fdebc8f25.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-7f5449daa602f65acc1b.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-8b9d3c05c0596a39a7f8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-34-26-0233.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-8b4a679e91c567ad81c8.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-da4d0484eb7a71bd6e82.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-d4c34a6f09068958ebb1.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/cmake-build-debug/compile_commands.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/include/legged_estimation/LinearKalmanFilter.h" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/include/legged_estimation/LinearKalmanFilter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_estimation/src/LinearKalmanFilter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/ModelSettings.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/ModelSettings.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/Types.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/gait/MotionPhaseDefinition.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/gait/MotionPhaseDefinition.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/CppAdInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/CppAdInterface.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/src/PinocchioCentroidalDynamicsAD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/src/PinocchioCentroidalDynamicsAD.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/config/mpc/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/config/mpc/task.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -598,7 +590,7 @@
       <workItem from="1693965297669" duration="8518000" />
       <workItem from="1694053910616" duration="5261000" />
       <workItem from="1694065975666" duration="1249000" />
-      <workItem from="1694070030279" duration="613000" />
+      <workItem from="1694070030279" duration="2165000" />
     </task>
     <servers />
   </component>

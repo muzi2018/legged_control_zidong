@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: ocs2_legged_robot
+Description: Description of ocs2_legged_robot
+Version: 0.0.1
+Cflags: -I${prefix}/include -I/usr/include/eigen3 -I/usr/include -I/opt/openrobots/lib/pkgconfig/../../include -I/opt/openrobots/include
+Libs: -L${prefix}/lib -locs2_legged_robot /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0 /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0 -lpinocchio -lboost_filesystem -lboost_serialization -lboost_system -lurdfdom_sensor -lurdfdom_model_state -lurdfdom_model -lurdfdom_world -lconsole_bridge -lhpp-fcl -loctomap -loctomath
+Requires: ocs2_core ocs2_oc ocs2_ddp ocs2_mpc ocs2_sqp ocs2_ipm ocs2_robotic_tools ocs2_pinocchio_interface ocs2_centroidal_model ocs2_robotic_assets

@@ -239,18 +239,18 @@ R
   (11,11)   1.0       ; right_h_foot_force
 
   ;; foot velocity relative to base: [LF, LH, RF, RH] (uses the Jacobian at nominal configuration) ;;
-  (6,6) 50.0    ; x
-  (7,7) 50.0    ; y
-  (8,8) 50.0    ; z
-  (9,9) 50.0    ; x
-  (10,10) 50.0    ; y
-  (11,11) 50.0    ; z
   (12,12) 50.0    ; x
   (13,13) 50.0    ; y
   (14,14) 50.0    ; z
   (15,15) 50.0    ; x
   (16,16) 50.0    ; y
   (17,17) 50.0    ; z
+  (18,18) 50.0    ; x
+  (19,19) 50.0    ; y
+  (20,20) 50.0    ; z
+  (21,21) 50.0    ; x
+  (22,22) 50.0    ; y
+  (23,23) 50.0    ; z
 }
 
 frictionConeSoftConstraint

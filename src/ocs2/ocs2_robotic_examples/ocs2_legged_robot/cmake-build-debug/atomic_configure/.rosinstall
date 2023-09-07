@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/devel/setup.sh

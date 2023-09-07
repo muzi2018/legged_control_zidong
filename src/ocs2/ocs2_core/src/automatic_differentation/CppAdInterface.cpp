@@ -70,24 +70,39 @@ CppAdInterface::CppAdInterface(const CppAdInterface& rhs)
 /******************************************************************************************************/
 void CppAdInterface::createModels(ApproximationOrder approximationOrder, bool verbose) {
   createFolderStructure();
-
+    std::cout<<"---- createModels ----"<<std::endl;
   // set and declare independent variables and start tape recording
   ad_vector_t xp(variableDim_ + parameterDim_);
   xp.setOnes();  // Ones are better than zero, to prevent devision by zero in taping
   CppAD::Independent(xp);
+        std::cout<<"---- variableDim_ ----"<<variableDim_<<std::endl;
+        std::cout<<"---- parameterDim_ ----"<<parameterDim_<<std::endl;
 
   // Split in variables and parameters
   ad_vector_t x = xp.segment(0, variableDim_);
-  ad_vector_t p = xp.segment(variableDim_, parameterDim_);
-  // dependent variable vector
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        ad_vector_t p = xp.segment(variableDim_, parameterDim_);
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        // dependent variable vector
   ad_vector_t y;
-  // the model equation
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        // the model equation
   adFunction_(x, p, y);
-  rangeDim_ = y.rows();
-  // create f: xp -> y and stop tape recording
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        rangeDim_ = y.rows();
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        // create f: xp -> y and stop tape recording
   ad_fun_t fun(xp, y);
-  // Optimize the operation sequence
+        std::cout<<"---- createModels ----"<<std::endl;
+
+        // Optimize the operation sequence
   fun.optimize();
+        std::cout<<"---- createModels ----"<<std::endl;
 
   // generates source code
   CppAD::cg::ModelCSourceGen<scalar_t> sourceGen(fun, modelName_);
@@ -98,6 +113,7 @@ void CppAdInterface::createModels(ApproximationOrder approximationOrder, bool ve
   CppAD::cg::GccCompiler<scalar_t> gccCompiler;
   CppAD::cg::DynamicModelLibraryProcessor<scalar_t> libraryProcessor(libraryCSourceGen, libraryName_ + tmpName_);
   setCompilerOptions(gccCompiler);
+        std::cout<<"---- createModels ----"<<std::endl;
 
   if (verbose) {
     std::cerr << "[CppAdInterface] Compiling Shared Library: "
@@ -109,6 +125,7 @@ void CppAdInterface::createModels(ApproximationOrder approximationOrder, bool ve
   model_ = dynamicLib_->model(modelName_);
 
   setSparsityNonzeros();
+        std::cout<<"---- createModels ----"<<std::endl;
 
   // Rename generated library after loading
   if (verbose) {
@@ -117,7 +134,9 @@ void CppAdInterface::createModels(ApproximationOrder approximationOrder, bool ve
   }
   boost::filesystem::rename(libraryName_ + tmpName_ + CppAD::cg::system::SystemInfo<>::DYNAMIC_LIB_EXTENSION,
                             libraryName_ + CppAD::cg::system::SystemInfo<>::DYNAMIC_LIB_EXTENSION);
-}
+        std::cout<<"---- createModels ----"<<std::endl;
+
+    }
 
 /******************************************************************************************************/
 /******************************************************************************************************/

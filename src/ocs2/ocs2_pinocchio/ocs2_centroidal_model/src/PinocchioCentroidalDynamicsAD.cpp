@@ -52,15 +52,18 @@ PinocchioCentroidalDynamicsAD::PinocchioCentroidalDynamicsAD(const PinocchioInte
     ad_vector_t input = x.tail(info.inputDim);
     y = getValueCppAd(pinocchioInterfaceCppAd, mappingCppAd, state, input);
   };
-
+std::cout<<"----    PinocchioCentroidalDynamicsAD    ----"<<std::endl;
   systemFlowMapCppAdInterfacePtr_.reset(
       new CppAdInterface(systemFlowMapFunc, info.stateDim + info.inputDim, modelName + "_systemFlowMap", modelFolder));
+        std::cout<<"----    PinocchioCentroidalDynamicsAD    ----"<<std::endl;
 
   if (recompileLibraries) {
     systemFlowMapCppAdInterfacePtr_->createModels(CppAdInterface::ApproximationOrder::First, verbose);
   } else {
     systemFlowMapCppAdInterfacePtr_->loadModelsIfAvailable(CppAdInterface::ApproximationOrder::First, verbose);
   }
+        std::cout<<"----    PinocchioCentroidalDynamicsAD    ----"<<std::endl;
+
 }
 
 /******************************************************************************************************/

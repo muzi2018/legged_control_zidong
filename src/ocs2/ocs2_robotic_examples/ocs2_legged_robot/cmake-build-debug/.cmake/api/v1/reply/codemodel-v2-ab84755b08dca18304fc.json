@@ -1,0 +1,316 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-b3336e164455f7dc25fb.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0.2"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"build" : "gtest",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-gtest-Debug-40f9edd0af6c04d6f946.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.8"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "/usr/src/googletest"
+				},
+				{
+					"build" : "gtest/googlemock",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-gtest.googlemock-Debug-8fd0af86403c015b5fbc.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 2,
+					"source" : "/usr/src/googletest/googlemock",
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"build" : "gtest/googletest",
+					"jsonFile" : "directory-gtest.googletest-Debug-5804ba12edef54b53d36.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.6.4"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 3,
+					"source" : "/usr/src/googletest/googletest",
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "ocs2_legged_robot",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18
+					]
+				},
+				{
+					"childIndexes" : 
+					[
+						2
+					],
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "googletest-distribution",
+					"parentIndex" : 0
+				},
+				{
+					"childIndexes" : 
+					[
+						3
+					],
+					"directoryIndexes" : 
+					[
+						2
+					],
+					"name" : "gmock",
+					"parentIndex" : 1,
+					"targetIndexes" : 
+					[
+						8,
+						9
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "gtest",
+					"parentIndex" : 2,
+					"targetIndexes" : 
+					[
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_catkin_empty_exported_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_catkin_empty_exported_target-Debug-87e9dec26c19230c2ef4.json",
+					"name" : "_catkin_empty_exported_target",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_ocs2_legged_robot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_ocs2_legged_robot-Debug-c7b35dbddc1f7b4ef210.json",
+					"name" : "_run_tests_ocs2_legged_robot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_ocs2_legged_robot_gtest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_ocs2_legged_robot_gtest-Debug-0351c69c369078d5b3e2.json",
+					"name" : "_run_tests_ocs2_legged_robot_gtest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "_run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test-Debug-68e7b490f7cd31e17f6d.json",
+					"name" : "_run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_test_results::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_test_results-Debug-6f569f92cd6a4b9cbeab.json",
+					"name" : "clean_test_results",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_test_results_ocs2_legged_robot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_test_results_ocs2_legged_robot-Debug-60c2d0de3c332b9c5a89.json",
+					"name" : "clean_test_results_ocs2_legged_robot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "download_extra_data::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-download_extra_data-Debug-f647b9946d979ae06c91.json",
+					"name" : "download_extra_data",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "doxygen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-doxygen-Debug-e046bf8c68a412777a1e.json",
+					"name" : "doxygen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock-Debug-86d17e011c8f966aaa3b.json",
+					"name" : "gmock",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gmock_main::@e3f94eedc5dc07131386",
+					"jsonFile" : "target-gmock_main-Debug-98b12d9339675f50a17c.json",
+					"name" : "gmock_main",
+					"projectIndex" : 2
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest-Debug-8d88f64a527c15a189d7.json",
+					"name" : "gtest",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "gtest_main::@b738d542747fbb7ea6e3",
+					"jsonFile" : "target-gtest_main-Debug-7bfd1f573e877dda8f8e.json",
+					"name" : "gtest_main",
+					"projectIndex" : 3
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ocs2_legged_robot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ocs2_legged_robot-Debug-84624f2e5d29b44cdff6.json",
+					"name" : "ocs2_legged_robot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ocs2_legged_robot_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ocs2_legged_robot_test-Debug-3cfd2a5312dac37fe51b.json",
+					"name" : "ocs2_legged_robot_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests-Debug-f9cfb25cd3b1e92b670b.json",
+					"name" : "run_tests",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_ocs2_legged_robot::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_ocs2_legged_robot-Debug-833590ec31aa3c8510b4.json",
+					"name" : "run_tests_ocs2_legged_robot",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_ocs2_legged_robot_gtest::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_ocs2_legged_robot_gtest-Debug-644ad100a310a62feb5f.json",
+					"name" : "run_tests_ocs2_legged_robot_gtest",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test-Debug-0c912db9140a63be463c.json",
+					"name" : "run_tests_ocs2_legged_robot_gtest_ocs2_legged_robot_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tests::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tests-Debug-304d1c28a06709816ddf.json",
+					"name" : "tests",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug",
+		"source" : "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

@@ -44,31 +44,40 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
 //        std::cout<<"contact name :"<<name<<std::endl;
 //    }
   setupLeggedInterface(taskFile, urdfFile, referenceFile, verbose);
+  std::cout<<"setupMpc"<<std::endl;
   setupMpc();
+    std::cout<<"setupMrt"<<std::endl;
 
   setupMrt();
   // Visualization
-  ros::NodeHandle nh;
+    std::cout<<"Visualization"<<std::endl;
+
+    ros::NodeHandle nh;
   CentroidalModelPinocchioMapping pinocchioMapping(leggedInterface_->getCentroidalModelInfo());
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"eeKinematicsPtr_"<<std::endl;
 
     eeKinematicsPtr_ = std::make_shared<PinocchioEndEffectorKinematics>(leggedInterface_->getPinocchioInterface(), pinocchioMapping,
                                                                       leggedInterface_->modelSettings().contactNames3DoF);
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"LeggedRobotVisualizer"<<std::endl;
 
     robotVisualizer_ = std::make_shared<LeggedRobotVisualizer>(leggedInterface_->getPinocchioInterface(),
                                                              leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_, nh);
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"LeggedSelfCollisionVisualization"<<std::endl;
 
     selfCollisionVisualization_.reset(new LeggedSelfCollisionVisualization(leggedInterface_->getPinocchioInterface(),
                                                                          leggedInterface_->getGeometryInterface(), pinocchioMapping, nh));
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"hybridJointInterface"<<std::endl;
 
     // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();
   std::vector<std::string> joint_names{"R_JHipRz", "R_JHipRx", "R_JThigh", "R_JKnee", "R_JAnkle", "L_JHipRz",
                                        "L_JHipRx", "L_JThigh", "L_JKnee", "L_JAnkle", "R_JShoulderRx", "R_JUpperArm",
                                        "R_JForeArm","L_JShoulderRx", "L_JUpperArm", "L_JForeArm"};
+    std::cout<<"joint_name"<<std::endl;
 
   for (const auto& joint_name : joint_names) {
     hybridJointHandles_.push_back(hybridJointInterface->getHandle(joint_name));
@@ -78,20 +87,25 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
     contactHandles_.push_back(contactInterface->getHandle(name));
   }
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"imuSensorHandle_"<<std::endl;
 
     imuSensorHandle_ = robot_hw->get<hardware_interface::ImuSensorInterface>()->getHandle("unitree_imu");
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"setupStateEstimate"<<std::endl;
 
   // State estimation
   setupStateEstimate(taskFile, verbose);
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"WeightedWbc"<<std::endl;
 
   // Whole body control
   wbc_ = std::make_shared<WeightedWbc>(leggedInterface_->getPinocchioInterface(), leggedInterface_->getCentroidalModelInfo(),
                                        *eeKinematicsPtr_);
+    std::cout<<"loadTasksSetting"<<std::endl;
 
     wbc_->loadTasksSetting(taskFile, verbose);
 //    std::cout<<"init finish"<<std::endl;
+    std::cout<<"safetyChecker_"<<std::endl;
 
   // Safety Checker
   safetyChecker_ = std::make_shared<SafetyChecker>(leggedInterface_->getCentroidalModelInfo());
@@ -303,13 +317,10 @@ LeggedController::~LeggedController() {
 
 void LeggedController::setupLeggedInterface(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                             bool verbose) {
-//      std::cout<<"updateStateEstimation start"<<std::endl;
 
   leggedInterface_ = std::make_shared<LeggedInterface>(taskFile, urdfFile, referenceFile);
-//    std::cout<<"-------------setupLeggedInterface------------------------------"<<std::endl;
 
   leggedInterface_->setupOptimalControlProblem(taskFile, urdfFile, referenceFile, verbose);
-//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
 }
 

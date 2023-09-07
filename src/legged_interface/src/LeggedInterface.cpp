@@ -72,6 +72,8 @@ LeggedInterface::LeggedInterface(const std::string& taskFile, const std::string&
   sqpSettings_ = sqp::loadSettings(taskFile, "sqp", verbose);
   ipmSettings_ = ipm::loadSettings(taskFile, "ipm", verbose);
   rolloutSettings_ = rollout::loadSettings(taskFile, "rollout", verbose);
+    std::cout << "LeggedInterface is end" << std::endl;
+
 }
 
 /******************************************************************************************************/
@@ -79,29 +81,41 @@ LeggedInterface::LeggedInterface(const std::string& taskFile, const std::string&
 /******************************************************************************************************/
 void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                                  bool verbose) {
-
+    std::cout<<"setupModel"<<std::endl;
   setupModel(taskFile, urdfFile, referenceFile, verbose);
+        std::cout<<"initialState_"<<std::endl;
 
   // Initial state
   initialState_.setZero(centroidalModelInfo_.stateDim);
+        std::cout<<"setupReferenceManager"<<std::endl;
 
   loadData::loadEigenMatrix(taskFile, "initialState", initialState_);
   setupReferenceManager(taskFile, urdfFile, referenceFile, verbose);
   // Optimal control problem
   problemPtr_ = std::make_unique<OptimalControlProblem>();
-  // Dynamics
-  std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
+        std::cout<<"SystemDynamicsBase"<<std::endl;
 
-  dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_, "dynamics", modelSettings_);
+        // Dynamics
+  std::unique_ptr<SystemDynamicsBase> dynamicsPtr;
+        std::cout<<"LeggedRobotDynamicsAD"<<std::endl;
+
+  dynamicsPtr = std::make_unique<LeggedRobotDynamicsAD>(*pinocchioInterfacePtr_, centroidalModelInfo_,
+                                                        "dynamics", modelSettings_);
+        std::cout<<"dynamicsPtr"<<std::endl;
+
   problemPtr_->dynamicsPtr = std::move(dynamicsPtr);
-  // Cost terms
+        std::cout<<"costPtr"<<std::endl;
+
+        // Cost terms
   problemPtr_->costPtr->add("baseTrackingCost", getBaseTrackingCost(taskFile, centroidalModelInfo_, verbose));
+        std::cout<<"frictionCoefficient"<<std::endl;
 
   // Constraint terms
   // friction cone settings
   scalar_t frictionCoefficient = 0.7;
   RelaxedBarrierPenalty::Config barrierPenaltyConfig;
   std::tie(frictionCoefficient, barrierPenaltyConfig) = loadFrictionConeSettings(taskFile, verbose);
+        std::cout<<"numThreeDofContacts"<<std::endl;
 
   for (size_t i = 0; i < centroidalModelInfo_.numThreeDofContacts; i++) {
     const std::string& footName = modelSettings_.contactNames3DoF[i];
@@ -120,6 +134,7 @@ void LeggedInterface::setupOptimalControlProblem(const std::string& taskFile, co
         footName + "_normalVelocity",
         std::unique_ptr<StateInputConstraint>(new NormalVelocityConstraintCppAd(*referenceManagerPtr_, *eeKinematicsPtr, i)));
   }
+        std::cout<<"stateSoftConstraintPtr"<<std::endl;
 
   // Self-collision avoidance constraint
   problemPtr_->stateSoftConstraintPtr->add("selfCollision",

@@ -1,0 +1,9 @@
+# CMake generated Testfile for 
+# Source directory: /home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot
+# Build directory: /home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug
+# 
+# This file includes the relevant testing commands required for 
+# testing this directory and lists subdirectories to be tested as well.
+add_test(_ctest_ocs2_legged_robot_gtest_ocs2_legged_robot_test "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/catkin_generated/env_cached.sh" "/usr/bin/python3" "/opt/ros/noetic/share/catkin/cmake/test/run_tests.py" "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/test_results/ocs2_legged_robot/gtest-ocs2_legged_robot_test.xml" "--return-code" "/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/devel/lib/ocs2_legged_robot/ocs2_legged_robot_test --gtest_output=xml:/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/test_results/ocs2_legged_robot/gtest-ocs2_legged_robot_test.xml")
+set_tests_properties(_ctest_ocs2_legged_robot_gtest_ocs2_legged_robot_test PROPERTIES  _BACKTRACE_TRIPLES "/opt/ros/noetic/share/catkin/cmake/test/tests.cmake;160;add_test;/opt/ros/noetic/share/catkin/cmake/test/gtest.cmake;98;catkin_run_tests_target;/opt/ros/noetic/share/catkin/cmake/test/gtest.cmake;37;_catkin_add_google_test;/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/CMakeLists.txt;149;catkin_add_gtest;/home/taizun/Desktop/legged_control_zidong/src/ocs2/ocs2_robotic_examples/ocs2_legged_robot/CMakeLists.txt;0;")
+subdirs("gtest")
