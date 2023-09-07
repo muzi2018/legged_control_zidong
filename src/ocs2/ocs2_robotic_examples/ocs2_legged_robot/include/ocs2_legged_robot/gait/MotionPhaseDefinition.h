@@ -46,11 +46,10 @@ namespace legged_robot {
 
 enum ModeNumber {  // {LF, RF, LH, RH}
   FLY = 0,
-  LF = 1,
-  RF = 2,
+  RF= 1,
+  LF = 2,
   STANCE = 3,
 };
-
 /******************************************************************************************************/
 /******************************************************************************************************/
 /******************************************************************************************************/
@@ -59,16 +58,16 @@ inline contact_flag_t modeNumber2StanceLeg(const size_t& modeNumber) {
 
   switch (modeNumber) {
     case 0:
-      stanceLegs = contact_flag_t{false, false};
+      stanceLegs = contact_flag_t{false, false,false, false};
       break;  // 0:  0-leg-stance
     case 1:
-      stanceLegs = contact_flag_t{false, true};
-      break;  // 1:  LF
+      stanceLegs = contact_flag_t{false, false, true, true};
+      break;  // 1:  RF
     case 2:
-      stanceLegs = contact_flag_t{true, false};
-      break;  // 2:  RF
+      stanceLegs = contact_flag_t{true, true,false, false};
+      break;  // 2:  LF
     case 3:
-      stanceLegs = contact_flag_t{true, true};
+      stanceLegs = contact_flag_t{true, true, true, true};
       break;  // 3: STANCE
   }
 
@@ -79,8 +78,14 @@ inline contact_flag_t modeNumber2StanceLeg(const size_t& modeNumber) {
 /******************************************************************************************************/
 /******************************************************************************************************/
 inline size_t stanceLeg2ModeNumber(const contact_flag_t& stanceLegs) {
-  return 1 * static_cast<size_t>(stanceLegs[1]) +
-         2 * static_cast<size_t>(stanceLegs[0]);
+  if( !stanceLegs[0] && !stanceLegs[1] && !stanceLegs[2] && !stanceLegs[3])
+    return 0;
+  else if( (stanceLegs[2] || stanceLegs[3]) && (!stanceLegs[0] && !stanceLegs[1]) )
+    return 1;
+  else if( (!stanceLegs[2] && !stanceLegs[3]) && (stanceLegs[0] || stanceLegs[1]) )
+    return 2;
+  else 
+    return 3;
 }
 
 /******************************************************************************************************/

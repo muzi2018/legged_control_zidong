@@ -225,12 +225,18 @@ R
   scaling 1e-3
 
   ;; Feet Contact Forces: [LF, RF, LH, RH] ;;
-  (0,0)   1.0       ; left_foot_force
-  (1,1)   1.0       ; left_foot_force
-  (2,2)   1.0       ; left_foot_force
-  (3,3)   1.0       ; right_foot_force
-  (4,4)   1.0       ; right_foot_force
-  (5,5)   1.0       ; right_foot_force
+  (0,0)   1.0       ; left_f_foot_force
+  (1,1)   1.0       ; left_f_foot_force
+  (2,2)   1.0       ; left_f_foot_force
+  (3,3)   1.0       ; left_h_foot_force
+  (4,4)   1.0       ; left_h_foot_force
+  (5,5)   1.0       ; left_h_foot_force
+  (6,6)   1.0       ; right_f_foot_force
+  (7,7)   1.0       ; right_f_foot_force
+  (8,8)   1.0       ; right_f_foot_force
+  (9,9)   1.0       ; right_h_foot_force
+  (10,10)   1.0       ; right_h_foot_force
+  (11,11)   1.0       ; right_h_foot_force
 
   ;; foot velocity relative to base: [LF, LH, RF, RH] (uses the Jacobian at nominal configuration) ;;
   (6,6) 50.0    ; x
@@ -239,6 +245,12 @@ R
   (9,9) 50.0    ; x
   (10,10) 50.0    ; y
   (11,11) 50.0    ; z
+  (12,12) 50.0    ; x
+  (13,13) 50.0    ; y
+  (14,14) 50.0    ; z
+  (15,15) 50.0    ; x
+  (16,16) 50.0    ; y
+  (17,17) 50.0    ; z
 }
 
 frictionConeSoftConstraint
