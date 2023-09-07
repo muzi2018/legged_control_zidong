@@ -1,5 +1,0 @@
-ocs2_robotic_assets
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_assets/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_assets/lib/pkgconfig/ocs2_robotic_assets.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_robotic_assets.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_assets/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_robotic_assets/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_robotic_assets/cmake/ocs2_robotic_assetsConfig-version.cmake

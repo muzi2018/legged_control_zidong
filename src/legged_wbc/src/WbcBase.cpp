@@ -28,6 +28,7 @@ WbcBase::WbcBase(const PinocchioInterface& pinocchioInterface, CentroidalModelIn
 
 vector_t WbcBase::update(const vector_t& stateDesired, const vector_t& inputDesired, const vector_t& rbdStateMeasured, size_t mode,
                          scalar_t /*period*/) {
+
   contactFlag_ = modeNumber2StanceLeg(mode);
   numContacts_ = 0;
   for (bool flag : contactFlag_) {
@@ -239,7 +240,7 @@ Task WbcBase::formulateContactForceTask(const vector_t& inputDesired) const {
 
 void WbcBase::loadTasksSetting(const std::string& taskFile, bool verbose) {
   // Load task file
-  torqueLimits_ = vector_t(info_.actuatedDofNum / 4);
+  torqueLimits_ = vector_t(info_.actuatedDofNum / 2); /// 16/2=8
   loadData::loadEigenMatrix(taskFile, "torqueLimitsTask", torqueLimits_);
   if (verbose) {
     std::cerr << "\n #### Torque Limits Task:";

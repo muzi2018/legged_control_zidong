@@ -11,7 +11,7 @@ bool LeggedHW::init(ros::NodeHandle& root_nh, ros::NodeHandle& /*robot_hw_nh*/) 
     ROS_ERROR("Error occurred while setting up urdf");
     return false;
   }
-
+    ROS_ERROR("Error occurred while setting up urdf");
   registerInterface(&jointStateInterface_);
   registerInterface(&hybridJointInterface_);
   registerInterface(&imuSensorInterface_);

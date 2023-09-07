@@ -285,17 +285,10 @@ torqueLimitsTask
    (2,0)  33.5     ; R_JThigh
    (3,0)  33.5     ; R_JKnee
    (4,0)  33.5     ; R_JAnkle
-   (5,0)  33.5     ; L_JHipRz
-   (6,0)  33.5     ; L_JHipRx
-   (7,0)  33.5     ; L_JThigh
-   (8,0)  33.5     ; L_JKnee
-   (9,0)  33.5     ; L_JAnkle
-   (10,0)  33.5     ; R_JShoulderRx
-   (11,0)  33.5     ; R_JUpperArm
-   (12,0)  33.5     ; R_JForeArm
-   (13,0)  33.5     ; L_JShoulderRx
-   (14,0)  33.5     ; L_JUpperArm
-   (15,0)  33.5     ; L_JForeArm
+   (5,0)  33.5     ; R_JShoulderRx
+   (6,0)  33.5     ; R_JUpperArm
+   (7,0)  33.5     ; R_JForeArm
+
 }
 
 frictionConeTask

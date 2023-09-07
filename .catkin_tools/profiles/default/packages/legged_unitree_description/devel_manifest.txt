@@ -1,5 +1,0 @@
-legged_examples/legged_unitree/legged_unitree_description
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_unitree_description/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_unitree_description/lib/pkgconfig/legged_unitree_description.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_unitree_description.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_unitree_description/share/legged_unitree_description/cmake/legged_unitree_descriptionConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_unitree_description/cmake/legged_unitree_descriptionConfig-version.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_unitree_description/share/legged_unitree_description/cmake/legged_unitree_descriptionConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_unitree_description/cmake/legged_unitree_descriptionConfig.cmake

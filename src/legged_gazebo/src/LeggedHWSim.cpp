@@ -41,6 +41,7 @@
 namespace legged {
 bool LeggedHWSim::initSim(const std::string& robot_namespace, ros::NodeHandle model_nh, gazebo::physics::ModelPtr parent_model,
                           const urdf::Model* urdf_model, std::vector<transmission_interface::TransmissionInfo> transmissions) {
+
   bool ret = DefaultRobotHWSim::initSim(robot_namespace, model_nh, parent_model, urdf_model, transmissions);
   // Joint interface
   registerInterface(&hybridJointInterface_);
@@ -137,6 +138,7 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
 }
 
 void LeggedHWSim::writeSim(ros::Time time, ros::Duration period) {
+
   for (auto joint : hybridJointDatas_) {
     auto& buffer = cmdBuffer_.find(joint.joint_.getName())->second;
     if (time == ros::Time(period.toSec())) {  // Simulation reset
@@ -152,6 +154,8 @@ void LeggedHWSim::writeSim(ros::Time time, ros::Duration period) {
     const auto& cmd = buffer.back();
     joint.joint_.setCommand(cmd.kp_ * (cmd.posDes_ - joint.joint_.getPosition()) + cmd.kd_ * (cmd.velDes_ - joint.joint_.getVelocity()) +
                             cmd.ff_);
+//    joint.joint_.setCommand(3);
+
   }
   DefaultRobotHWSim::writeSim(time, period);
 }

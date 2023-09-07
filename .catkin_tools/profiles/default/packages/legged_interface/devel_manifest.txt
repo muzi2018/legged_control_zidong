@@ -1,6 +1,0 @@
-legged_interface
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_interface/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_interface/lib/liblegged_interface.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_interface.so
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_interface/lib/pkgconfig/legged_interface.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_interface.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_interface/share/legged_interface/cmake/legged_interfaceConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_interface/cmake/legged_interfaceConfig.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_interface/share/legged_interface/cmake/legged_interfaceConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_interface/cmake/legged_interfaceConfig-version.cmake

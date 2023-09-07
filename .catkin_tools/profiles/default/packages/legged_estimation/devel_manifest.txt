@@ -1,6 +1,0 @@
-legged_estimation
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_estimation/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_estimation/lib/liblegged_estimation.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_estimation.so
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_estimation/lib/pkgconfig/legged_estimation.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_estimation.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_estimation/share/legged_estimation/cmake/legged_estimationConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_estimation/cmake/legged_estimationConfig-version.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_estimation/share/legged_estimation/cmake/legged_estimationConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_estimation/cmake/legged_estimationConfig.cmake

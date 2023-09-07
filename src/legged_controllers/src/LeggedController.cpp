@@ -142,20 +142,39 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 //  std::cout<<optimizedState<<std::endl;
 
   wbcTimer_.startTimer();
-  vector_t x = wbc_->update(optimizedState, optimizedInput, measuredRbdState_, plannedMode, period.toSec());
+  std::cout<<"-------------   wbc update  -------------"<<std::endl;
+  vector_t x = wbc_->update(optimizedState, optimizedInput,
+                            measuredRbdState_, plannedMode, period.toSec());
+//  std::cout<<"optimizedState: "<<std::endl<<optimizedState<<std::endl; // 28 X 28
+//  std::cout<<"optimizedInput: "<<std::endl<<optimizedInput<<std::endl; // 22 X 22
+//  std::cout<<"x.size: "<<x.cols()<<"X"<<x.rows()<<std::endl<<x<<std::endl;
+//  std::cout<<x<<std::endl;
+//  std::cout<<"measuredRbdState_.size: "<<measuredRbdState_.cols()<<"X"<<measuredRbdState_.rows()<<std::endl<<x<<std::endl;
+//  std::cout<<measuredRbdState_<<std::endl;
   wbcTimer_.endTimer();
 //    std::cout<<"-------------- Whole body control end-----------------"<<std::endl;
   vector_t torque = x.tail(16);
 
   vector_t posDes = centroidal_model::getJointAngles(optimizedState, leggedInterface_->getCentroidalModelInfo());
   vector_t velDes = centroidal_model::getJointVelocities(optimizedInput, leggedInterface_->getCentroidalModelInfo());
-
+//    std::cout<<"posDes.size: "<<posDes.size()<<std::endl;
+//    std::cout<<posDes<<std::endl;
+//    std::cout<<"velDes.size: "<<velDes.size()<<std::endl;
+//    std::cout<<velDes<<std::endl;
+//    std::cout<<"torque: "<<torque<<std::endl;
+//    std::cout<<"---- end  ----"<<std::endl;
   // Safety check, if failed, stop the controller
   if (!safetyChecker_->check(currentObservation_, optimizedState, optimizedInput)) {
     ROS_ERROR_STREAM("[Legged Controller] Safety check failed, stopping the controller.");
     stopRequest(time);
   }
+//    std::cout<<"hybridJointHandles_ "<<std::endl<<hybridJointHandles_.size()<<std::endl;
 
+//    for (int i1 = 0; i1 < leggedInterface_->getCentroidalModelInfo().actuatedDofNum; ++i1) {
+//        posDes(i1)=0;
+//        velDes(i1)=0;
+//        torque(i1)=0;
+//    }
   for (size_t j = 0; j < leggedInterface_->getCentroidalModelInfo().actuatedDofNum; ++j) {
     hybridJointHandles_[j].setCommand(posDes(j), velDes(j), 0, 3, torque(j));
   }
@@ -220,13 +239,15 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
 //  std::cout<<"time: "<<time<<std::endl;
 //  std::cout<<"period: "<<period<<std::endl;
 //  std::cout<<"measuredRbdState_ size "<<measuredRbdState_.size()<<std::endl;
-//  std::cout<<measuredRbdState_<<std::endl;
+  std::cout<<measuredRbdState_<<std::endl;
   currentObservation_.time += period.toSec();
   scalar_t yawLast = currentObservation_.state(9);
 //  std::cout<<"measuredRbdState_.size： "<<std::endl<<measuredRbdState_.size()<<std::endl;
   currentObservation_.state = rbdConversions_->computeCentroidalStateFromRbdModel(measuredRbdState_);
   currentObservation_.state(9) = yawLast + angles::shortest_angular_distance(yawLast, currentObservation_.state(9));
   currentObservation_.mode = stateEstimate_->getMode();
+//  std::cout<<"currentObservation_ size "<<currentObservation_.state.size()<<std::endl;
+
 //  std::cout<<"currentObservation_.state"<<std::endl<<currentObservation_.state<<std::endl;
 }
 

@@ -1,6 +1,0 @@
-ocs2/ocs2_sqp/ocs2_sqp
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/lib/libocs2_sqp.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_sqp.so
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/lib/pkgconfig/ocs2_sqp.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_sqp.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/share/ocs2_sqp/cmake/ocs2_sqpConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_sqp/cmake/ocs2_sqpConfig-version.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_sqp/share/ocs2_sqp/cmake/ocs2_sqpConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_sqp/cmake/ocs2_sqpConfig.cmake

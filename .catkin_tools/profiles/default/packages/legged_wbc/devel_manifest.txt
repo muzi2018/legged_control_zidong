@@ -1,6 +1,0 @@
-legged_wbc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_wbc/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_wbc/lib/liblegged_wbc.so /home/taizun/Desktop/legged_control_zidong/devel/lib/liblegged_wbc.so
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_wbc/lib/pkgconfig/legged_wbc.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_wbc.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_wbc/share/legged_wbc/cmake/legged_wbcConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_wbc/cmake/legged_wbcConfig.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_wbc/share/legged_wbc/cmake/legged_wbcConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_wbc/cmake/legged_wbcConfig-version.cmake

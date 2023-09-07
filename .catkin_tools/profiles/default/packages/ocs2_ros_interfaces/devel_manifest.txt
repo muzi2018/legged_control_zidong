@@ -1,9 +1,0 @@
-ocs2/ocs2_ros_interfaces
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/lib/libocs2_ros_interfaces.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_ros_interfaces.so
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/lib/pkgconfig/ocs2_ros_interfaces.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_ros_interfaces.pc
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/lib/ocs2_ros_interfaces/multiplot_remap /home/taizun/Desktop/legged_control_zidong/devel/lib/ocs2_ros_interfaces/multiplot_remap
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/lib/ocs2_ros_interfaces/test_custom_callback_queue /home/taizun/Desktop/legged_control_zidong/devel/lib/ocs2_ros_interfaces/test_custom_callback_queue
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/lib/ocs2_ros_interfaces/ocs2_ros_interfaces_lintTarget /home/taizun/Desktop/legged_control_zidong/devel/lib/ocs2_ros_interfaces/ocs2_ros_interfaces_lintTarget
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/share/ocs2_ros_interfaces/cmake/ocs2_ros_interfacesConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_ros_interfaces/cmake/ocs2_ros_interfacesConfig.cmake
-/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_ros_interfaces/share/ocs2_ros_interfaces/cmake/ocs2_ros_interfacesConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_ros_interfaces/cmake/ocs2_ros_interfacesConfig-version.cmake
