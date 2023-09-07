@@ -1,4 +1,4 @@
-/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/ninja/linux/x64/ninja -G Ninja -S /home/taizun/Desktop/legged_control_zidong/src/legged_gazebo -B /home/taizun/Desktop/legged_control_zidong/src/legged_gazebo/cmake-build-debug
+/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/taizun/Desktop/legged_control_zidong/src/legged_gazebo -B /home/taizun/Desktop/legged_control_zidong/src/legged_gazebo/cmake-build-debug
 -- The C compiler identification is GNU 9.4.0
 -- The CXX compiler identification is GNU 9.4.0
 -- Detecting C compiler ABI info
@@ -140,6 +140,6 @@ This warning is for project developers.  Use -Wno-dev to suppress it.
 -- Looking for ignition-msgs5 -- found version 5.10.0
 -- Gazebo version: 11.11
 -- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
--- Configuring done (2.8s)
+-- Configuring done (1.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/taizun/Desktop/legged_control_zidong/src/legged_gazebo/cmake-build-debug

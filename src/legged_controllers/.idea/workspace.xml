@@ -88,14 +88,45 @@
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T03-31-55-0596.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/task.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/Types.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/common/Types.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/gait/MotionPhaseDefinition.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/include/ocs2_legged_robot/gait/MotionPhaseDefinition.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot_ros/include/ocs2_legged_robot_ros/visualization/LeggedRobotVisualizer.h" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot_ros/include/ocs2_legged_robot_ros/visualization/LeggedRobotVisualizer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/leg.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/urdf/common/leg.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/cache-v2-07ea90f3c39798cff990.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-e13e69240cbdd71430eb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-70d9d6ffe21991845df6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-25-24-0473.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-c29297ab377678d071ed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-efddc0beb894939e936b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-cb6ef82a7e8146d38712.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_hw/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4a22625f8ea4ed779dbd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-33-22-0761.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_hw/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b865adf1f1be7cf3b181.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-eaafa3e24ee425cfe8ac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-ee8309a588732ca7f8e6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-35-57-0185.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-75cb0d89b3624c083606.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-5717e2393239989a96dd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-6ba19386c7ca8a60000a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,30 +159,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/home/taizun/Desktop/legged_control_zidong/src/legged_controllers/CMakeLists.txt",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "CMakeSettings",
-    "structure.view.defaults.are.configured": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/taizun/Desktop/legged_control_zidong/src/legged_hw/CMakeLists.txt&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;CMakeSettings&quot;,
+    &quot;structure.view.defaults.are.configured&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="CMake Application.legged_target_trajectories_publisher">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="actionlib_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="legged_controllers" TARGET_NAME="actionlib_generate_messages_cpp" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -588,7 +614,8 @@
       <workItem from="1693897495715" duration="3393000" />
       <workItem from="1693911264934" duration="993000" />
       <workItem from="1693965297669" duration="8518000" />
-      <workItem from="1694053910616" duration="972000" />
+      <workItem from="1694053910616" duration="5261000" />
+      <workItem from="1694065975666" duration="1249000" />
     </task>
     <servers />
   </component>

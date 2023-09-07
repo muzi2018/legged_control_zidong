@@ -26,15 +26,15 @@
 
 namespace legged {
 bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHandle& controller_nh) {
-  std::cout<<"init start"<<std::endl;
+//  std::cout<<"init start"<<std::endl;
 
   // Initialize OCS2
   std::string urdfFile;
   std::string taskFile;
   std::string referenceFile;
   controller_nh.getParam("/urdfFile", urdfFile);
-  std::cout<<"---------------urdfFile-----------"<<std::endl;
-  std::cout<<urdfFile<<std::endl;
+//  std::cout<<"---------------urdfFile-----------"<<std::endl;
+//  std::cout<<urdfFile<<std::endl;
   controller_nh.getParam("/taskFile", taskFile);
   controller_nh.getParam("/referenceFile", referenceFile);
   
@@ -50,19 +50,19 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   // Visualization
   ros::NodeHandle nh;
   CentroidalModelPinocchioMapping pinocchioMapping(leggedInterface_->getCentroidalModelInfo());
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
     eeKinematicsPtr_ = std::make_shared<PinocchioEndEffectorKinematics>(leggedInterface_->getPinocchioInterface(), pinocchioMapping,
                                                                       leggedInterface_->modelSettings().contactNames3DoF);
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
     robotVisualizer_ = std::make_shared<LeggedRobotVisualizer>(leggedInterface_->getPinocchioInterface(),
                                                              leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_, nh);
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
     selfCollisionVisualization_.reset(new LeggedSelfCollisionVisualization(leggedInterface_->getPinocchioInterface(),
                                                                          leggedInterface_->getGeometryInterface(), pinocchioMapping, nh));
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
     // Hardware interface
   auto* hybridJointInterface = robot_hw->get<HybridJointInterface>();
@@ -77,31 +77,31 @@ bool LeggedController::init(hardware_interface::RobotHW* robot_hw, ros::NodeHand
   for (const auto& name : leggedInterface_->modelSettings().contactNames3DoF) {
     contactHandles_.push_back(contactInterface->getHandle(name));
   }
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
     imuSensorHandle_ = robot_hw->get<hardware_interface::ImuSensorInterface>()->getHandle("unitree_imu");
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
   // State estimation
   setupStateEstimate(taskFile, verbose);
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
   // Whole body control
   wbc_ = std::make_shared<WeightedWbc>(leggedInterface_->getPinocchioInterface(), leggedInterface_->getCentroidalModelInfo(),
                                        *eeKinematicsPtr_);
 
     wbc_->loadTasksSetting(taskFile, verbose);
-    std::cout<<"init finish"<<std::endl;
+//    std::cout<<"init finish"<<std::endl;
 
   // Safety Checker
   safetyChecker_ = std::make_shared<SafetyChecker>(leggedInterface_->getCentroidalModelInfo());
-  std::cout<<"init finish"<<std::endl;
+//  std::cout<<"init finish"<<std::endl;
 
   return true;
 }
 
 void LeggedController::starting(const ros::Time& time) {
-    std::cout<<"starting start"<<std::endl;
+//    std::cout<<"starting start"<<std::endl;
   
   // Initial state
   currentObservation_.state.setZero(leggedInterface_->getCentroidalModelInfo().stateDim);
@@ -131,11 +131,11 @@ void LeggedController::starting(const ros::Time& time) {
   ROS_INFO_STREAM("Initial policy has been received.");
 
   mpcRunning_ = true;
-  std::cout<<"starting finish"<<std::endl;
+//  std::cout<<"starting finish"<<std::endl;
 }
 
 void LeggedController::update(const ros::Time& time, const ros::Duration& period) {
-  std::cout<<"update start"<<std::endl;
+//  std::cout<<"update start"<<std::endl;
   // State Estimate
   updateStateEstimation(time, period);
 
@@ -160,7 +160,7 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 //  std::cout<<optimizedState<<std::endl;
 
   wbcTimer_.startTimer();
-  std::cout<<"-------------   wbc update  -------------"<<std::endl;
+//  std::cout<<"-------------   wbc update  -------------"<<std::endl;
   vector_t x = wbc_->update(optimizedState, optimizedInput,
                             measuredRbdState_, plannedMode, period.toSec());
 //  std::cout<<"optimizedState: "<<std::endl<<optimizedState<<std::endl; // 28 X 28
@@ -203,12 +203,12 @@ void LeggedController::update(const ros::Time& time, const ros::Duration& period
 
   // Publish the observation. Only needed for the command interface
   observationPublisher_.publish(ros_msg_conversions::createObservationMsg(currentObservation_));
-    std::cout<<"update finish"<<std::endl;
+//    std::cout<<"update finish"<<std::endl;
 
 }
 
 void LeggedController::updateStateEstimation(const ros::Time& time, const ros::Duration& period) {
-      std::cout<<"updateStateEstimation start"<<std::endl;
+//      std::cout<<"updateStateEstimation start"<<std::endl;
 
   vector_t jointPos(hybridJointHandles_.size()), jointVel(hybridJointHandles_.size());
 //  std::cout<<"---- updateStateEstimation ----"<<std::endl;
@@ -218,15 +218,15 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
   contact_flag_t contactFlag;
   vector3_t angularVel, linearAccel;
   matrix3_t orientationCovariance, angularVelCovariance, linearAccelCovariance;
-      std::cout<<"updateStateEstimation finish"<<std::endl;
+//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
   for (size_t i = 0; i < hybridJointHandles_.size(); ++i) {
     jointPos(i) = hybridJointHandles_[i].getPosition();
     jointVel(i) = hybridJointHandles_[i].getVelocity();
   }
-        std::cout<<"updateStateEstimation finish"<<std::endl;
+//        std::cout<<"updateStateEstimation finish"<<std::endl;
 
-   std::cout<<"contacts.size() "<<std::endl<< contacts.size()<<std::endl;
+//   std::cout<<"contacts.size() "<<std::endl<< contacts.size()<<std::endl;
 //    std::cout<<jointPos<<std::endl;
 //    std::cout<<"jointVel "<<std::endl<< jointVel.size()<<std::endl;
 //    std::cout<<jointVel<<std::endl;
@@ -235,7 +235,7 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     contactFlag[i] = contactHandles_[i].isContact();
 //      std::cout<<contactFlag[i] <<std::endl;
   }
-      std::cout<<"updateStateEstimation finish"<<std::endl;
+//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
 //    std::cout<<"Imu get Orientation"<<std::endl;
   for (size_t i = 0; i < 4; ++i) {
@@ -247,7 +247,7 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     angularVel(i) = imuSensorHandle_.getAngularVelocity()[i];
 //      std::cout<<imuSensorHandle_.getAngularVelocity()[i]<<std::endl;
   }
-        std::cout<<"updateStateEstimation finish"<<std::endl;
+//        std::cout<<"updateStateEstimation finish"<<std::endl;
 
 //    std::cout<<"Imu get LinearAcceleration"<<std::endl;
     for (size_t i = 0; i < 3; ++i) {
@@ -259,19 +259,19 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
     angularVelCovariance(i) = imuSensorHandle_.getAngularVelocityCovariance()[i];
     linearAccelCovariance(i) = imuSensorHandle_.getLinearAccelerationCovariance()[i];
   }
-      std::cout<<"updateStateEstimation finish"<<std::endl;
+//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
   stateEstimate_->updateJointStates(jointPos, jointVel);
   stateEstimate_->updateContact(contactFlag);
   stateEstimate_->updateImu(quat, angularVel, linearAccel, orientationCovariance, angularVelCovariance, linearAccelCovariance);
   measuredRbdState_ = stateEstimate_->update(time, period);
-        std::cout<<"updateStateEstimation finish"<<std::endl;
+//        std::cout<<"updateStateEstimation finish"<<std::endl;
 
 //  std::cout<<"time: "<<time<<std::endl;
 //  std::cout<<"period: "<<period<<std::endl;
 //  std::cout<<"measuredRbdState_ size "<<measuredRbdState_.size()<<std::endl;
   std::cout<<measuredRbdState_<<std::endl;
-        std::cout<<"updateStateEstimation finish"<<std::endl;
+//        std::cout<<"updateStateEstimation finish"<<std::endl;
 
   currentObservation_.time += period.toSec();
   scalar_t yawLast = currentObservation_.state(9);
@@ -282,7 +282,7 @@ void LeggedController::updateStateEstimation(const ros::Time& time, const ros::D
 //  std::cout<<"currentObservation_ size "<<currentObservation_.state.size()<<std::endl;
 
 //  std::cout<<"currentObservation_.state"<<std::endl<<currentObservation_.state<<std::endl;
-      std::cout<<"updateStateEstimation finish"<<std::endl;
+//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
 }
 
@@ -303,18 +303,18 @@ LeggedController::~LeggedController() {
 
 void LeggedController::setupLeggedInterface(const std::string& taskFile, const std::string& urdfFile, const std::string& referenceFile,
                                             bool verbose) {
-      std::cout<<"updateStateEstimation start"<<std::endl;
+//      std::cout<<"updateStateEstimation start"<<std::endl;
 
   leggedInterface_ = std::make_shared<LeggedInterface>(taskFile, urdfFile, referenceFile);
 //    std::cout<<"-------------setupLeggedInterface------------------------------"<<std::endl;
 
   leggedInterface_->setupOptimalControlProblem(taskFile, urdfFile, referenceFile, verbose);
-      std::cout<<"updateStateEstimation finish"<<std::endl;
+//      std::cout<<"updateStateEstimation finish"<<std::endl;
 
 }
 
 void LeggedController::setupMpc() {
-      std::cout<<"updateStateEstimation start"<<std::endl;
+//      std::cout<<"updateStateEstimation start"<<std::endl;
 
   mpc_ = std::make_shared<SqpMpc>(leggedInterface_->mpcSettings(), leggedInterface_->sqpSettings(),
                                   leggedInterface_->getOptimalControlProblem(), leggedInterface_->getInitializer());
@@ -332,12 +332,12 @@ void LeggedController::setupMpc() {
   mpc_->getSolverPtr()->addSynchronizedModule(gaitReceiverPtr);
   mpc_->getSolverPtr()->setReferenceManager(rosReferenceManagerPtr);
   observationPublisher_ = nh.advertise<ocs2_msgs::mpc_observation>(robotName + "_mpc_observation", 1);
-        std::cout<<"updateStateEstimation finish"<<std::endl;
+//        std::cout<<"updateStateEstimation finish"<<std::endl;
 
 }
 
 void LeggedController::setupMrt() {
-        std::cout<<"setupMrt start"<<std::endl;
+//        std::cout<<"setupMrt start"<<std::endl;
 
   mpcMrtInterface_ = std::make_shared<MPC_MRT_Interface>(*mpc_);
   mpcMrtInterface_->initRollout(&leggedInterface_->getRollout());
@@ -364,27 +364,27 @@ void LeggedController::setupMrt() {
     }
   });
   setThreadPriority(leggedInterface_->sqpSettings().threadPriority, mpcThread_);
-          std::cout<<"setupMrt finish"<<std::endl;
+//          std::cout<<"setupMrt finish"<<std::endl;
 
 }
 
 void LeggedController::setupStateEstimate(const std::string& taskFile, bool verbose) {
-          std::cout<<"setupStateEstimate start"<<std::endl;
+//          std::cout<<"setupStateEstimate start"<<std::endl;
 
   stateEstimate_ = std::make_shared<KalmanFilterEstimate>(leggedInterface_->getPinocchioInterface(),
                                                           leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_);
   dynamic_cast<KalmanFilterEstimate&>(*stateEstimate_).loadSettings(taskFile, verbose);
   currentObservation_.time = 0;
-            std::cout<<"setupStateEstimate finish"<<std::endl;
+//            std::cout<<"setupStateEstimate finish"<<std::endl;
 
 }
 
 void LeggedCheaterController::setupStateEstimate(const std::string& /*taskFile*/, bool /*verbose*/) {
-            std::cout<<"setupStateEstimate start"<<std::endl;
+//            std::cout<<"setupStateEstimate start"<<std::endl;
 
   stateEstimate_ = std::make_shared<FromTopicStateEstimate>(leggedInterface_->getPinocchioInterface(),
                                                             leggedInterface_->getCentroidalModelInfo(), *eeKinematicsPtr_);
-                                                                      std::cout<<"setupStateEstimate finish"<<std::endl;
+//                                                                      std::cout<<"setupStateEstimate finish"<<std::endl;
 
 }
 

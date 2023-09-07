@@ -1,4 +1,4 @@
-/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/ninja/linux/x64/ninja -G Ninja -S /home/taizun/Desktop/legged_control_zidong/src/legged_interface -B /home/taizun/Desktop/legged_control_zidong/src/legged_interface/cmake-build-debug
+/home/taizun/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/232.9559.58/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /home/taizun/Desktop/legged_control_zidong/src/legged_interface -B /home/taizun/Desktop/legged_control_zidong/src/legged_interface/cmake-build-debug
 -- The C compiler identification is GNU 9.4.0
 -- The CXX compiler identification is GNU 9.4.0
 -- Detecting C compiler ABI info
@@ -61,6 +61,6 @@ CMake Deprecation Warning at /usr/src/googletest/googletest/CMakeLists.txt:56 (c
 -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
 -- Checking for module 'pinocchio'
 --   Found pinocchio, version 2.6.10
--- Configuring done (1.0s)
+-- Configuring done (2.6s)
 -- Generating done (0.0s)
 -- Build files have been written to: /home/taizun/Desktop/legged_control_zidong/src/legged_interface/cmake-build-debug

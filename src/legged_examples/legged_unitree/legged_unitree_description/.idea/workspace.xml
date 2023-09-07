@@ -20,7 +20,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="948e50a1-5a49-404b-ad1e-5d597b2f0bb5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/config/a1/task.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/src/LeggedController.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urdf/common/leg.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/urdf/common/leg.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/cache-v2-07ea90f3c39798cff990.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-e13e69240cbdd71430eb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-70d9d6ffe21991845df6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-25-24-0473.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-c29297ab377678d071ed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-efddc0beb894939e936b.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-cb6ef82a7e8146d38712.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/compile_commands.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/src/LeggedHWSim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/src/LeggedHWSim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_hw/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-4a22625f8ea4ed779dbd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-33-22-0761.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/build.ninja" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/build.ninja" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_hw/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/cache-v2-b865adf1f1be7cf3b181.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/cmakeFiles-v1-eaafa3e24ee425cfe8ac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/codemodel-v2-ee8309a588732ca7f8e6.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/index-2023-08-30T06-35-57-0185.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gmock-Debug-75cb0d89b3624c083606.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gmock_main-Debug-5717e2393239989a96dd.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/.cmake/api/v1/reply/target-gtest_main-Debug-6ba19386c7ca8a60000a.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/CMakeConfigureLog.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/clion-Debug-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/CMakeFiles/rules.ninja" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/catkin_generated/setup_cached.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/catkin_generated/setup_cached.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/compile_commands.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/compile_commands.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +125,9 @@
       <workItem from="1693375472013" duration="427000" />
       <workItem from="1693376104719" duration="1212000" />
       <workItem from="1693897485945" duration="599000" />
+      <workItem from="1694057109526" duration="3743000" />
+      <workItem from="1694065974299" duration="1914000" />
+      <workItem from="1694069551691" duration="598000" />
     </task>
     <servers />
   </component>

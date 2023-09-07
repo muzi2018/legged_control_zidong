@@ -262,11 +262,7 @@ selfCollision
   ; Self Collision pairs
   collisionLinkPairs
   {
-    [0] "R_LThigh, L_LThigh"
-    [1] "R_LShank, L_LShank"
-    [2] "R_Foot, L_Foot"
-    [3] "R_LUpperArm, L_LUpperArm"
-    [4] "R_LForeArm, L_LForeArm"
+    [0] "R_Foot, L_Foot"
   }
 
   minimumDistance  0.05

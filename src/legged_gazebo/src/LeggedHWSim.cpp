@@ -87,6 +87,9 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
       joint_position_[j] += angles::shortest_angular_distance(joint_position_[j], position);
     }
     joint_effort_[j] = sim_joints_[j]->GetForce((unsigned int)(0));
+//     std::cout<<"joint_effort_"<<"["<<j<<"]"<<joint_effort_[j]<<std::endl;
+//     std::cout<<"joint_position_"<<"["<<j<<"]"<<joint_position_[j]<<std::endl;
+//     std::cout<<"joint_velocity_"<<"["<<j<<"]"<<joint_velocity_[j]<<std::endl;
   }
 
   // Imu Sensor
@@ -138,7 +141,7 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
 }
 
 void LeggedHWSim::writeSim(ros::Time time, ros::Duration period) {
-
+//  std::cout<<"----writeSim----"<<std::endl;
   for (auto joint : hybridJointDatas_) {
     auto& buffer = cmdBuffer_.find(joint.joint_.getName())->second;
     if (time == ros::Time(period.toSec())) {  // Simulation reset
@@ -152,9 +155,10 @@ void LeggedHWSim::writeSim(ros::Time time, ros::Duration period) {
         .stamp_ = time, .posDes_ = joint.posDes_, .velDes_ = joint.velDes_, .kp_ = joint.kp_, .kd_ = joint.kd_, .ff_ = joint.ff_});
 
     const auto& cmd = buffer.back();
-    joint.joint_.setCommand(cmd.kp_ * (cmd.posDes_ - joint.joint_.getPosition()) + cmd.kd_ * (cmd.velDes_ - joint.joint_.getVelocity()) +
-                            cmd.ff_);
-//    joint.joint_.setCommand(3);
+      joint.joint_.setCommand(cmd.kp_ * (cmd.posDes_ - joint.joint_.getPosition()) + cmd.kd_ * (cmd.velDes_ - joint.joint_.getVelocity()) +
+                              cmd.ff_);
+//    std::cout<<"joint.effort: "<<cmd.kp_ * (cmd.posDes_ - joint.joint_.getPosition()) + cmd.kd_ * (cmd.velDes_ - joint.joint_.getVelocity()) +
+//                            cmd.ff_<<std::endl;
 
   }
   DefaultRobotHWSim::writeSim(time, period);
