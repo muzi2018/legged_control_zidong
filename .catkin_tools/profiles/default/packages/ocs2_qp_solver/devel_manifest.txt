@@ -1,0 +1,6 @@
+ocs2/ocs2_test_tools/ocs2_qp_solver
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/lib/libocs2_qp_solver.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_qp_solver.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/lib/pkgconfig/ocs2_qp_solver.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_qp_solver.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/share/ocs2_qp_solver/cmake/ocs2_qp_solverConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_qp_solver/cmake/ocs2_qp_solverConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_qp_solver/share/ocs2_qp_solver/cmake/ocs2_qp_solverConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_qp_solver/cmake/ocs2_qp_solverConfig-version.cmake

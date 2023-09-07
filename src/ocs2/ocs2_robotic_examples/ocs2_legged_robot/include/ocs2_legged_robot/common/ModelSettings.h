@@ -48,10 +48,11 @@ struct ModelSettings {
   std::string modelFolderCppAd = "/tmp/ocs2";
 
   // This is only used to get names for the knees and to check urdf for extra joints that need to be fixed.
-  std::vector<std::string> jointNames{"LF_HAA", "LF_HFE", "LF_KFE", "RF_HAA", "RF_HFE", "RF_KFE",
-                                      "LH_HAA", "LH_HFE", "LH_KFE", "RH_HAA", "RH_HFE", "RH_KFE"};
+  std::vector<std::string> jointNames{"R_JHipRz", "R_JHipRx", "R_JThigh", "R_JKnee", "R_JAnkle", "L_JHipRz",
+                                       "L_JHipRx", "L_JThigh", "L_JKnee", "L_JAnkle", "R_JShoulderRx", "R_JUpperArm",
+                                       "R_JForeArm","L_JShoulderRx", "L_JUpperArm", "L_JForeArm"};
   std::vector<std::string> contactNames6DoF{};
-  std::vector<std::string> contactNames3DoF{"LF_FOOT", "RF_FOOT", "LH_FOOT", "RH_FOOT"};
+  std::vector<std::string> contactNames3DoF{"L_Foot", "R_Foot"};
 };
 
 ModelSettings loadModelSettings(const std::string& filename, const std::string& fieldName = "model_settings", bool verbose = "true");

@@ -1,0 +1,7 @@
+ocs2/ocs2_core
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/lib/libocs2_core.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_core.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/lib/pkgconfig/ocs2_core.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_core.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/lib/ocs2_core/ocs2_core_lintTarget /home/taizun/Desktop/legged_control_zidong/devel/lib/ocs2_core/ocs2_core_lintTarget
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/share/ocs2_core/cmake/ocs2_coreConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_core/cmake/ocs2_coreConfig-version.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_core/share/ocs2_core/cmake/ocs2_coreConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_core/cmake/ocs2_coreConfig.cmake

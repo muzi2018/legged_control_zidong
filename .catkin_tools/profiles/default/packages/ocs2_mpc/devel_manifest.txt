@@ -1,0 +1,7 @@
+ocs2/ocs2_mpc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/lib/libocs2_mpc.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_mpc.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/lib/pkgconfig/ocs2_mpc.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_mpc.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/lib/ocs2_mpc/ocs2_mpc_lintTarget /home/taizun/Desktop/legged_control_zidong/devel/lib/ocs2_mpc/ocs2_mpc_lintTarget
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/share/ocs2_mpc/cmake/ocs2_mpcConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_mpc/cmake/ocs2_mpcConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_mpc/share/ocs2_mpc/cmake/ocs2_mpcConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_mpc/cmake/ocs2_mpcConfig-version.cmake

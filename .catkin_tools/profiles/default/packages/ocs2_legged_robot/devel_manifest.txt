@@ -1,0 +1,6 @@
+ocs2/ocs2_robotic_examples/ocs2_legged_robot
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/lib/libocs2_legged_robot.so /home/taizun/Desktop/legged_control_zidong/devel/lib/libocs2_legged_robot.so
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/lib/pkgconfig/ocs2_legged_robot.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/ocs2_legged_robot.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/share/ocs2_legged_robot/cmake/ocs2_legged_robotConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_legged_robot/cmake/ocs2_legged_robotConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/ocs2_legged_robot/share/ocs2_legged_robot/cmake/ocs2_legged_robotConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/ocs2_legged_robot/cmake/ocs2_legged_robotConfig-version.cmake

@@ -1,22 +1,26 @@
 targetDisplacementVelocity          0.5;
 targetRotationVelocity              0.3;
 
-comHeight                           0.575
+comHeight                           0.498137
 
 defaultJointState
 {
-   (0,0)  -0.25   ; LF_HAA
-   (1,0)   0.60   ; LF_HFE
-   (2,0)  -0.85   ; LF_KFE
-   (3,0)  -0.25   ; LH_HAA
-   (4,0)  -0.60   ; LH_HFE
-   (5,0)   0.85   ; LH_KFE
-   (6,0)   0.25   ; RF_HAA
-   (7,0)   0.60   ; RF_HFE
-   (8,0)  -0.85   ; RF_KFE
-   (9,0)   0.25   ; RH_HAA
-   (10,0) -0.60   ; RH_HFE
-   (11,0)  0.85   ; RH_KFE
+   (0,0)  0  ; torso_to_R_HipRz
+   (1,0)  -0.0436501   ; R_HipRz_to_R_HipRx
+   (2,0)  -0.4         ; R_HipRx_to_R_Thigh
+   (3,0)  1.36438      ; R_Knee
+   (4,0)  -0.876195   ; R_Ankle
+   (5,0)  0   ; torso_to_L_HipRz
+   (6,0)  0.0436501   ; L_HipRz_to_L_HipRx
+   (7,0)  -0.488181   ; L_HipRx_to_L_Thigh
+   (8,0) 1.36438   ; L_Knee
+   (9,0)  -0.876195   ; L_Ankle
+   (10,0)  0   ; torso_to_R_ShoulderRx
+   (11,0)  0   ; R_ShoulderRx_to_R_UpperArm
+   (12,0)  0   ; R_UpperArm_to_R_ForeArm
+   (13,0)  0   ; torso_to_L_ShoulderRx
+   (14,0)  0   ; L_ShoulderRx_to_L_UpperArm
+   (15,0)  0   ; L_UpperArm_to_L_ForeArm
 }
 
 initialModeSchedule

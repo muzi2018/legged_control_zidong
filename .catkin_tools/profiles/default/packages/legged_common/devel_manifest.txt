@@ -1,0 +1,5 @@
+legged_common
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_common/cmake.lock /home/taizun/Desktop/legged_control_zidong/devel/./cmake.lock
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_common/lib/pkgconfig/legged_common.pc /home/taizun/Desktop/legged_control_zidong/devel/lib/pkgconfig/legged_common.pc
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_common/share/legged_common/cmake/legged_commonConfig.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_common/cmake/legged_commonConfig.cmake
+/home/taizun/Desktop/legged_control_zidong/devel/.private/legged_common/share/legged_common/cmake/legged_commonConfig-version.cmake /home/taizun/Desktop/legged_control_zidong/devel/share/legged_common/cmake/legged_commonConfig-version.cmake
