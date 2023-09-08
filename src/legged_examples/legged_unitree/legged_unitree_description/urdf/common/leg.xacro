@@ -197,18 +197,18 @@
 
             <!--  两个点 -->
             <!---->
-            <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>
-            </collision>
-            <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>
-            </collision>
+<!--            <collision>-->
+<!--                <geometry>-->
+<!--                    <sphere radius="0.02"/>-->
+<!--                </geometry>-->
+<!--                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>-->
+<!--            </collision>-->
+<!--            <collision>-->
+<!--                <geometry>-->
+<!--                    <sphere radius="0.02"/>-->
+<!--                </geometry>-->
+<!--                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>-->
+<!--            </collision>-->
 
             <!--  条形 -->
 <!--            <collision>-->
@@ -230,9 +230,6 @@
                     <cylinder length="${Shank_length}" radius="${Shank_radius}"/>
                 </geometry>
             </collision> -->
-
-
-
             <inertial>
                 <origin rpy="0 0 0" xyz="0.0 0.0 -0.01"/>
                 <mass value="0.30"/>
@@ -243,6 +240,68 @@
             </inertial>
         </link>
 
+        <joint name="${prefix}F_Jfoot_fixed" type="fixed">
+            <origin rpy="0 0 0" xyz="0.12 0.0 -0.03"/>
+            <parent link="${prefix}_Foot"/>
+            <child link="${prefix}F_Lfoot_fixed"/>
+        </joint>
+        <link name="${prefix}F_Lfoot_fixed">
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="${0.01}"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="${0.02}"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="${foot_mass}"/>
+                <inertia
+                        ixx="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" ixy="0.0" ixz="0.0"
+                        iyy="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" iyz="0.0"
+                        izz="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}"/>
+            </inertial>
+        </link>
+
+        <joint name="${prefix}H_Jfoot_fixed" type="fixed">
+            <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03"/>
+            <parent link="${prefix}_Foot"/>
+            <child link="${prefix}H_Lfoot_fixed"/>
+        </joint>
+        <link name="${prefix}H_Lfoot_fixed">
+            <visual>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="${0.01}"/>
+                </geometry>
+                <material name="orange"/>
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0"/>
+                <geometry>
+                    <sphere radius="${0.02}"/>
+                </geometry>
+            </collision>
+            <inertial>
+                <mass value="${foot_mass}"/>
+                <inertia
+                        ixx="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" ixy="0.0" ixz="0.0"
+                        iyy="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}" iyz="0.0"
+                        izz="${(2*foot_mass)/5.0*(foot_radius*foot_radius)}"/>
+            </inertial>
+        </link>
+
+        <gazebo reference="${prefix}F_Lfoot_fixed">
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+        </gazebo>
+        <gazebo reference="${prefix}H_Lfoot_fixed">
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+        </gazebo>
         <gazebo reference="${prefix}_LHipRz">
             <mu1>0.2</mu1>
             <mu2>0.2</mu2>

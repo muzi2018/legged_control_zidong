@@ -46,6 +46,9 @@ bool LeggedHWSim::initSim(const std::string& robot_namespace, ros::NodeHandle mo
   // Joint interface
   registerInterface(&hybridJointInterface_);
   std::vector<std::string> names = ej_interface_.getNames();
+//    for (int i = 0; i < names.size(); ++i) {
+//        std::cout<<"ej_interface_.getNames(): "<<names[i]<<std::endl;
+//    }
   for (const auto& name : names) {
     hybridJointDatas_.push_back(HybridJointData{.joint_ = ej_interface_.getHandle(name)});
     HybridJointData& back = hybridJointDatas_.back();
@@ -113,9 +116,11 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
   }
     int i=0;
   // Contact Sensor
-  for (auto& state : name2contact_) {
+//    std::cout<<"Contact_number"<<name2contact_.size()<<std::endl;
+
+    for (auto& state : name2contact_) {
     state.second = false;
-    std::cout<<"Contact_"<<"["<<i<<"]="<<state.first<<std::endl;
+//    std::cout<<"Contact_"<<"["<<i<<"]="<<state.first<<std::endl;
     i++;
   }
   for (const auto& contact : contactManager_->GetContacts()) {
@@ -123,18 +128,23 @@ void LeggedHWSim::readSim(ros::Time time, ros::Duration period) {
         static_cast<uint32_t>(contact->time.nsec) != (time - period).nsec) {
       continue;
     }
-    std::string linkName = contact->collision1->GetLink()->GetName();
-    std::cout<<"collision1 linkName: "<<linkName<<std::endl;
 
-    if (name2contact_.find(linkName) != name2contact_.end()) {
-      name2contact_[linkName] = true;
-    }
-    linkName = contact->collision2->GetLink()->GetName();
-      std::cout<<"collision2 linkName: "<<linkName<<std::endl;
+      std::string linkName = contact->collision1->GetLink()->GetName();
+//      std::cout<<"collision1 linkName: "<<linkName<<std::endl;
 
       if (name2contact_.find(linkName) != name2contact_.end()) {
       name2contact_[linkName] = true;
+//      std::cout<<"find name2contact"<<std::endl;
     }
+//      std::cout<<name2contact_[linkName]<<std::endl;
+
+      linkName = contact->collision2->GetLink()->GetName();
+      if (name2contact_.find(linkName) != name2contact_.end()) {
+      name2contact_[linkName] = true;
+    }
+
+//      std::cout<<"collision2 linkName: "<<linkName<<std::endl;
+//      std::cout<<name2contact_[linkName]<<std::endl;
 
   }
 
@@ -228,11 +238,15 @@ void LeggedHWSim::parseImu(XmlRpc::XmlRpcValue& imuDatas, const gazebo::physics:
 
 void LeggedHWSim::parseContacts(XmlRpc::XmlRpcValue& contactNames) {
   ROS_ASSERT(contactNames.getType() == XmlRpc::XmlRpcValue::TypeArray);
+    std::cout<<"parseContacts"<<std::endl;
+    std::cout<<"contactNames.size()="<<contactNames.size()<<std::endl;
   for (int i = 0; i < contactNames.size(); ++i) {  // NOLINT(modernize-loop-convert)
     std::string name = contactNames[i];
     name2contact_.insert(std::make_pair(name, false));
     contactSensorInterface_.registerHandle(ContactSensorHandle(name, &name2contact_[name]));
+    std::cout<<"name"<<name<<std::endl;
   }
+
   registerInterface(&contactSensorInterface_);
 }
 

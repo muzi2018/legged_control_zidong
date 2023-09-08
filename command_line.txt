@@ -505,3 +505,6 @@ u[65]  -0.0664574
  -2.2243e-21
 
 hasStateInputConstraints： 1
+
+std::cout<<"parseContacts"<<std::endl;
+

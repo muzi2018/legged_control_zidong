@@ -233,24 +233,27 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <!-- <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>
-            </collision> 
-            <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>
-            </collision>  -->
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
-      <geometry>
-        <box size="0.22 0.04 0.016"/>
-      </geometry>
-    </collision>
+    <!--  两个点 -->
+    <!---->
+    <!--            <collision>-->
+    <!--                <geometry>-->
+    <!--                    <sphere radius="0.02"/>-->
+    <!--                </geometry>-->
+    <!--                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>-->
+    <!--            </collision>-->
+    <!--            <collision>-->
+    <!--                <geometry>-->
+    <!--                    <sphere radius="0.02"/>-->
+    <!--                </geometry>-->
+    <!--                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>-->
+    <!--            </collision>-->
+    <!--  条形 -->
+    <!--            <collision>-->
+    <!--                <origin rpy="0 0 0" xyz="0 0 -0.033"/>-->
+    <!--                <geometry>-->
+    <!--                    <box size="${foot_width} ${foot_length} ${foot_height}"/>-->
+    <!--                </geometry>-->
+    <!--            </collision>-->
     <!-- <collision>
             <xacro:if value="${(mirror == True)}">
                 <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
@@ -268,6 +271,52 @@
       <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
     </inertial>
   </link>
+  <joint name="LF_Jfoot_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.12 0.0 -0.03"/>
+    <parent link="L_Foot"/>
+    <child link="LF_Lfoot_fixed"/>
+  </joint>
+  <link name="LF_Lfoot_fixed">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="LH_Jfoot_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03"/>
+    <parent link="L_Foot"/>
+    <child link="LH_Lfoot_fixed"/>
+  </joint>
+  <link name="LH_Lfoot_fixed">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="LF_Lfoot_fixed">
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  <gazebo reference="LH_Lfoot_fixed">
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
   <gazebo reference="L_LHipRz">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
@@ -299,6 +348,7 @@
   <gazebo reference="L_Foot">
     <mu1>0.6</mu1>
     <mu2>0.6</mu2>
+    <self_collide>1</self_collide>
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="100.0"/>
@@ -481,24 +531,27 @@
       </geometry>
       <material name="orange"/>
     </visual>
-    <!-- <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>
-            </collision> 
-            <collision>
-                <geometry>
-                    <sphere radius="0.02"/>
-                </geometry>
-                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>
-            </collision>  -->
-    <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.033"/>
-      <geometry>
-        <box size="0.22 0.04 0.016"/>
-      </geometry>
-    </collision>
+    <!--  两个点 -->
+    <!---->
+    <!--            <collision>-->
+    <!--                <geometry>-->
+    <!--                    <sphere radius="0.02"/>-->
+    <!--                </geometry>-->
+    <!--                <origin xyz="-0.1 0.0 -0.03" rpy="0 0 0"/>-->
+    <!--            </collision>-->
+    <!--            <collision>-->
+    <!--                <geometry>-->
+    <!--                    <sphere radius="0.02"/>-->
+    <!--                </geometry>-->
+    <!--                <origin xyz="0.12 0.0 -0.03" rpy="0 0 0"/>-->
+    <!--            </collision>-->
+    <!--  条形 -->
+    <!--            <collision>-->
+    <!--                <origin rpy="0 0 0" xyz="0 0 -0.033"/>-->
+    <!--                <geometry>-->
+    <!--                    <box size="${foot_width} ${foot_length} ${foot_height}"/>-->
+    <!--                </geometry>-->
+    <!--            </collision>-->
     <!-- <collision>
             <xacro:if value="${(mirror == True)}">
                 <origin rpy="0 0 0" xyz="${foot_width} ${Shank_y_offset} ${Shank_z_offset}"/>
@@ -516,6 +569,52 @@
       <inertia ixx="0.003735" ixy="0.0" ixz="0.0" iyy="0.01391" iyz="0.0" izz="0.01355"/>
     </inertial>
   </link>
+  <joint name="RF_Jfoot_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="0.12 0.0 -0.03"/>
+    <parent link="R_Foot"/>
+    <child link="RF_Lfoot_fixed"/>
+  </joint>
+  <link name="RF_Lfoot_fixed">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="RH_Jfoot_fixed" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.1 0.0 -0.03"/>
+    <parent link="R_Foot"/>
+    <child link="RH_Lfoot_fixed"/>
+  </joint>
+  <link name="RH_Lfoot_fixed">
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="orange"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+  <gazebo reference="RF_Lfoot_fixed">
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
+  <gazebo reference="RH_Lfoot_fixed">
+    <disableFixedJointLumping>true</disableFixedJointLumping>
+  </gazebo>
   <gazebo reference="R_LHipRz">
     <mu1>0.2</mu1>
     <mu2>0.2</mu2>
@@ -547,6 +646,7 @@
   <gazebo reference="R_Foot">
     <mu1>0.6</mu1>
     <mu2>0.6</mu2>
+    <self_collide>1</self_collide>
     <material>Gazebo/DarkGrey</material>
     <kp value="1000000.0"/>
     <kd value="100.0"/>

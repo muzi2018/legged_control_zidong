@@ -52,7 +52,7 @@ struct ModelSettings {
                                        "L_JHipRx", "L_JThigh", "L_JKnee", "L_JAnkle", "R_JShoulderRx", "R_JUpperArm",
                                        "R_JForeArm","L_JShoulderRx", "L_JUpperArm", "L_JForeArm"};
   std::vector<std::string> contactNames6DoF{};
-  std::vector<std::string> contactNames3DoF{"LF_Foot","LH_Foot","RF_Foot" "RH_Foot"};
+  std::vector<std::string> contactNames3DoF{"LF_Lfoot_fixed", "RF_Lfoot_fixed", "LH_Lfoot_fixed","RH_Lfoot_fixed"};
 };
 
 ModelSettings loadModelSettings(const std::string& filename, const std::string& fieldName = "model_settings", bool verbose = "true");

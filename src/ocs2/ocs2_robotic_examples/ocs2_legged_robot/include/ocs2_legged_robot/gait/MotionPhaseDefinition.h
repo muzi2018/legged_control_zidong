@@ -46,9 +46,9 @@ namespace legged_robot {
 
 enum ModeNumber {  // {LF, RF, LH, RH}
   FLY = 0,
-  RF= 1,
-  LF = 2,
-  STANCE = 3,
+  LF_LH = 10,
+  RF_RH = 5,
+  STANCE = 15,
 };
 /******************************************************************************************************/
 /******************************************************************************************************/
@@ -58,17 +58,17 @@ inline contact_flag_t modeNumber2StanceLeg(const size_t& modeNumber) {
 
   switch (modeNumber) {
     case 0:
-      stanceLegs = contact_flag_t{false, false,false, false};
+      stanceLegs = contact_flag_t{false, false, false, false};
       break;  // 0:  0-leg-stance
-    case 1:
-      stanceLegs = contact_flag_t{false, false, true, true};
-      break;  // 1:  RF
-    case 2:
-      stanceLegs = contact_flag_t{true, true,false, false};
-      break;  // 2:  LF
-    case 3:
+    case 10:
+      stanceLegs = contact_flag_t{true, false, true, false};
+      break;  // 10: LF, LH
+    case 5:
+      stanceLegs = contact_flag_t{false, true, false, true};
+      break;  // 5:  RF, RH
+    case 15:
       stanceLegs = contact_flag_t{true, true, true, true};
-      break;  // 3: STANCE
+      break;  // 15: 4-leg-stance
   }
 
   return stanceLegs;
@@ -78,14 +78,8 @@ inline contact_flag_t modeNumber2StanceLeg(const size_t& modeNumber) {
 /******************************************************************************************************/
 /******************************************************************************************************/
 inline size_t stanceLeg2ModeNumber(const contact_flag_t& stanceLegs) {
-  if( !stanceLegs[0] && !stanceLegs[1] && !stanceLegs[2] && !stanceLegs[3])
-    return 0;
-  else if( (stanceLegs[2] || stanceLegs[3]) && (!stanceLegs[0] && !stanceLegs[1]) )
-    return 1;
-  else if( (!stanceLegs[2] && !stanceLegs[3]) && (stanceLegs[0] || stanceLegs[1]) )
-    return 2;
-  else 
-    return 3;
+  return static_cast<size_t>(stanceLegs[3]) + 2 * static_cast<size_t>(stanceLegs[2]) + 4 * static_cast<size_t>(stanceLegs[1]) +
+         8 * static_cast<size_t>(stanceLegs[0]);
 }
 
 /******************************************************************************************************/
@@ -95,8 +89,8 @@ inline std::string modeNumber2String(const size_t& modeNumber) {
   // build the map from mode number to name
   std::map<size_t, std::string> modeToName;
   modeToName[FLY] = "FLY";
-  modeToName[LF] = "LF";
-  modeToName[RF] = "RF";
+  modeToName[LF_LH] = "LF_LH";
+  modeToName[RF_RH] = "RF_RH";
   modeToName[STANCE] = "STANCE";
 
   return modeToName[modeNumber];
@@ -109,8 +103,8 @@ inline size_t string2ModeNumber(const std::string& modeString) {
   // build the map from name to mode number
   std::map<std::string, size_t> nameToMode;
   nameToMode["FLY"] = FLY;
-  nameToMode["LF"] = LF;
-  nameToMode["RF"] = RF;
+  nameToMode["LF_LH"] = LF_LH;
+  nameToMode["RF_RH"] = RF_RH;
   nameToMode["STANCE"] = STANCE;
 
 

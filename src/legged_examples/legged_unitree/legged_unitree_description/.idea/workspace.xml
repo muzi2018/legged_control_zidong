@@ -20,7 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="948e50a1-5a49-404b-ad1e-5d597b2f0bb5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../command_line.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../command_line.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_controllers/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urdf/common/leg.xacro" beforeDir="false" afterPath="$PROJECT_DIR$/urdf/common/leg.xacro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/urdf/robot.urdf" beforeDir="false" afterPath="$PROJECT_DIR$/urdf/robot.urdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/config/default.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/config/default.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_gazebo/src/LeggedHWSim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_gazebo/src/LeggedHWSim.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ocs2/ocs2_pinocchio/ocs2_centroidal_model/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ocs2/ocs2_pinocchio/ocs2_centroidal_model/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,20 +65,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/taizun/Desktop/legged_control_zidong/src/legged_gazebo/CMakeLists.txt&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "last_opened_file_path": "/home/taizun/Desktop/legged_control_zidong/src/legged_examples/legged_unitree/legged_unitree_description/CMakeLists.txt",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -85,6 +97,7 @@
       <workItem from="1694065974299" duration="1914000" />
       <workItem from="1694069551691" duration="1578000" />
       <workItem from="1694079315246" duration="9000" />
+      <workItem from="1694143370494" duration="2495000" />
     </task>
     <servers />
   </component>

@@ -86,21 +86,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a757826-4115-4d54-88d8-01609540890e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../legged_gazebo/src/.idea/src.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/.idea/automatic_differentation.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/.idea/ocs2_centroidal_model.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/.idea/ocs2_legged_robot.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../.catkin_tools/profiles/default/devel_collisions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/a1/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/config/a1/task.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/LeggedController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/LeggedController.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_examples/legged_unitree/legged_unitree_description/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_gazebo/src/LeggedHWSim.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../legged_interface/src/LeggedInterface.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/CppAdInterface.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_core/src/automatic_differentation/CppAdInterface.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/src/PinocchioCentroidalDynamicsAD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/src/PinocchioCentroidalDynamicsAD.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/config/mpc/task.info" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/config/mpc/task.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_pinocchio/ocs2_centroidal_model/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/../ocs2/ocs2_robotic_examples/ocs2_legged_robot/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -591,6 +582,7 @@
       <workItem from="1694053910616" duration="5261000" />
       <workItem from="1694065975666" duration="1249000" />
       <workItem from="1694070030279" duration="2165000" />
+      <workItem from="1694141952767" duration="599000" />
     </task>
     <servers />
   </component>

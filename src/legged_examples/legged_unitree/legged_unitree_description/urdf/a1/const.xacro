@@ -4,7 +4,7 @@
 
     <!-- Constants for robot dimensions -->
     <xacro:property name="stick_mass" value="0.00001"/>
-
+<xacro:property name="foot_radius" value="0.02"/>
     <!-- <xacro:property name="trunk_width" value="0.08"/>
     <xacro:property name="trunk_length" value="0.22"/>
     <xacro:property name="trunk_height" value="0.14"/> -->
